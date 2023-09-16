@@ -1,0 +1,112 @@
+body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+.parent {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  }
+  
+  .div1 { grid-area: 1 / 1 / 4 / 4; }
+  .div2 { grid-area: 4 / 1 / 5 / 4; }
+  .div3 { grid-area: 5 / 1 / 6 / 4; }
+  .div4 { grid-area: 5 / 7 / 6 / 10; }
+  .div5 { grid-area: 3 / 4 / 4 / 6; }
+  .div6 { grid-area: 2 / 4 / 3 / 6; }
+  .div7 { grid-area: 1 / 4 / 2 / 6; }
+  .div8 { grid-area: 1 / 6 / 4 / 11; }
+  .div9 { grid-area: 7 / 3 / 9 / 9; }
+  .div10 { grid-area: 6 / 4 / 7 / 8; }
+
+  .informationPrixDates {
+    display: inline; /* Affiche le prix en ligne */
+    margin-left: 4vw;
+    margin-right: 30%; /* Marge à droite pour l'espace entre le prix et les dates */
+  }
+  
+  .dates {
+    display: inline-block; /* Affiche les dates en bloc, côte à côte */
+  }
+  
+  .dateDeLaFormation {
+    display: block; /* Affiche chaque date sur une ligne différente */
+  }
+
+  .div1 {
+    display: grid;
+    place-items: center; /* Centre l'image horizontalement et verticalement dans la grille */
+    height: 100%; /* Assurez-vous que la div1 a une hauteur définie (par exemple, 100% de la hauteur parente) */
+  }
+
+  #imageFormation {
+      max-width: 100%; /* L'image prendra au maximum la largeur de la grille */
+      max-height: 100%; /* L'image prendra au maximum la hauteur de la grille */
+  }
+
+  #duree{
+    margin-left: 4vw;
+    text-align: center;
+    border-style: solid;
+    padding-top: 0.4vh;
+    padding-bottom: 0.4vh;
+  }
+
+  header {
+    margin-bottom: 5vh;
+    display: flex;
+    width: 100%;
+    height: 12vh;
+    background-color: #73B7DE;
+    padding: 0px 10px;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer{
+      display: flex;
+      width: 100%;
+      height: 120px;
+      background-color: #73B7DE;
+      color: white;
+      text-align: center;
+      margin-top: 4%;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  #description{
+    padding-left: 4 vw;
+    border-style: solid;
+    max-height: 40vh; /* Définissez la hauteur maximale souhaitée */
+    overflow-y: auto; /* Active la barre de défilement verticale en cas de dépassement */
+    background-color: #D9D9D9;
+  }
+  #texteDescription{
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+
+  #certification{
+    text-align: center;
+    background-color: #80C5F8;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+  }
+
+  #ajouterAuPanier{
+    text-align: center;
+    background-color: #8DD082;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
