@@ -6,13 +6,13 @@
     <head>
         <meta charset='UTF-8'>
         <title>Liste des produits</title>
-        <link href="liste-produit.css" rel="stylesheet">
+        <link href="css/liste-produit.css" rel="stylesheet">
     </head>
     <body>
         <header>
-            <img src='images/hamb.png' alt='Programmer en C' width='90px' height='80px'>
+            <img src='../images/hamb.png' alt='Programmer en C' width='90px' height='80px'>
             <h1>Arbre du Savoir</h1>
-            <img src='images/logo.png' alt='Programmer en C' width='90px' height='80px'>
+            <img src='../images/logo.png' alt='Programmer en C' width='90px' height='80px'>
         </header>
         <div class='body'>
             <div class='rech'>
@@ -32,7 +32,7 @@
                 <h3>Catégorie d’activité :</h3>
                 <?php
 
-                include(__DIR__."/controlleurs/CategorieControlleur.php");
+                include(__DIR__."/../controlleurs/CategorieControlleur.php");
 
                 $categorieControlleur = new \controlleurs\CategorieControlleur();
 
@@ -42,7 +42,7 @@
                 <h3>Lieux :</h3>
                 <?php
 
-                include(__DIR__."/controlleurs/LieuControlleur.php");
+                include(__DIR__."/../controlleurs/LieuControlleur.php");
 
                 $lieuControlleur = new \controlleurs\LieuControlleur();
 
@@ -108,7 +108,7 @@
 
                 <?php
 
-                include(__DIR__."/controlleurs/FormationControlleur.php");
+                include(__DIR__."/../controlleurs/FormationControlleur.php");
 
                 $formationControlleur = new \controlleurs\FormationControlleur();
 

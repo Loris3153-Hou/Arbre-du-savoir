@@ -8,6 +8,7 @@ class formationDAO
     public function creerFormation($tmp) {
 
         $formation = new \models\Formation();
+        $categorieDAO = new CategorieDAO();
 
         $formation->setIdFormation($tmp['id_formation']);
         $formation->setTitreFormation($tmp['titre_formation']);
@@ -18,6 +19,7 @@ class formationDAO
         $formation->setCertificationFormation($tmp['certification_formation']);
         $formation->setDateDebutFormation($tmp['date_debut_formation']);
         $formation->setDateFinFormation($tmp['date_fin_formation']);
+        $formation->setListeCategories($categorieDAO->getCategoriesParFormation($formation->getIdFormation()));
 
         return $formation;
     }

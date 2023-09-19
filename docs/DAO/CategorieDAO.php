@@ -37,4 +37,11 @@ class CategorieDAO
         return $this->lireRequete($sql, $argument);
     }
 
+    public function getCategoriesParFormation($idFormation){
+        $sql = "SELECT CATEGORIE.* FROM CATEGORIE INNER JOIN FORMATION_CATEGORIE ON CATEGORIE.id_categorie = FORMATION_CATEGORIE.id_categorie WHERE FORMATION_CATEGORIE.id_formation = ? ;";
+        $argument = array();
+        array_push($argument, $idFormation);
+        return $this->lireRequete($sql, $argument);
+    }
+
 }
