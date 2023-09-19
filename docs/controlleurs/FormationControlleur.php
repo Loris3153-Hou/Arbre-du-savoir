@@ -17,7 +17,7 @@ class FormationControlleur
         $this->listeFormations = $this->formationDAO->getToutesLesFormations();
     }
 
-    public function afficherToutesLesFormations(){
+    public function afficherToutesLesFormationsPageListeProduits(){
         $html = "";
         foreach ($this->listeFormations as $formation){
             $html .= "<div class='produit'>
@@ -25,6 +25,39 @@ class FormationControlleur
                         <h2>". $formation->getTitreFormation() ."</h2>
                         <p>Description du produit</p>
                       </div>";
+        }
+        echo $html;
+    }
+
+    public function afficherToutesLesFormationsPageAdmin(){
+        $html = "";
+        foreach ($this->listeFormations as $formation){
+            $html .= "<li class='produit-item'>
+                            <h2 class='item'>". $formation->getTitreFormation() ."</h2>
+                            <p class='produit-info item'>". $formation->getDescFormation() ."</p>
+                            <p class='produit-info item'>";
+
+                foreach ($formation->getListeCategories() as $categorie){
+                    $html .= $categorie->getNomCategorie() . "</br>";
+                }
+
+            $html .=                 "</p>
+                            <p class='produit-info item'>". $formation->getPrixFormation() ." $ </p>
+                            <p class='produit-info item'>";
+
+            foreach ($formation->getListeLieux() as $lieu){
+                $html .= $lieu->getVilleLieu() . "</br>";
+            }
+
+            $html .=        "</p>
+                            <p class='produit-info item'>". $formation->getDateDebutFormation() ."</p>
+                            <p class='produit-info item'>". $formation->getDateFinFormation() ."</p>
+                            <p class='produit-info item'>". $formation->getNiveauFormation() ."</p>
+                            <div class='line-buttons'>
+                                <button class='line-button item'>Modifier</button>
+                                <button class='line-button item'>Supprimer</button>
+                            </div>
+                        </li>";
         }
         echo $html;
     }

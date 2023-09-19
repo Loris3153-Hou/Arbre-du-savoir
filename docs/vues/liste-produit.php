@@ -112,7 +112,7 @@
 
                 $formationControlleur = new \controlleurs\FormationControlleur();
 
-                $formationControlleur->afficherToutesLesFormations();
+                $formationControlleur->afficherToutesLesFormationsPageListeProduits();
 
                 ?>
 

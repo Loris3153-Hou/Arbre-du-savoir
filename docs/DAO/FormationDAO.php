@@ -1,5 +1,7 @@
 <?php
 
+include_once(__DIR__.'/../DAO/CategorieDAO.php');
+include_once(__DIR__.'/../DAO/LieuDAO.php');
 include_once(__DIR__.'/../models/Formation.php');
 
 class formationDAO
