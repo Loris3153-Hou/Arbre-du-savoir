@@ -22,7 +22,7 @@
         <input type='submit' name='submit' 
         class='submit' value='Rechercher'>
     </div>
-    <button class='ajoutBoutton' type='button'>Ajouter</button> 
+    <button class='ajoutBoutton' type='button' onclick='goPageAjouterProduit()'>Ajouter</button>
     <div class='produits'>   
         <ul class='produit-list'>
             <?php

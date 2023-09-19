@@ -8,6 +8,7 @@
     <meta charset='UTF-8'>
     <title>Arjouter produit</title>
     <link href="css/ajouter-produit.css" rel="stylesheet">
+    <script src="js/ajouter-produit.js"></script>
 </head>
 <body>
     <header>
@@ -55,7 +56,7 @@
         <button class='boutton' type='button'>Modifier</button> 
     </div>
     <div class="div11"> 
-        <button class='boutton' type='button'>Annuler</button> 
+        <button class='boutton' type='button' onclick='annulerAjout()'>Annuler</button>
     </div>
     </div>
     <footer>
