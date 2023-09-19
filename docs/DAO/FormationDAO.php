@@ -9,6 +9,7 @@ class formationDAO
 
         $formation = new \models\Formation();
         $categorieDAO = new CategorieDAO();
+        $lieuDAO = new LieuDAO();
 
         $formation->setIdFormation($tmp['id_formation']);
         $formation->setTitreFormation($tmp['titre_formation']);
@@ -20,6 +21,7 @@ class formationDAO
         $formation->setDateDebutFormation($tmp['date_debut_formation']);
         $formation->setDateFinFormation($tmp['date_fin_formation']);
         $formation->setListeCategories($categorieDAO->getCategoriesParFormation($formation->getIdFormation()));
+        $formation->setListeLieux($lieuDAO->getLieuxParFormation($formation->getIdFormation()));
 
         return $formation;
     }

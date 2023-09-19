@@ -14,6 +14,7 @@ class Formation
     public $dateDebutFormation;
     public $dateFinFormation;
     public $listeCategories;
+    public $listeLieux;
 
     public function __construct() {
         $this->idFormation = "";
@@ -26,6 +27,7 @@ class Formation
         $this->dateDebutFormation = "";
         $this->dateFinFormation = "";
         $this->listeCategories = array();
+        $this->listeLieux = array();
     }
 
     /**
@@ -187,5 +189,23 @@ class Formation
     {
         $this->listeCategories = $listeCategories;
     }
+
+    /**
+     * @return array
+     */
+    public function getListeLieux()
+    {
+        return $this->listeLieux;
+    }
+
+    /**
+     * @param array $listeLieux
+     */
+    public function setListeLieux($listeLieux)
+    {
+        $this->listeLieux = $listeLieux;
+    }
+
+
 
 }

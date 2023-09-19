@@ -39,4 +39,11 @@ class LieuDAO
         return $this->lireRequete($sql, $argument);
     }
 
+    public function getLieuxParFormation($idFormation){
+        $sql = "    SELECT LIEU.* FROM LIEU INNER JOIN FORMATION_LIEU ON LIEU.id_lieu = FORMATION_LIEU.id_lieu WHERE FORMATION_LIEU.id_formation = ?;";
+        $argument = array();
+        array_push($argument, $idFormation);
+        return $this->lireRequete($sql, $argument);
+    }
+
 }
