@@ -13,6 +13,7 @@ class Formation
     public $certificationFormation;
     public $dateDebutFormation;
     public $dateFinFormation;
+    public $listeCategories;
 
     public function __construct() {
         $this->idFormation = "";
@@ -24,6 +25,7 @@ class Formation
         $this->certificationFormation = "";
         $this->dateDebutFormation = "";
         $this->dateFinFormation = "";
+        $this->listeCategories = array();
     }
 
     /**
@@ -170,6 +172,20 @@ class Formation
         $this->dateFinFormation = $dateFinFormation;
     }
 
+    /**
+     * @return array
+     */
+    public function getListeCategories()
+    {
+        return $this->listeCategories;
+    }
 
+    /**
+     * @param array $listeCategories
+     */
+    public function setListeCategories($listeCategories)
+    {
+        $this->listeCategories = $listeCategories;
+    }
 
 }
