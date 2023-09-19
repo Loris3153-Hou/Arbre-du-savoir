@@ -23,7 +23,7 @@ footer{
   background-color: #73B7DE;
   color: white;
   text-align: center;
-  margin-top: 5%;
+  margin-top: 7%;
   justify-content: space-between;
   align-items: center;
 }
@@ -231,7 +231,7 @@ h3{
   margin: 0;
   padding: 80px 0;
   list-style: none;
-  background-color: #ECEFF1;
+  background-color: #73B7DE;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
   transition-duration: .25s;
 }
