@@ -156,7 +156,7 @@ h3{
 #slide1:checked ~ #bullets label:nth-child(1),
 #slide2:checked ~ #bullets label:nth-child(2),
 #slide3:checked ~ #bullets label:nth-child(3) {
-  background: #444;
+  background: #000;
 }
 @media screen and (max-width: 900px) {
   #slide1:checked ~ #controls label:nth-child(2),
@@ -238,7 +238,7 @@ h3{
 .menu__item {
   display: block;
   padding: 12px 24px;
-  color: #333;
+  color: #000;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   font-weight: 600;
@@ -246,5 +246,5 @@ h3{
   transition-duration: .25s;
 }
 .menu__item:hover {
-  background-color: #CFD8DC;
+  background-color: #27adfa;
 }
