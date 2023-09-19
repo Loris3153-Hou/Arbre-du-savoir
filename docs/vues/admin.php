@@ -8,14 +8,11 @@
     <meta charset='UTF-8'>
     <title>Administrateur</title>
     <link href="css/admin.css" rel="stylesheet">
+    <link href="css/menu.css" rel="stylesheet">
     <script src="js/admin.js"></script>
 </head>
 <body>
-    <header>
-            <img src='../images/hamb.png' alt='Programmer en C' width='90px' height='80px'>
-            <h1>Arbre du Savoir</h1>
-            <img src='../images/logo.png' alt='Programmer en C' width='90px' height='80px'>
-    </header>
+    <?php include("header.php")?>
     <div class='body'>
     <div class='rech'>
         <input type='text' name='search' placeholder='Recherche..'>

@@ -7,13 +7,10 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/fiche-produit.css">
+        <link rel="stylesheet" href="css/menu.css">
     </head>
     <body>
-        <header>
-            <img src='../images/hamb.png' alt='Programmer en C' width='90px' height='80px'>
-            <h1>Arbre du Savoir</h1>
-            <img src='../images/logo.png' alt='Programmer en C' width='90px' height='80px'>
-        </header>
+        <?php include("header.php")?>
         <div class="parent">
             <div class="div1"> 
                 <img id="imageFormation" src="../images/image_formation.png" alt="Photo de la formation">
