@@ -8,6 +8,7 @@
     <meta charset='UTF-8'>
     <title>Administrateur</title>
     <link href="css/admin.css" rel="stylesheet">
+    <script src="js/admin.js"></script>
 </head>
 <body>
     <header>

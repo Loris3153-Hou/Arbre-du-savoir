@@ -56,7 +56,7 @@ class FormationControlleur
                             <p class='produit-info item'>". $formation->getCertificationFormation() ."</p>
                             <p class='produit-info item'>". $formation->getNiveauFormation() ."</p>
                             <div class='line-buttons'>
-                                <button class='line-button item'>Modifier</button>
+                                <button class='line-button item' onclick='goPageModifierProduit()'>Modifier</button>
                                 <button class='line-button item'>Supprimer</button>
                             </div>
                         </li>";
