@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+h1{ 
+    padding-left: 20px;
+    padding-right: 20px;
+    color: black;
+    font-size: 40px;
+}
+
+h3{ 
+    padding-left: 20px;
+    padding-right: 20px;
+    color: black;
+}
+
+.body{
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    display: grid;
+    grid-template-columns: 0.10fr 0.25fr repeat(2, 1fr) 0.10fr; 
+    grid-template-rows: 0.01fr 0.5fr repeat(2, 0.25fr) repeat(2, 0.5fr) 0.01fr;
+    grid-column-gap: 15px;
+    grid-row-gap: 10px; 
+}
+
+header {
+    display: flex;
+    width: 100vw;
+    height: 12vh;
+    background-color: #73B7DE;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer{
+    display: flex;
+    width: 100vw;
+    height: 8vh;
+    background-color: #73B7DE;
+    color: white;
+    text-align: center;
+    margin-top: 4%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rech{
+    grid-area: 2 / 2 / 3 / 3;
+    padding-top: 50px;
+    place-items: center;
+    text-align: center;
+}
+
+.produits{
+    grid-area: 2 / 3 / 8 / 5;
+    margin: 0px 20px;
+}
+
+.ajoutBoutton {
+    grid-area: 3 / 2 / 4 / 3;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.item{
+    margin: 20px 20px;
+}
+
+.produit-item {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    place-items: center;
+}
+
+.produit h2 {
+    margin-bottom: 10px;
+}
+
+.produit-info {
+    font-size: 14px;
+    margin-top: 25px;
+}
+
+.line-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.line-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
