@@ -35,6 +35,7 @@ class FormationControlleur
             $html .= "<li class='produit-item'>
                             <h2 class='item'>". $formation->getTitreFormation() ."</h2>
                             <p class='produit-info item'>". $formation->getDescFormation() ."</p>
+                            <p class='produit-info item'>". $formation->getPhotoFormation() ."</p>
                             <p class='produit-info item'>";
 
                 foreach ($formation->getListeCategories() as $categorie){
@@ -52,6 +53,7 @@ class FormationControlleur
             $html .=        "</p>
                             <p class='produit-info item'>". $formation->getDateDebutFormation() ."</p>
                             <p class='produit-info item'>". $formation->getDateFinFormation() ."</p>
+                            <p class='produit-info item'>". $formation->getCertificationFormation() ."</p>
                             <p class='produit-info item'>". $formation->getNiveauFormation() ."</p>
                             <div class='line-buttons'>
                                 <button class='line-button item'>Modifier</button>
