@@ -8,6 +8,7 @@
     <meta charset='UTF-8'>
     <title>Arbre du Savoir</title>
     <link href="css/modifier-produit.css" rel="stylesheet">
+    <script src="js/modifier-produit.js"></script>
 </head>
 <body>
     <header>
@@ -55,7 +56,7 @@
         <button class='boutton' type='button'>Modifier</button> 
     </div>
     <div class="div11"> 
-        <button class='boutton' type='button'>Annuler</button> 
+        <button class='boutton' type='button' onclick="annulerModification()">Annuler</button>
     </div>
     </div>
     <footer>
