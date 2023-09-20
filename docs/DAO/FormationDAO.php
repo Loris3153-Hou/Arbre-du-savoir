@@ -49,11 +49,4 @@ class formationDAO
         $argument = array();
         return $this->lireRequete($sql, $argument);
     }
-    public function getLaFormation($idFormation){
-        $sql = "SELECT * FROM FORMATION WHERE id_formation = ? ;";
-        $argument = array();
-        array_push($argument, $idFormation);
-        return $this->lireRequete($sql, $argument);
-    }
-
 }
