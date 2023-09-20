@@ -3,8 +3,8 @@ function goPageModifierProduit(idFormation) {
     console.log('Id de formation:', idFormation);
 }
 
-function goPageSupprimerProduit() {
-    window.location.pathname = '/arbre-du-savoir/docs/vues/supprimer-produit.php'
+function goPageSupprimerProduit(idFormation) {
+    window.location.href = 'supprimer-produit.php?idFormation=' + idFormation;
 }
 
 function goPageAjouterProduit() {
