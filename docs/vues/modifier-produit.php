@@ -18,7 +18,7 @@
     </header>
     <div class='body'>
         <div class='titre'>
-            <h1>Modifier le produit</h1>
+            <h2>Modifier le produit</h2>
         </div>
 
         <?php

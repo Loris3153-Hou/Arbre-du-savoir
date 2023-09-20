@@ -25,22 +25,22 @@ h3{
     align-items: center;
  }
 
-.div4 { 
+.div12 {
     grid-area: 4 / 2 / 5 / 3;
-    display: flex;
-    justify-content: space-between;
-    align-items: center; 
-}
-
-.div5 { 
-    grid-area: 5 / 2 / 6 / 3; 
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.div6 { 
-    grid-area: 6 / 2 / 7 / 3; 
+.div6 {
+    grid-area: 5 / 2 / 6 / 3; 
+
+    display: block;
+    text-align: right;
+}
+
+.div5 {
+    grid-area: 6 / 2 / 7 / 3;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -67,11 +67,10 @@ h3{
     align-items: center;
 }
 
-.div12 { 
-    grid-area: 5 / 4 / 6 / 5; 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.div4 {
+    grid-area: 5 / 4 / 6 / 5;
+    display: block;
+    text-align: right;
 }
 
 .div10 { 
@@ -96,7 +95,7 @@ h3{
     font-family: Arial, sans-serif;
     display: grid;
     grid-template-columns: 0.3fr 1fr 0.3fr 1fr 0.3fr;
-    grid-template-rows: 0.01fr 1.5fr repeat(4, 0.4fr) 1fr 0.01fr; 
+    grid-template-rows: 0.01fr 1.5fr repeat(2, 0.4fr) 1.5fr 0.4fr 1fr 0.01fr;
     grid-column-gap: 15px;
     grid-row-gap: 10px; 
 }
@@ -118,7 +117,6 @@ footer{
     background-color: #73B7DE;
     color: white;
     text-align: center;
-    margin-top: 4%;
     justify-content: space-between;
     align-items: center;
 }
