@@ -8,6 +8,7 @@
         <title>Liste des produits</title>
         <link href="css/liste-produit.css" rel="stylesheet">
         <link href="css/menu.css" rel="stylesheet">
+        <script src="js/description-produit.js"></script>
     </head>
     <body>
         <?php include("header.php")?>

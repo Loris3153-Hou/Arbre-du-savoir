@@ -27,7 +27,7 @@ body{
   .informationPrixDates {
     display: inline; /* Affiche le prix en ligne */
     margin-left: 4vw;
-    margin-right: 30%; /* Marge à droite pour l'espace entre le prix et les dates */
+    margin-right: 4vw; /* Marge à droite pour l'espace entre le prix et les dates */
   }
   
   .dates {
@@ -82,6 +82,7 @@ body{
   }
 
   #description{
+    text-align: justify;
     padding-left: 4 vw;
     border-style: solid;
     max-height: 40vh; /* Définissez la hauteur maximale souhaitée */
