@@ -44,9 +44,29 @@ class formationDAO
         return $listFormation;
     }
 
+    public function executerRequete($sql, $arguments) {
+
+        require 'DAO.php';
+
+        $bdd = new PDO("mysql:host=localhost;dbname=$db_name",$user,$pass);
+        $rs = $bdd->prepare($sql);
+        $rs->execute($arguments);
+
+    }
+
     public function getToutesLesFormations(){
         $sql = "SELECT * FROM FORMATION;";
         $argument = array();
         return $this->lireRequete($sql, $argument);
+    }
+
+    public function supprimerUneFormation($idFormation){
+        echo $idFormation;
+        $sql = "DELETE FROM FORMATION_CATEGORIE WHERE FORMATION_CATEGORIE.id_formation = ?;
+                DELETE FROM FORMATION_LIEU WHERE FORMATION_LIEU.id_formation = ?;
+                DELETE FROM FORMATION WHERE FORMATION.id_formation = ?;";
+        $argument = array();
+        array_push($argument, $idFormation, $idFormation, $idFormation);
+        return $this->executerRequete($sql, $argument);
     }
 }
