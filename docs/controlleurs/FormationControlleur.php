@@ -11,10 +11,12 @@ class FormationControlleur
 
     public $formationDAO;
     public $listeFormations;
+   // public $laFormation;
 
     function __construct(){
         $this->formationDAO = new \formationDAO();
         $this->listeFormations = $this->formationDAO->getToutesLesFormations();
+        //$this->laFormation = $this->formationDAO->getLaFormation();
     }
 
     public function afficherToutesLesFormationsPageListeProduits(){
@@ -56,7 +58,7 @@ class FormationControlleur
                             <p class='produit-info item'>". $formation->getCertificationFormation() ."</p>
                             <p class='produit-info item'>". $formation->getNiveauFormation() ."</p>
                             <div class='line-buttons'>
-                                <button class='line-button item' onclick='goPageModifierProduit()'>Modifier</button>
+                                <button class='line-button item' onclick='goPageModifierProduit(" .$formation->getIdFormation()." )'>Modifier</button>
                                 <button class='line-button item' onclick='goPageSupprimerProduit()'>Supprimer</button>
                             </div>
                         </li>";
