@@ -58,15 +58,6 @@
         <div class="div11">
             <button class='boutton' type='button' onclick="annulerModification()">Annuler</button>
         </div>
-        <?php
-
-        include(__DIR__."/../controlleurs/CategorieControlleur.php");
-
-        $categorieControlleur = new \controlleurs\CategorieControlleur();
-
-        $categorieControlleur->afficherToutesLesCategories();
-
-        ?>
     </div>
     <footer>
         <h3>Condition d'utilisation</h3>
