@@ -78,24 +78,32 @@ class FormationControlleur
 
         foreach ($this->listeFormations as $formation) {
             if ($formation->getIdFormation() == $idFormation) {
-                echo
                 $html .= "<div class='div3'>
                 <h3 class='text'>Nom du produit</h3>
                 <input class='entrer' type='text' value='" . $formation->getTitreFormation() . "'>
                 </div>
                 <div class='div4'>
-                <h3 class='text'>Catégorie</h3>
-                <input class='entrer' type='text' value='" . $formation->getPrixFormation() . "'>
-                </div>
-                <div class='div5'>
+                <h3 class='text'>Catégorie</h3>";
+                foreach ($formation->getListeCategories() as $categorie){
+                    $html .= "<input type='checkbox' id='ville1'>
+                    <label for='ville1'>" . $categorie->getNomCategorie() . "</label><br><br>";
+
+                }
+                $html .= "</div>";
+                $html .= "<div class='div5'>
                 <h3 class='text'>Prix</h3>
                 <input class='entrer' type='text' value='" . $formation->getPrixFormation() . "'>
                 </div>
                 <div class='div6'>
-                <h3 class='text'>Lieux</h3>
-                <input class='entrer' type='text' value='" . $formation->getTitreFormation() . "'>
-                </div>
-                <div class='div7'>
+                <h3 class='text'>Lieux</h3>";
+                foreach ($formation->getListeLieux() as $lieu){
+                    $html .= "<input type='checkbox' id='ville1'>
+                    <label for='ville1'>" . $lieu->getVilleLieu() . "</label><br><br>";
+
+                }
+                $html .= "</div>";
+
+                $html .= "<div class='div7'>
                 <h3 class='text'>Date début</h3>
                 <input class='entrer' type='text' value='" . $formation->getDateDebutFormation() . "'>
                 </div>
@@ -109,7 +117,7 @@ class FormationControlleur
                 </div>
                 <div class='div9'>
                 <h3 class='text'>Détails</h3>
-                <input class='entrer' type='text' value='" . $formation->getDescFormation() . "'>
+                <textarea class='entrer' rows='4' cols='50'>" . $formation->getDescFormation() . "</textarea>
                 </div>
                 <div class='div10'>
                     <button class='boutton' type='button'>Modifier</button>
