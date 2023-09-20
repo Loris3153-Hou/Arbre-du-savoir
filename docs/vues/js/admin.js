@@ -1,5 +1,6 @@
-function goPageModifierProduit() {
-    window.location.pathname = '/arbre-du-savoir/docs/vues/modifier-produit.php'
+function goPageModifierProduit(idFormation) {
+    window.location.href = 'modifier-produit.php?idFormation=' + idFormation;
+    console.log('Id de formation:', idFormation);
 }
 
 function goPageSupprimerProduit() {
