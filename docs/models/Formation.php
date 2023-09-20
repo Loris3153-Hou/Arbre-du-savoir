@@ -24,8 +24,8 @@ class Formation
         $this->prixFormation = "";
         $this->niveauFormation = "";
         $this->certificationFormation = "";
-        $this->dateDebutFormation = "";
-        $this->dateFinFormation = "";
+        $this->dateDebutFormation = date("Y/m/d");
+        $this->dateFinFormation = date("Y/m/d");
         $this->listeCategories = array();
         $this->listeLieux = array();
     }

@@ -20,8 +20,8 @@ class formationDAO
         $formation->setPrixFormation($tmp['prix_formation']);
         $formation->setNiveauFormation($tmp['niveau_formation']);
         $formation->setCertificationFormation($tmp['certification_formation']);
-        $formation->setDateDebutFormation($tmp['date_debut_formation']);
-        $formation->setDateFinFormation($tmp['date_fin_formation']);
+        $formation->setDateDebutFormation(date($tmp['date_debut_formation']));
+        $formation->setDateFinFormation(date($tmp['date_fin_formation']));
         $formation->setListeCategories($categorieDAO->getCategoriesParFormation($formation->getIdFormation()));
         $formation->setListeLieux($lieuDAO->getLieuxParFormation($formation->getIdFormation()));
 

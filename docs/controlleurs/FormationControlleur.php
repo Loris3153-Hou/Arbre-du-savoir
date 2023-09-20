@@ -20,7 +20,7 @@ class FormationControlleur
     public function afficherToutesLesFormationsPageListeProduits(){
         $html = "";
         foreach ($this->listeFormations as $formation){
-            $html .= "<div class='produit'>
+            $html .= "<div class='produit' onclick='goPageDescriptionProduit(".$formation->getIdFormation().")'>
                         <img src='../images/". $formation->getPhotoFormation() . "' alt='". $formation->getPhotoFormation() . "' width='400' height='220'>
                         <h2>". $formation->getTitreFormation() ."</h2>
                         <p>Description du produit</p>
@@ -121,6 +121,15 @@ class FormationControlleur
             }
         }
 
+    }
+
+    public function getFormationById($id){
+       foreach ($this->listeFormations as $formation) {
+           if ($formation->getIdFormation() == $id){
+               $formTrouvee = $formation;
+           }
+       }
+       return $formTrouvee;
     }
 
 }
