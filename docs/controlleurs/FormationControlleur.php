@@ -132,4 +132,8 @@ class FormationControlleur
        return $formTrouvee;
     }
 
+    public function supprimerLaFormation($idFormation) {
+        $this->formationDAO->supprimerUneFormation($idFormation);
+    }
+
 }
