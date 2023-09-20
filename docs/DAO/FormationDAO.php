@@ -49,5 +49,4 @@ class formationDAO
         $argument = array();
         return $this->lireRequete($sql, $argument);
     }
-
 }
