@@ -14,14 +14,14 @@
 <body>
     <?php include("header.php")?>
     <div class='body'>
-    <div class='rech'>
+    <div class='recherche'>
         <input type='text' name='search' placeholder='Recherche..'>
         <input type='submit' name='submit' 
         class='submit' value='Rechercher'>
     </div>
     <button class='ajoutBoutton' type='button' onclick='goPageAjouterProduit()'>Ajouter</button>
     <div class='produits'>   
-        <ul class='produit-list'>
+        <ul class='produits_list'>
             <?php
 
             include(__DIR__."/../controlleurs/FormationControlleur.php");

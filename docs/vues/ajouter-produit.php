@@ -28,7 +28,7 @@
         <h3 class="text">Catégorie</h3>
         <input class="entrer" type='text'>
     </div>
-    <div class="div5"> 
+    <div class="div5">
         <h3 class="text">Prix</h3>
         <input class="entrer" type='text'>
     </div>

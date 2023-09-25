@@ -23,9 +23,9 @@ session_start(); ?>
         <input type="radio" name="slider" id="slide1" checked>
         <input type="radio" name="slider" id="slide2">
         <input type="radio" name="slider" id="slide3">
-        <div id="slides">
-            <div id="overflow">
-                <div class="inner">
+        <div id="slider_slides">
+            <div id="slider_slides_overflow">
+                <div class="slider_slides_overflow_inner">
                     <div class="slide slide_1">
                         <div class="slide-content">
                             <h2>Bienvenue sur l'Arbre du Savoir...</h2>

@@ -18,12 +18,17 @@ $formation = $formationControlleur->getFormationById($_COOKIE['id']);
     <body>
         <?php include("header.php")?>
         <div class="parent">
-            <div class="div1">
+            <div class = "titre_formation">
+                <h1 id="titre-formation">
+                    <?php echo $formation->getTitreFormation() ?>
+                </h1>
+            </div>
+            <div class="photo_formation">
                 <?php
                 echo "<img id='imageFormation' src='../images/" . $formation->getPhotoFormation() . "' alt='" . $formation->getPhotoFormation() . "'>";
                 ?>
             </div>
-            <div class="div2"> 
+            <div class="prix_formation">
                 <h2 class = "informationPrixDates" id = "prix">
                     <?php echo $formation->getPrixFormation()?>
                     $
@@ -37,7 +42,7 @@ $formation = $formationControlleur->getFormationById($_COOKIE['id']);
                     </h3>
                 </div>
             </div>
-            <div class="div3"> 
+            <div class="duree_formation">
                 <h3 id = "duree">Durée :
                     <?php
                     $dateDebut = new DateTime($formation->getDateDebutFormation());
@@ -48,7 +53,7 @@ $formation = $formationControlleur->getFormationById($_COOKIE['id']);
                     ?>
                 </h3>
             </div>
-            <div class="div4"> 
+            <div class="cerification_formation">
                 <div id="certification">
                     <h3>Niveau :
                         <?php echo $formation->getNiveauFormation()?>
@@ -56,7 +61,7 @@ $formation = $formationControlleur->getFormationById($_COOKIE['id']);
 
                 </div>
             </div>
-            <div class="div5">
+            <div class="lieu_formation">
                 <form>
                     <label for="ville">Ville :</label>
                     <select name="ville" id="ville">
@@ -70,7 +75,7 @@ $formation = $formationControlleur->getFormationById($_COOKIE['id']);
                     </select>
                 </form>
             </div>
-            <div class="div6">
+            <div class="quantite_formation">
                 <form>
                     <label for="quantite">Quantité :</label>
                     <select name="quantite" id="quantite">
@@ -83,7 +88,7 @@ $formation = $formationControlleur->getFormationById($_COOKIE['id']);
             </div>
             <div class="div7">
             </div>
-            <div class="div8"> 
+            <div class="description_formation">
                 <div id = "description">
                     <h4>Description : </h4>
                     <p id = "texteDescription">
@@ -92,7 +97,7 @@ $formation = $formationControlleur->getFormationById($_COOKIE['id']);
                 </div>
             </div>
             <div class="div9"> </div>
-            <div class="div10"> 
+            <div class="ajouterAuPanier_formation">
                 <div id = "ajouterAuPanier">
                     <h3>AJOUTER AU PANIER</h3>
                 </div>
