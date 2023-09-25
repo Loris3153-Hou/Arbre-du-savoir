@@ -8,14 +8,11 @@
     <meta charset='UTF-8'>
     <title>Arbre du Savoir</title>
     <link href="css/modifier-produit.css" rel="stylesheet">
+    <link href="css/menu.css" rel="stylesheet">
     <script src="js/modifier-produit.js"></script>
 </head>
 <body>
-    <header>
-            <img src='../images/hamb.png' alt='Programmer en C' width='90px' height='80px'>
-            <h1>Arbre du Savoir</h1>
-            <img src='../images/logo.png' alt='Programmer en C' width='90px' height='80px'>
-    </header>
+    <?php include("header.php")?>
     <div class='body'>
         <div class='titre'>
             <h2>Modifier le produit</h2>

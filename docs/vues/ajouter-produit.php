@@ -8,14 +8,11 @@
     <meta charset='UTF-8'>
     <title>Arjouter produit</title>
     <link href="css/ajouter-produit.css" rel="stylesheet">
+    <link href="css/menu.css" rel="stylesheet">
     <script src="js/ajouter-produit.js"></script>
 </head>
 <body>
-    <header>
-            <img src='../images/hamb.png' alt='Programmer en C' width='90px' height='80px'>
-            <h1>Arbre du Savoir</h1>
-            <img src='../images/logo.png' alt='Programmer en C' width='90px' height='80px'>
-    </header>
+    <?php include("header.php")?>
     <div class='body'>
     <div class='titre'>
         <h1>Ajouter le produit</h1>
