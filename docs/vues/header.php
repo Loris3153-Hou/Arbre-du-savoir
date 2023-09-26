@@ -17,7 +17,7 @@
             </ul>
         </div>
         <h1 onclick="goPageAccueil()">Arbre du Savoir</h1>
-        <img src='../images/logo.png' alt='Programmer en C' width='90px' height='80px'>
+        <img onclick="goPageAccueil()" src='../images/logo.png' alt='Programmer en C' width='90px' height='80px'>
     </header>
 </body>
 
