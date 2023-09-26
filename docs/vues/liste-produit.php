@@ -30,7 +30,7 @@
                 <h3>Catégorie d’activité :</h3>
                 <?php
 
-                include(__DIR__."/../controlleurs/CategorieControlleur.php");
+                include_once(__DIR__."/../controlleurs/CategorieControlleur.php");
 
                 $categorieControlleur = new \controlleurs\CategorieControlleur();
 
@@ -40,7 +40,7 @@
                 <h3>Lieux :</h3>
                 <?php
 
-                include(__DIR__."/../controlleurs/LieuControlleur.php");
+                include_once(__DIR__."/../controlleurs/LieuControlleur.php");
 
                 $lieuControlleur = new \controlleurs\LieuControlleur();
 
@@ -106,7 +106,7 @@
 
                 <?php
 
-                include(__DIR__."/../controlleurs/FormationControlleur.php");
+                include_once(__DIR__."/../controlleurs/FormationControlleur.php");
 
                 $formationControlleur = new \controlleurs\FormationControlleur();
 

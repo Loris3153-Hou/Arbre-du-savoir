@@ -2,9 +2,7 @@
 
 namespace controlleurs;
 
-use DAO\LieuDAO;
-
-include(__DIR__ . '/../DAO/LieuDAO.php');
+include_once(__DIR__ . "/../DAO/LieuDAO.php");
 
 class LieuControlleur
 {
@@ -27,5 +25,29 @@ class LieuControlleur
         }
         echo $html;
     }
+
+    public function afficherTousLesLieuxVueModifierFormation($listeLieuxFormation){
+        $html = "";
+        foreach ($this->listeLieux as $lieu){
+            $html .= "<input type='checkbox' id='sous-lieu' name='". $lieu->getIdLieu() ."'";
+            foreach ($listeLieuxFormation as $lieuFormation){
+                if ($lieu->getIdLieu() == $lieuFormation->getIdLieu()){
+                    $html .= " checked='true'";
+                }
+            }
+            $html .= "><label for='sous-lieu'>" . $lieu->getVilleLieu() ."</label><br><br>";
+        }
+        return $html;
+    }
+
+    public function afficherTousLesLieuxVueAjouterFormation(){
+        $html = "";
+        foreach ($this->listeLieux as $lieu){
+            $html .= "<input type='checkbox' id='sous-lieu' name='". $lieu->getIdLieu() ."'>
+                    <label for='sous-lieu'>" . $lieu->getVilleLieu() ."</label><br><br>";
+        }
+        echo $html;
+    }
+
 
 }

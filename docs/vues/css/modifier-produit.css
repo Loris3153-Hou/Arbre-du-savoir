@@ -67,6 +67,20 @@ h3{
     align-items: center;
 }
 
+.div13 {
+    grid-area: 7 / 2 / 8 / 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.div14 {
+    grid-area: 7 / 4 / 8 / 5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .div4 {
     grid-area: 5 / 4 / 6 / 5;
     display: block;
@@ -74,7 +88,7 @@ h3{
 }
 
 .div10 { 
-    grid-area: 7 / 2 / 8 / 3; 
+    grid-area: 8 / 2 / 9 / 3;
     display: grid;
     align-items: center;
     justify-items: right;
@@ -82,7 +96,7 @@ h3{
 }
 
 .div11 { 
-    grid-area: 7 / 4 / 8 / 5; 
+    grid-area: 8 / 4 / 9 / 5;
     display: grid;
     align-items: center;
     justify-items: left;
@@ -95,7 +109,7 @@ h3{
     font-family: Arial, sans-serif;
     display: grid;
     grid-template-columns: 0.3fr 1fr 0.3fr 1fr 0.3fr;
-    grid-template-rows: 0.01fr 1.5fr repeat(2, 0.4fr) 1.5fr 0.4fr 1fr 0.01fr;
+    grid-template-rows: 0.01fr 1fr repeat(2, 0.4fr) 1.5fr 0.4fr 0.4fr 1fr;
     grid-column-gap: 15px;
     grid-row-gap: 10px; 
 }
@@ -116,6 +130,7 @@ footer{
     height: 8vh;
     background-color: #73B7DE;
     color: white;
+    margin-top: 5%;
     text-align: center;
     justify-content: space-between;
     align-items: center;

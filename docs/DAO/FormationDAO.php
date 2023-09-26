@@ -61,12 +61,47 @@ class formationDAO
     }
 
     public function supprimerUneFormation($idFormation){
-        echo $idFormation;
         $sql = "DELETE FROM FORMATION_CATEGORIE WHERE FORMATION_CATEGORIE.id_formation = ?;
                 DELETE FROM FORMATION_LIEU WHERE FORMATION_LIEU.id_formation = ?;
                 DELETE FROM FORMATION WHERE FORMATION.id_formation = ?;";
         $argument = array();
         array_push($argument, $idFormation, $idFormation, $idFormation);
+        return $this->executerRequete($sql, $argument);
+    }
+
+    public function supprimerUneAssociationFormationLieu($idFormation, $idLieu){
+        $sql = "DELETE FROM FORMATION_LIEU WHERE FORMATION_LIEU.id_formation = ? AND FORMATION_LIEU.id_lieu = ?;";
+        $argument = array();
+        array_push($argument, $idFormation, $idLieu);
+        return $this->executerRequete($sql, $argument);
+    }
+
+    public function ajouterUneAssociationFormationLieu($idFormation, $idLieu){
+        $sql = "INSERT INTO FORMATION_LIEU VALUES (?, ?);";
+        $argument = array();
+        array_push($argument, $idFormation, $idLieu);
+        return $this->executerRequete($sql, $argument);
+    }
+
+    public function modifierUneFormation($titreFormation,$descFormation,$dateDebutFormation,$dateFinFormation,$prixFormation,$certificationFormation,$niveauFormation,$photoFormation,$idFormation){
+        $sql = "UPDATE FORMATION SET FORMATION.titre_formation = ?, 
+                FORMATION.desc_formation = ?, 
+                FORMATION.date_debut_formation = ?, 
+                FORMATION.date_fin_formation = ?, 
+                FORMATION.prix_formation = ?, 
+                FORMATION.certification_formation = ?, 
+                FORMATION.niveau_formation = ?,
+                FORMATION.photo_formation = ?
+                WHERE FORMATION.id_formation = ?;";
+        $argument = array();
+        array_push($argument, $titreFormation,$descFormation,$dateDebutFormation,$dateFinFormation,$prixFormation,$certificationFormation,$niveauFormation,$photoFormation,$idFormation);
+        return $this->executerRequete($sql, $argument);
+    }
+
+    public function ajouterUneFormation($titreFormation,$descFormation,$dateDebutFormation,$dateFinFormation,$prixFormation,$certificationFormation,$niveauFormation,$photoFormation){
+        $sql = "INSERT INTO  FORMATION VALUES (0, ?, ?, ?, ?, ?, ?, ?, ?);";
+        $argument = array();
+        array_push($argument, $titreFormation,$descFormation,$photoFormation,$prixFormation,$niveauFormation,$certificationFormation,$dateDebutFormation,$dateFinFormation);
         return $this->executerRequete($sql, $argument);
     }
 }

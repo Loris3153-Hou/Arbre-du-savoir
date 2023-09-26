@@ -2,9 +2,7 @@
 
 namespace controlleurs;
 
-use DAO\CategorieDAO;
-
-include(__DIR__ . "/../DAO/CategorieDAO.php");
+include_once(__DIR__ . "/../DAO/CategorieDAO.php");
 
 class CategorieControlleur
 {
@@ -26,5 +24,29 @@ class CategorieControlleur
         }
         echo $html;
     }
+
+    public function afficherTousLesCategoriesVueModifierFormation($listeCategoriesFormation){
+        $html = "";
+        foreach ($this->listeCategories as $categorie){
+            $html .= "<input type='checkbox' id='sous-catego' name='". $categorie->getIdCategorie() ."'";
+            foreach ($listeCategoriesFormation as $categorieFormation){
+                if ($categorie->getIdCategorie() == $categorieFormation->getIdCategorie()){
+                    $html .= " checked='true'";
+                }
+            }
+            $html .= "><label for='sous-catego'>" . $categorie->getNomCategorie() ."</label><br><br>";
+        }
+        return $html;
+    }
+    public function afficherTousLesCategoriesVueAjouterFormation(){
+        $html = "";
+        foreach ($this->listeCategories as $categorie){
+            $html .= "<input type='checkbox' id='sous-catego' name='". $categorie->getIdCategorie() ."'>
+                        <label for='sous-catego'>" . $categorie->getNomCategorie() ."</label><br><br>";
+        }
+        echo $html;
+    }
+
+
 
 }
