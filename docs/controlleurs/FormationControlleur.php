@@ -163,14 +163,19 @@ class FormationControlleur
                 }
             }
         }
-        $this->formationDAO->modifierUneFormation($titreFormation, $descFormation, $dateDebutFormation, $dateFinFormation, $prixFormation, $certificationFormation, $niveauFormation, $photoFormation, $idFormation);
-
+        if (filter_var($prixFormation, FILTER_VALIDATE_FLOAT) !== false) {
+            $this->formationDAO->modifierUneFormation($titreFormation, $descFormation, $dateDebutFormation, $dateFinFormation, $prixFormation, $certificationFormation, $niveauFormation, $photoFormation, $idFormation);
+        } else {
+            echo "Le prix de la formation n'est pas un nombre valide.";
+        }
     }
 
     public function ajouterLaFormation($titreFormation, $descFormation, $dateDebutFormation, $dateFinFormation, $prixFormation, $certificationFormation, $niveauFormation, $photoFormation)
     {
-
-        $this->formationDAO->ajouterUneFormation($titreFormation, $descFormation, $dateDebutFormation, $dateFinFormation, $prixFormation, $certificationFormation, $niveauFormation, $photoFormation);
-
+        if (filter_var($prixFormation, FILTER_VALIDATE_FLOAT) !== false) {
+            $this->formationDAO->ajouterUneFormation($titreFormation, $descFormation, $dateDebutFormation, $dateFinFormation, $prixFormation, $certificationFormation, $niveauFormation, $photoFormation);
+        } else {
+            echo "Le prix de la formation n'est pas un nombre valide.";
+        }
     }
 }

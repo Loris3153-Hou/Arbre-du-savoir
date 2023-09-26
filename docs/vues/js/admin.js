@@ -8,5 +8,5 @@ function goPageSupprimerProduit(idFormation) {
 }
 
 function goPageAjouterProduit() {
-    window.location.pathname = '/arbre-du-savoir/docs/vues/ajouter-produit.php'
+    window.location.href = 'ajouter-produit.php'
 }

@@ -7,7 +7,7 @@
 
     if (isset($_POST['boutonModifierFormation'])) {
         $formationControlleur->modifierLaFormation($_POST['modifierFormationTitre'], $_POST['modifierFormationDescription'], $_POST['modifierFormationDateDebut'], $_POST['modifierFormationDateFin'], $_POST['modifierFormationPrix'], $_POST['modifierFormationCertification'], $_POST['modifierFormationNiveau'], $_POST['modifierFormationPhoto'], $idFormation);
-        header('Location: /arbre-du-savoir/docs/vues/admin.php');
+        header('Location: admin.php');
         exit;
     }
 ?>

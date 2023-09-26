@@ -12,8 +12,8 @@ $formation = $formationControlleur->getFormationById($_COOKIE['id']);
         <title>Fiche Produit</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/fiche-produit.css">
-        <link rel="stylesheet" href="css/menu.css">
+        <link href="css/menu.css" rel="stylesheet">
+        <link href="css/fiche-produit.css" rel="stylesheet">
     </head>
     <body>
         <?php include("header.php")?>

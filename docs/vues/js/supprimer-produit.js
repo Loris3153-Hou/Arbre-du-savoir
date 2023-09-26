@@ -1,5 +1,5 @@
 function annulerSuppression() {
-    window.location.pathname = '/arbre-du-savoir/docs/vues/admin.php'
+    window.location.href = 'admin.php'
 }
 
 function supprimerFormation(idFormation) {
