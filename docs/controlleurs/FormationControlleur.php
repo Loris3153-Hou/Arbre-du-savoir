@@ -90,7 +90,7 @@ class FormationControlleur
                 $html .= "
                 <div class='div3'>
                 <h3 class='text'>Nom du produit</h3>
-                <input name='modifierFormationTitre' type='text' value='" . $formation->getTitreFormation() . "'>
+                <input name='modifierFormationTitre' type='text' value='" . $formation->getTitreFormation() . "' required>
                 </div>
                 <div class='div4'>
                 <h3 class='text'>Catégorie</h3>";
@@ -98,34 +98,34 @@ class FormationControlleur
                 $html .= "</div>
                           <div class='div5'>
                 <h3 class='text'>Prix</h3>
-                <input name='modifierFormationPrix' type='text' value='" . $formation->getPrixFormation() . "'>
+                <input name='modifierFormationPrix' type='text' value='" . $formation->getPrixFormation() . "' required>
                 </div>
                 <div class='div6'>
                 <h3 class='text'>Lieux</h3>";
                 $html .= $this->lieuController->afficherTousLesLieuxVueModifierFormation($formation->getListeLieux());
                 $html .= "</div><div class='div7'>
                 <h3 class='text'>Date début</h3>
-                <input name='modifierFormationDateDebut' type='date' value='" . $formation->getDateDebutFormation() . "'>
+                <input name='modifierFormationDateDebut' type='date' value='" . $formation->getDateDebutFormation() . "' required>
                 </div>
                 <div class='div8'>
                 <h3 class='text'>Date fin</h3>
-                <input name='modifierFormationDateFin' type='date' value='" . $formation->getDateFinFormation() . "'>
+                <input name='modifierFormationDateFin' type='date' value='" . $formation->getDateFinFormation() . "' required>
                 </div>
                 <div class='div12'>
                 <h3 class='text'>Certification</h3>
-                <input name='modifierFormationCertification' type='text' value='" . $formation->getCertificationFormation() . "'>
+                <input name='modifierFormationCertification' type='text' value='" . $formation->getCertificationFormation() . "' required>
                 </div>
                 <div class='div9'>
                 <h3 class='text'>Détails</h3>
-                <input name='modifierFormationDescription' type='text' value='" . $formation->getDescFormation() . "'>
+                <input name='modifierFormationDescription' type='text' value='" . $formation->getDescFormation() . "' required>
                 </div>
                 <div class='div13'>
                 <h3 class='text'>Niveau</h3>
-                <input name='modifierFormationNiveau' type='text' value='" . $formation->getNiveauFormation() . "'>
+                <input name='modifierFormationNiveau' type='text' value='" . $formation->getNiveauFormation() . "' required>
                 </div>
                  <div class='div14'>
                 <h3 class='text'>Photo</h3>
-                <input name='modifierFormationPhoto' accept='image/png, image/jpg' type='file' value='../images/" . $formation->getPhotoFormation() . "'>
+                <input name='modifierFormationPhoto' accept='image/png, image/jpg' type='file' value='../images/" . $formation->getPhotoFormation() . "' required>
                 </div>
                 <div class='div10'>
                     <input class='boutton' type='submit' name='boutonModifierFormation' value='Modifier'>

@@ -109,12 +109,12 @@ h3{
 }
 
 #controls {
-   margin: -300px 0 0 0;
-   width: 100%;
-   height: 50px;
-   z-index: 3;
-   position: relative;
- }
+  margin: -300px 0 0 0;
+  width: 100%;
+  height: 50px;
+  z-index: 3;
+  position: relative;
+}
 #controls label {
   transition: opacity 0.2s ease-out;
   display: none;

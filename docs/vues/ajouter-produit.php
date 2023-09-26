@@ -26,11 +26,6 @@
 </head>
 <body>
     <?php include("header.php")?>
-    <header>
-            <img src='../images/hamb.png' alt='Programmer en C' width='90px' height='80px'>
-            <h1>Arbre du Savoir</h1>
-            <img src='../images/logo.png' alt='Programmer en C' width='90px' height='80px'>
-    </header>
     <form method='post'>
     <div class='body'>
     <div class='titre'>
@@ -38,7 +33,7 @@
     </div>
     <div class="div3"> 
         <h3 class="text">Nom du produit</h3>
-        <input name="ajouterFormationTitre" type='text'>
+        <input name="ajouterFormationTitre" type='text'required>
     </div>
     <div class="div4"> 
         <h3 class="text">Catégorie</h3>
@@ -50,31 +45,31 @@
     </div>
     <div class="div7">
         <h3 class="text">Date début</h3>
-        <input name="ajouterFormationDateDebut" type='date'>
+        <input name="ajouterFormationDateDebut" type='date' required>
     </div>
     <div class="div8"> 
         <h3 class="text">Date fin</h3>
-        <input name="ajouterFormationDateFin" type='date'>
+        <input name="ajouterFormationDateFin" type='date' required>
     </div>
     <div class="div9">
         <h3 class="text">Description</h3>
-        <input name="ajouterFormationDescription" type='text'>
+        <input name="ajouterFormationDescription" type='text' required>
     </div>
     <div class="div13">
         <h3 class="text">Niveau</h3>
-        <input name="ajouterFormationNiveau" type='text'>
+        <input name="ajouterFormationNiveau" type='text' required>
     </div>
     <div class="div14">
         <h3 class="text">Photo</h3>
-        <input name="ajouterFormationPhoto" type='file'>
+        <input name="ajouterFormationPhoto" type='file' required>
     </div>
     <div class='div12'>
         <h3 class='text'>Certification</h3>
-        <input name='ajouterFormationCertification' type='text'>
+        <input name='ajouterFormationCertification' type='text' required>
     </div>
     <div class='div5'>
         <h3 class='text'>Prix</h3>
-        <input name='ajouterPrixCertification' type='text'>
+        <input name='ajouterPrixCertification' type='text' required>
     </div>
     <div class="div10">
         <input class='boutton' type='submit' name='boutonAjouterFormation' value='Ajouter'>

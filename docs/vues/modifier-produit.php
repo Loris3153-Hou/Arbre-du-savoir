@@ -22,11 +22,7 @@
 </head>
 <body>
     <?php include("header.php")?>
-    <header>
-            <img src='../images/hamb.png' alt='Programmer en C' width='90px' height='80px'>
-            <h1>Arbre du Savoir</h1>
-            <img src='../images/logo.png' alt='Programmer en C' width='90px' height='80px'>
-    </header>
+
     <form method='post'>
     <div class='body'>
         <div class='titre'>
