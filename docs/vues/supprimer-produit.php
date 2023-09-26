@@ -11,7 +11,7 @@ if (isset($_GET['idFormationASupprimer'])) {
 if (isset($_GET['idFormation'])) {
     $idFormation = $_GET['idFormation'];
 } else {
-    header('Location: /arbre-du-savoir/docs/vues/admin.php');
+    header('Location: admin.php');
     exit;
 }
 

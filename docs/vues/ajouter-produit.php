@@ -10,7 +10,7 @@
         $formationControlleur->ajouterLaFormation($_POST['ajouterFormationTitre'], $_POST['ajouterFormationDescription'],
             $_POST['ajouterFormationDateDebut'], $_POST['ajouterFormationDateFin'], $_POST['ajouterPrixCertification'],
             $_POST['ajouterFormationCertification'], $_POST['ajouterFormationNiveau'], $_POST['ajouterFormationPhoto']);
-        header('Location: /arbre-du-savoir/docs/vues/admin.php');
+        header('Location: admin.php');
         exit;
     }
 
