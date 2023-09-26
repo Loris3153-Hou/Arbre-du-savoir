@@ -1,4 +1,5 @@
 <?php
+
     $idFormation = $_GET['idFormation'];
 
     include_once(__DIR__."/../controlleurs/FormationControlleur.php");
@@ -16,9 +17,11 @@
     <meta charset='UTF-8'>
     <title>Arbre du Savoir</title>
     <link href="css/modifier-produit.css" rel="stylesheet">
+    <link href="css/menu.css" rel="stylesheet">
     <script src="js/modifier-produit.js"></script>
 </head>
 <body>
+    <?php include("header.php")?>
     <header>
             <img src='../images/hamb.png' alt='Programmer en C' width='90px' height='80px'>
             <h1>Arbre du Savoir</h1>

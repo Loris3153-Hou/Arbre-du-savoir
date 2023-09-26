@@ -8,21 +8,36 @@ body{
 .parent {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(8, 1fr);
+  grid-template-rows: repeat(9, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   }
-  
-  .div1 { grid-area: 1 / 1 / 4 / 4; }
-  .div2 { grid-area: 4 / 1 / 5 / 4; }
-  .div3 { grid-area: 5 / 1 / 6 / 4; }
-  .div4 { grid-area: 5 / 7 / 6 / 10; }
-  .div5 { grid-area: 3 / 4 / 4 / 6; }
-  .div6 { grid-area: 2 / 4 / 3 / 6; }
-  .div7 { grid-area: 1 / 4 / 2 / 6; }
-  .div8 { grid-area: 1 / 6 / 4 / 11; }
-  .div9 { grid-area: 7 / 3 / 9 / 9; }
-  .div10 { grid-area: 6 / 4 / 7 / 8; }
+
+  .titre_formation { grid-area: 1 / 1 / 1 / 10}
+  .photo_formation {
+    grid-area: 2 / 1 / 5 / 4;
+    display: grid;
+    place-items: center; /* Centre l'image horizontalement et verticalement dans la grille */
+    height: 100%; /* Assurez-vous que la div1 a une hauteur définie (par exemple, 100% de la hauteur parente) */
+    margin-left: 2vw;
+  }
+  .prix_formation { grid-area: 5 / 1 / 6 / 4; }
+  .duree_formation { grid-area: 6 / 1 / 7 / 4; }
+  .cerification_formation { grid-area: 6 / 7 / 7 / 10; }
+  .lieu_formation {
+    grid-area: 4 / 4 / 5 / 6;
+    margin-left: 6vw
+  }
+  .quantite_formation {
+    grid-area: 3 / 4 / 4 / 6;
+    margin-left: 6vw
+  }
+  .div7 {
+    grid-area: 2 / 4 / 3 / 6;
+  }
+  .description_formation { grid-area: 2 / 6 / 5 / 11; }
+  .div9 { grid-area: 8 / 3 / 10 / 9; }
+  .ajouterAuPanier_formation { grid-area: 7 / 4 / 8 / 8; }
 
   .informationPrixDates {
     display: inline; /* Affiche le prix en ligne */
@@ -38,15 +53,9 @@ body{
     display: block; /* Affiche chaque date sur une ligne différente */
   }
 
-  .div1 {
-    display: grid;
-    place-items: center; /* Centre l'image horizontalement et verticalement dans la grille */
-    height: 100%; /* Assurez-vous que la div1 a une hauteur définie (par exemple, 100% de la hauteur parente) */
-  }
-
   #imageFormation {
-      max-width: 100%; /* L'image prendra au maximum la largeur de la grille */
-      max-height: 100%; /* L'image prendra au maximum la hauteur de la grille */
+    max-width: 100%; /* L'image prendra au maximum la largeur de la grille */
+    max-height: 100%; /* L'image prendra au maximum la hauteur de la grille */
   }
 
   #duree{
@@ -83,9 +92,10 @@ body{
 
   #description{
     text-align: justify;
-    padding-left: 4 vw;
+    padding-left: 4vw;
     border-style: solid;
     max-height: 40vh; /* Définissez la hauteur maximale souhaitée */
+    min-height: 40vh; /* Définissez la hauteur maximale souhaitée */
     overflow-y: auto; /* Active la barre de défilement verticale en cas de dépassement */
     background-color: #D9D9D9;
   }
@@ -110,4 +120,10 @@ body{
     padding-right: 4vw;
     padding-top: 1vh;
     padding-bottom: 1vh;
+  }
+
+  #titre-formation{
+    text-align: center;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    font-size:2.5vw
   }

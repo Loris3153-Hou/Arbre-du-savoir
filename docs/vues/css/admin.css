@@ -52,7 +52,7 @@ footer{
     align-items: center;
 }
 
-.rech{
+.recherche{
     grid-area: 2 / 2 / 3 / 3;
     padding-top: 50px;
     place-items: center;
