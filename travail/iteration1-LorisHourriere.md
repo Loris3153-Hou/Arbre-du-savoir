@@ -14,7 +14,7 @@ https://github.com/cegepmatane/arbre-du-savoir/issues/14 ----> 1.5h
 
 https://github.com/cegepmatane/arbre-du-savoir/issues/9 -----> 3h
 
-Réalisation de la page admin (ajouter et supprimer) ---------> 8h
+Réalisation de la page admin (ajouter et modifier), modifier avec Mathide ---------> 8h
 
 Préparation de l'environnement PHP (Problème) ---------------> 2h
 
