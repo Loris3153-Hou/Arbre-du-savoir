@@ -10,7 +10,7 @@ https://github.com/cegepmatane/arbre-du-savoir/issues/17 ----> 1.5h
 
 https://github.com/cegepmatane/arbre-du-savoir/issues/2 (le menu hamburger) ----> 1.5h
 
-https://github.com/cegepmatane/arbre-du-savoir/issues/23 (le menu hamburger) ----> 4h
+https://github.com/cegepmatane/arbre-du-savoir/issues/23 (le menu hamburger) ----> 3.5h
 
 Préparation de l'environnement PHP en local  ----------------> 2h
 
@@ -19,3 +19,5 @@ Rédaction du dossier d'analyse des besoins ------------------> 1.5h
 Rédaction des issues ----------------------------------------> 3h
 
 liens entre toutes les pages du projet ----------------------> 0.5h
+
+Préparation du scénario et de la présentation ---------------> 0.5h
