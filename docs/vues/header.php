@@ -1,6 +1,7 @@
 <head>
     <meta charset="utf-8">
     <script src="js/acceuil.js"></script>
+    <script src="js/panier.js"></script>
 </head>
 <body>
     <header>
@@ -14,9 +15,11 @@
                 <li><a class="menu__item" href="accueil.php">Acceuil</a></li>
                 <li><a class="menu__item" href="liste-produit.php">Liste Des Produits</a></li>
                 <li><a class="menu__item" href="admin.php">Administrateur</a></li>
+                <li><a class="menu__item" href="panier.php">Panier</a></li>
             </ul>
         </div>
         <h1 onclick="goPageAccueil()">Arbre du Savoir</h1>
+        <img onclick="goPagePanier()" src='../images/panier.png' alt='Panier' width='70px' height='70px'>
         <img onclick="goPageAccueil()" src='../images/logo.png' alt='Programmer en C' width='90px' height='80px'>
     </header>
 </body>
