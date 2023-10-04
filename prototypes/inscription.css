@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+h1{
+    padding-left: 20px;
+    padding-right: 20px;
+    color: black;
+    font-size: 40px;
+}
+
+h3{
+    padding-left: 20px;
+    padding-right: 20px;
+    color: black;
+}
+
+.body{
+    height: 80vh;
+    width: 100vw;
+    font-family: Arial, sans-serif;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr repeat(5, 0.25fr) 1fr;
+    grid-column-gap: 15px;
+    grid-row-gap: 10px;
+}
+
+header {
+    display: flex;
+    width: 100vw;
+    height: 12vh;
+    background-color: #73B7DE;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer{
+    display: flex;
+    width: 100vw;
+    height: 8vh;
+    background-color: #73B7DE;
+    color: white;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+}
+.inscriptionTitre {
+
+    padding-top: 50px;
+    grid-area: 1 / 2 / 2 / 3;
+    place-items: center;
+    text-align: center;
+
+}
+.inscriptionNom {
+    grid-area: 2 / 2 / 3 / 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.inscriptionPrenom {
+    grid-area: 3 / 2 / 4 / 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.inscriptionDate {
+    grid-area: 4 / 2 / 5 / 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;}
+.inscriptionMail {
+    grid-area: 5 / 2 / 6 / 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.inscriptionMdp {
+    grid-area: 6 / 2 / 7 / 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.inscriptionBouton {
+    grid-area: 7 / 2 / 8 / 3;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+.boutton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 50px;
+    width: 100px;
+}
