@@ -6,12 +6,26 @@ session_start(); ?>
 <head>
     <link href="css/authentification.css" rel="stylesheet">
     <link href="css/menu.css" rel="stylesheet">
+    <script src="js/acceuil.js"></script>
 </head>
+<header>
+    <div class="hamburger-menu">
+        <input id="menu__toggle" type="checkbox" />
+        <label class="menu__btn" for="menu__toggle">
+            <span></span>
+        </label>
 
-
-
-<body>
-    <?php include("header.php")?>
+        <ul class="menu__box">
+            <li><a class="menu__item" href="accueil.php">Acceuil</a></li>
+            <li><a class="menu__item" href="liste-produit.php">Liste Des Produits</a></li>
+            <li><a class="menu__item" href="admin.php">Administrateur</a></li>
+            <li><a class="menu__item" href="panier.php">Panier</a></li>
+        </ul>
+    </div>
+    <h1 onclick="goPageAccueil()">Arbre du Savoir</h1>
+    <img onclick="goPageAccueil()" src='../images/logo.png' alt='Programmer en C' width='90px' height='80px'>
+</header>
+</body>
     <div class='body'>
         <div class='authTitre'>
             <h1>S'authentifier</h1>
