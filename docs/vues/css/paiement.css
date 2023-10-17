@@ -6,24 +6,25 @@ body {
     font-family: Arial, sans-serif;
 }
 
-h1{ 
+h1{
     padding-left: 20px;
     padding-right: 20px;
     color: black;
     font-size: 40px;
 }
 
-h3{ 
+h3{
     padding-left: 20px;
     padding-right: 20px;
     color: black;
 }
 
-.div3 { grid-area: 3 / 2 / 4 / 3;
+.div3 {
+    grid-area: 3 / 2 / 4 / 3;
     display: flex;
     justify-content: space-between;
     align-items: center;
- }
+}
 
 .div12 {
     grid-area: 4 / 2 / 5 / 3;
@@ -33,42 +34,42 @@ h3{
 }
 
 .div6 {
-    grid-area: 5 / 2 / 6 / 3; 
+    grid-area: 5 / 2 / 6 / 3;
 
     display: block;
     text-align: right;
 }
 
 .div5 {
-    grid-area: 6 / 2 / 7 / 3;
+    grid-area: 5 / 2 / 6 / 3;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.div7 { 
-    grid-area: 3 / 4 / 4 / 5; 
+.div7 {
+    grid-area: 3 / 4 / 4 / 5;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.div8 { 
-    grid-area: 4 / 4 / 5 / 5; 
+.div8 {
+    grid-area: 4 / 4 / 5 / 5;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.div9 { 
-    grid-area: 6 / 4 / 7 / 5; 
+.div9 {
+    grid-area: 6 / 4 / 7 / 5;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .div13 {
-    grid-area: 7 / 2 / 8 / 3;
+    grid-area: 6 / 2 / 7 / 3;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -87,15 +88,15 @@ h3{
     text-align: right;
 }
 
-.div10 { 
-    grid-area: 8 / 2 / 9 / 3;
+.div10 {
+    grid-area: 5 / 4 / 7 / 5;
     display: grid;
     align-items: center;
-    justify-items: right;
+    justify-items: center;
     padding-right: 20px;
 }
 
-.div11 { 
+.div11 {
     grid-area: 8 / 4 / 9 / 5;
     display: grid;
     align-items: center;
@@ -109,10 +110,11 @@ h3{
     font-family: Arial, sans-serif;
     display: grid;
     grid-template-columns: 0.3fr 1fr 0.3fr 1fr 0.3fr;
-    grid-template-rows: 0.01fr 1fr repeat(2, 0.4fr) 1.5fr 0.4fr 0.4fr 1fr;
+    grid-template-rows: 0.01fr 1fr repeat(4, 1.5fr) 1fr;
     grid-column-gap: 15px;
     grid-row-gap: 10px;
     padding-top: 7%;
+
 }
 
 header {
@@ -142,6 +144,17 @@ footer{
     padding-top: 50px;
     place-items: center;
     text-align: center;
+}
+.divSous{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.divTotal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .text{
