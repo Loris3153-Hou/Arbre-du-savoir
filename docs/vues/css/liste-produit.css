@@ -27,7 +27,9 @@ h3{
     grid-template-columns: 0.10fr 0.75fr 0.10fr repeat(2, 1fr) 0.40fr;
     grid-template-rows: 0.01fr 0.5fr repeat(2, 0.25fr) repeat(2, 0.5fr) 0.01fr;
     grid-column-gap: 15px;
-    grid-row-gap: 10px; 
+    grid-row-gap: 10px;
+
+    padding-top: 7%;
 }
 
 header {

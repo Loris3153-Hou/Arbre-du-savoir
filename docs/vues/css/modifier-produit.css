@@ -111,7 +111,8 @@ h3{
     grid-template-columns: 0.3fr 1fr 0.3fr 1fr 0.3fr;
     grid-template-rows: 0.01fr 1fr repeat(2, 0.4fr) 1.5fr 0.4fr 0.4fr 1fr;
     grid-column-gap: 15px;
-    grid-row-gap: 10px; 
+    grid-row-gap: 10px;
+    padding-top: 7%;
 }
 
 header {

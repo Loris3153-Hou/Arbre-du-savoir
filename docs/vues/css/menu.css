@@ -44,8 +44,8 @@
 }
 .menu__box {
     z-index: 15;
-    display: block;
     position: fixed;
+    display: block;
     top: 0;
     left: -100%;
     width: 300px;
@@ -79,6 +79,8 @@ img:hover{
 }
 
 header {
+    z-index: 15;
+    position: fixed;
     display: flex;
     width: 100vw;
     height: 12vh;

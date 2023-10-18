@@ -9,15 +9,14 @@ session_start(); ?>
     </head>
 
 
-
+<?php include("header.php")?>
     <body>
-    <?php include("header.php")?>
 
     <!-- **************************************************************************************************** -->
 
 
     <!-- **************************************************************************************************** -->
-
+    <div class="body">
     <div id="slider">
 
         <input type="radio" name="slider" id="slide1" checked>
@@ -55,13 +54,16 @@ session_start(); ?>
             <label for="slide3"></label>
         </div>
     </div>
+    </div>
     <footer>
         <h3>Condition d'utilisation</h3>
         <h3>Date mise à jour</h3>
         <h3>Réseaux sociaux</h3>
     </footer>
     </body>
-
-
-
+    <style>
+        header {
+            position: static;
+        }
+    </style>
 </html>
