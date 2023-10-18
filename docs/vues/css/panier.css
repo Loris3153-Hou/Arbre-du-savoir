@@ -1,0 +1,42 @@
+.parent {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.panier { grid-area: 1 / 1 / 11 / 9; }
+.recapitulatif { grid-area: 1 / 9 / 11 / 13; }
+.texteRecapitulatif { grid-area: 2 / 9 / 3 / 13; }
+.nom-produit-quantite-recapitulatif { grid-area: 4 / 9 / 5 / 11; }
+.prix-total-article-recapitulatif { grid-area: 4 / 12 / 5 / 13; }
+.texte-total-recapitulatif { grid-area: 7 / 9 / 8 / 11; }
+.prix-total-commande-recapitulatif { grid-area: 7 / 12 / 8 / 13; }
+.button-paiement-recapitulatif { grid-area: 9 / 10 / 10 / 12; }
+.textePanier { grid-area: 2 / 1 / 3 / 9; }
+.description-article-panier { grid-area: 4 / 1 / 10 / 9; }
+
+
+
+.grid-panier {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.image-panier { grid-area: 2 / 1 / 6 / 5; }
+.nom-produit-panier { grid-area: 2 / 6 / 3 / 10; }
+.prix-panier { grid-area: 2 / 11 / 3 / 12; }
+.dates-panier { grid-area: 3 / 6 / 4 / 10; }
+.niveau-panier { grid-area: 4 / 6 / 5 / 10; }
+.quantite-panier { grid-area: 5 / 6 / 6 / 8; }
+.supprimer { grid-area: 6 / 11 / 7 / 12; }
+.ligne { grid-area: 7 / 1 / 8 / 12; }
+
+#imagePanier{
+    width: 20vw;
+    height: 20vh;
+}
