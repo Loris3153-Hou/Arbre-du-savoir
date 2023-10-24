@@ -1,5 +1,12 @@
 <?php
-session_start(); ?>
+
+    include_once(__DIR__."/../controlleurs/UtilisateurControlleur.php");
+    $utilisateurControlleur = new \controlleurs\UtilisateurControlleur();
+
+    if (isset($_POST['sub'])) {
+        $utilisateurControlleur->inscription(0, $_POST['nom'], $_POST['prenom'], $_POST['date'], $_POST['mail'], $_POST['mdp'], 0, '21/10/23');
+    }
+?>
 
 <!DOCTYPE html>
 <html lang='fr'>
@@ -26,39 +33,41 @@ session_start(); ?>
     <img onclick="goPageAccueil()" src='../images/logo.png' alt='Programmer en C' width='90px' height='80px'>
 </header>
 <body>
+<form method="post">
     <div class='body'>
         <div class='inscriptionTitre'>
             <h1>S'inscrire</h1>
         </div>
         <div class='inscriptionNom'>
             <h3 class='text'>Nom :</h3>
-            <input type='text' required>
+            <input name='nom' type='text' required>
         </div>
 
         <div class='inscriptionPrenom'>
             <h3 class='text'>Prénom :</h3>
-            <input type='text' required>
+            <input name='prenom' type='text' required>
         </div>
 
         <div class='inscriptionDate'>
             <h3 class='text'>Date de naissance :</h3>
-            <input type='date' required>
+            <input name='date' type='date' required>
         </div>
 
         <div class='inscriptionMail'>
             <h3 class='text'>Adresse mail :</h3>
-            <input type='text' required>
+            <input name='mail' type='text' required>
         </div>
 
         <div class='inscriptionMdp'>
             <h3 class='text'>Mot de passe :</h3>
-            <input type='text' required>
+            <input name='mdp' type='text' required>
         </div>
 
         <div class='inscriptionBouton'>
-            <input class='boutton' type='submit'  value='Sinscrire'>
+            <input class='boutton' type='submit' name='sub' value='Sinscrire'>
         </div>
     </div>
+</form>
 <footer>
     <h3>Condition d'utilisation</h3>
     <h3>Date mise à jour</h3>

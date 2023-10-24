@@ -1,6 +1,6 @@
 <?php
 
-$db_name="arbre_du_savoir_test";
+$db_name="base_formation";
 $user="root";
 $pass="lepwd";
 
