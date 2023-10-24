@@ -35,9 +35,9 @@ INSERT INTO FORMATION_LIEU VALUES (1, 1), (1, 4), (1, 2), (2, 1), (2, 3), (3, 5)
 
 INSERT INTO FORMATION_CATEGORIE VALUES (1, 1), (1, 5), (2, 2), (2, 5), (3, 1), (4, 3), (4, 5), (5, 1), (5, 7), (6, 5), (6, 6), (6, 8), (7, 4), (8, 1), (9, 5);
 
-INSERT INTO UTILISATEUR VALUES (0, 'Hourrière', 'Loris', '2003-09-19', 'lolodelastreet@gmail.com', 'motdepasse'),
-                               (0, 'Tessier', 'Nolan', '2003-02-10', 'nonolevrai@aol.com', 'passedemot'),
-                               (0, 'Burgevin', 'Mathilde', '2003-01-02', 'mathoudupoitou@outlook.fr', 'demotsepas');
+INSERT INTO UTILISATEUR VALUES (0, 'Hourrière', 'Loris', '2003-09-19', 'lolodelastreet@gmail.com', 'b6edd10559b20cb0a3ddaeb15e5267cc'),/*motdepasse*/
+                               (0, 'Tessier', 'Nolan', '2003-02-10', 'nonolevrai@aol.com', '30b33ef5c1428282b65d1918c5ea1d58'),/*passedemot*/
+                               (0, 'Burgevin', 'Mathilde', '2003-01-02', 'mathoudupoitou@outlook.fr', '52a29427e282d6a27d6f09cec449fd61'); /*demotsepas*/
 
 INSERT INTO COMMANDE VALUES (0, '2012-06-02', 1), (0, '2020-12-05', 2), (0, '2015-11-11', 3), (0, '2021-07-22', 2), (0, '2014-05-17', 1), (0, '2018-02-20', 1);
 
