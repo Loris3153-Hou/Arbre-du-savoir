@@ -34,3 +34,11 @@ INSERT INTO FORMATION_LIEU VALUES (1, 1), (1, 4), (1, 2), (2, 1), (2, 3), (3, 5)
                                   (5, 2), (5, 7), (6, 10), (6, 7), (7, 8), (7, 9), (8, 1), (8, 5), (9, 3), (9, 4);
 
 INSERT INTO FORMATION_CATEGORIE VALUES (1, 1), (1, 5), (2, 2), (2, 5), (3, 1), (4, 3), (4, 5), (5, 1), (5, 7), (6, 5), (6, 6), (6, 8), (7, 4), (8, 1), (9, 5);
+
+INSERT INTO UTILISATEUR VALUES (0, 'Hourrière', 'Loris', '2003-09-19', 'lolodelastreet@gmail.com', 'motdepasse'),
+                               (0, 'Tessier', 'Nolan', '2003-02-10', 'nonolevrai@aol.com', 'passedemot'),
+                               (0, 'Burgevin', 'Mathilde', '2003-01-02', 'mathoudupoitou@outlook.fr', 'demotsepas');
+
+INSERT INTO COMMANDE VALUES (0, '2012-06-02', 1), (0, '2020-12-05', 2), (0, '2015-11-11', 3), (0, '2021-07-22', 2), (0, '2014-05-17', 1), (0, '2018-02-20', 1);
+
+INSERT INTO COMMANDE_FORMATION VALUES (1, 9, 1), (1, 7, 1), (2, 2, 2), (3, 1, 3), (3, 4, 1), (4, 8, 1), (4, 7, 1), (5, 3, 2), (6, 5, 1);
