@@ -32,13 +32,20 @@ class UtilisateurControlleur
 
         $hashedMdpUtilisateur = hash("md5", $mdpUtilisateur);
 
-        $result = $this->utilisateurDAO->insertUtilisateur($idUtilisateur, $nomUtilisateur, $prenomUtilisateur, $dateNaissUtilisateur, $mailUtilisateur, $hashedMdpUtilisateur);
-        $mail = mail('tessier.nolan@yahoo.com', "Vérification mdp", "Bonjour, ceci est un test");
+        $resultMail = $this->utilisateurDAO->getUtilisateurParMail($mailUtilisateur);
 
-        if ($mail) echo "Un mail de réinitialisation du mot de passe vous a été envoyé."; else echo "Aucun compte ne correspond à cette adresse mail.";
+        if (count($resultMail)==0) {
+            $result = $this->utilisateurDAO->insertUtilisateur($idUtilisateur, $nomUtilisateur, $prenomUtilisateur, $dateNaissUtilisateur, $mailUtilisateur, $hashedMdpUtilisateur);
+            $mail = mail('tessier.nolan@yahoo.com', "Vérification mdp", "Bonjour, ceci est un test");
 
-        session_start();
-        $_SESSION['mail_utilisateur'] = $_POST['mail'];
+            if ($mail) echo "Un mail de réinitialisation du mot de passe vous a été envoyé."; else echo "Aucun compte ne correspond à cette adresse mail.";
+
+            session_start();
+            $_SESSION['mail_utilisateur'] = $_POST['mail'];
+        }else {
+            echo "deja use";
+        }
+
         //header('Location: authentification.php');
 
     }

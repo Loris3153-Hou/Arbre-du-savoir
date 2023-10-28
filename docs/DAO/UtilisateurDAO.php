@@ -37,11 +37,21 @@ class UtilisateurDAO
         return $listUtilisateur;
     }
 
+    public function executerRequete($sql, $arguments) {
+
+        require 'DAO.php';
+
+        $bdd = new PDO("mysql:host=localhost;dbname=$db_name",$user,$pass);
+        $rs = $bdd->prepare($sql);
+        $rs->execute($arguments);
+
+    }
+
     public function insertUtilisateur($idUtilisateur, $nomUtilisateur, $prenomUtilisateur, $dateNaissUtilisateur, $mailUtilisateur, $mdpUtilisateur){
         $sql = "INSERT into UTILISATEUR Values (?, ?,?,?, ?,?);";
         $arguments = array();
         array_push($arguments,$idUtilisateur, $nomUtilisateur, $prenomUtilisateur, $dateNaissUtilisateur, $mailUtilisateur, $mdpUtilisateur);
-        return $this->lireRequete($sql, $arguments);
+        return $this->executerRequete($sql, $arguments);
     }
 
     public function getUtilisateurParMail($mailUtilisateur){
@@ -50,5 +60,6 @@ class UtilisateurDAO
         array_push($arguments, $mailUtilisateur);
         return $this->lireRequete($sql, $arguments);
     }
+
 
 }

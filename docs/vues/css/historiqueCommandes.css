@@ -35,7 +35,7 @@ p {
     margin-right: 5vw;
     margin-bottom: 3vw;
     padding-top: 3vh;
-    padding-left: 3vws;
+    padding-left: 3vw;
 
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -67,3 +67,8 @@ p {
 .totaux {
     font-weight: bold;
 }
+
+footer{
+    margin-top: 16%;
+}
+
