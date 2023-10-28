@@ -1,6 +1,7 @@
 <?php
 
 include_once(__DIR__.'/../models/Utilisateur.php');
+include_once(__DIR__.'/../DAO/CommandeDAO.php');
 
 class UtilisateurDAO
 {
@@ -8,12 +9,14 @@ class UtilisateurDAO
     public function creerUtilisateur($tmp) {
 
         $utilisateur = new \models\Utilisateur();
+        $commandeDAO = new CommandeDAO();
         $utilisateur->setIdUtilisateur($tmp['id_utilisateur']);
         $utilisateur->setNomUtilisateur($tmp['nom_utilisateur']);
         $utilisateur->setPrenomUtilisateur($tmp['prenom_utilisateur']);
         $utilisateur->setDateNaisUtilisateur($tmp['date_nais_utilisateur']);
         $utilisateur->setMailUtilisateur($tmp['mail_utilisateur']);
         $utilisateur->setMdpUtilisateur($tmp['mdp_utilisateur']);
+        $utilisateur->setListeCommandes($commandeDAO->getCommandeParUtilisateur($utilisateur->getIdUtilisateur()));
 
         return $utilisateur;
     }
