@@ -33,7 +33,7 @@ INSERT INTO FORMATION VALUES (0,'Marketing Digital Avancé', 'Cette formation co
 INSERT INTO FORMATION_LIEU VALUES (1, 1), (1, 4), (1, 2), (2, 1), (2, 3), (3, 5), (3, 10), (3, 9), (4, 4), (4, 6), (4, 1), (5, 8), (5, 6),
                                   (5, 2), (5, 7), (6, 10), (6, 7), (7, 8), (7, 9), (8, 1), (8, 5), (9, 3), (9, 4);
 
-INSERT INTO FORMATION_CATEGORIE VALUES (1, 1), (1, 5), (2, 2), (2, 5), (3, 1), (4, 3), (4, 5), (5, 1), (5, 7), (6, 5), (6, 6), (6, 8), (7, 4), (8, 1), (9, 5);
+INSERT INTO FORMATION_CATEGORIE VALUES (1, 1), (1, 5), (2, 2), (2, 5), (3, 1), (4, 3), (4, 5), (5, 1), (5, 7), (6, 5), (6, 6), (6, 8), ( ), (8, 1), (9, 5);
 
 INSERT INTO UTILISATEUR VALUES (0, 'Hourrière', 'Loris', '2003-09-19', 'lolodelastreet@gmail.com', 'b6edd10559b20cb0a3ddaeb15e5267cc'),/*motdepasse*/
                                (0, 'Tessier', 'Nolan', '2003-02-10', 'nonolevrai@aol.com', '30b33ef5c1428282b65d1918c5ea1d58'),/*passedemot*/
