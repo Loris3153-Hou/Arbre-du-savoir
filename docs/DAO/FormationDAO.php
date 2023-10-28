@@ -104,4 +104,19 @@ class formationDAO
         array_push($argument, $titreFormation,$descFormation,$photoFormation,$prixFormation,$niveauFormation,$certificationFormation,$dateDebutFormation,$dateFinFormation);
         return $this->executerRequete($sql, $argument);
     }
+
+    public function getFormationParCommande($idCommande){
+        $sql = "SELECT FORMATION.* FROM FORMATION INNER JOIN COMMANDE_FORMATION ON FORMATION.id_formation = COMMANDE_FORMATION.id_formation 
+                    INNER JOIN COMMANDE ON COMMANDE_FORMATION.id_commande = COMMANDE.id_commande  WHERE COMMANDE_FORMATION.id_commande = ? ;";
+        $argument = array();
+        array_push($argument, $idCommande);
+        return $this->lireRequete($sql, $argument);
+    }
+
+    public function getNombreFormationParCommande($idFormation, $idCommande){
+        $sql = "SELECT nb_formation FROM COMMANDE_FORMATION WHERE id_formation = ? AND id_commande = ? ;";
+        $argument = array();
+        array_push($argument,$idFormation, $idCommande);
+        return $this->lireRequete($sql, $argument);
+    }
 }
