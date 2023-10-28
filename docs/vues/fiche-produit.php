@@ -7,6 +7,11 @@ if(!isset ($_SESSION['mail_utilisateur'])){
 include(__DIR__."/../controlleurs/FormationControlleur.php");
 $formationControlleur = new \controlleurs\FormationControlleur();
 $formation = $formationControlleur->getFormationById($_COOKIE['id']);
+
+if(isset($_POST["boutonAjoutPanier"])){
+    $formationControlleur->ajouterLaformationAuPanier($formation, $_POST["quantite"], $_POST["ville"]);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -66,8 +71,15 @@ $formation = $formationControlleur->getFormationById($_COOKIE['id']);
 
                 </div>
             </div>
-            <div class="lieu_formation">
-                <form>
+            <div class="quantite_formation">
+                <form method="post">
+                    <label for="quantite">Quantité :</label>
+                    <select name="quantite" id="quantite">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select><br><br>
                     <label for="ville">Ville :</label>
                     <select name="ville" id="ville">
                         <?php
@@ -77,18 +89,8 @@ $formation = $formationControlleur->getFormationById($_COOKIE['id']);
                         }
                         echo $html;
                         ?>
-                    </select>
-                </form>
-            </div>
-            <div class="quantite_formation">
-                <form>
-                    <label for="quantite">Quantité :</label>
-                    <select name="quantite" id="quantite">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
+                    </select><br><br><br>
+                    <input id="ajouterAuPanier" type="submit" name="boutonAjoutPanier" value="Ajouter au panier">
                 </form>
             </div>
             <div class="div7">
@@ -102,11 +104,7 @@ $formation = $formationControlleur->getFormationById($_COOKIE['id']);
                 </div>
             </div>
             <div class="div9"> </div>
-            <div class="ajouterAuPanier_formation">
-                <div id = "ajouterAuPanier">
-                    <h3>AJOUTER AU PANIER</h3>
-                </div>
-            </div>
+
         </div>
         <footer>
             <h3>Condition d'utilisation</h3>
