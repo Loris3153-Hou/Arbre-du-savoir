@@ -12,10 +12,8 @@ class UtilisateurDAO
         $utilisateur->setNomUtilisateur($tmp['nom_utilisateur']);
         $utilisateur->setPrenomUtilisateur($tmp['prenom_utilisateur']);
         $utilisateur->setDateNaisUtilisateur($tmp['date_nais_utilisateur']);
-        $utilisateur->setMailUtilisateur($tmp['adresse_mail_utilisateur']);
-        $utilisateur->setAdmintilisateur($tmp['admin_utilisateur']);
+        $utilisateur->setMailUtilisateur($tmp['mail_utilisateur']);
         $utilisateur->setMdpUtilisateur($tmp['mdp_utilisateur']);
-        $utilisateur->setDateInscUtilisateur($tmp['date_inscription_utilisateur']);
 
         return $utilisateur;
     }
@@ -36,15 +34,15 @@ class UtilisateurDAO
         return $listUtilisateur;
     }
 
-    public function insertUtilisateur($idUtilisateur, $nomUtilisateur, $prenomUtilisateur, $dateNaissUtilisateur, $mailUtilisateur, $mdpUtilisateur, $adminUtilisateur, $dateInscUtilisateur){
-        $sql = "INSERT into UTILISATEUR Values (?, ?,?,?, ?,?,?,?);";
+    public function insertUtilisateur($idUtilisateur, $nomUtilisateur, $prenomUtilisateur, $dateNaissUtilisateur, $mailUtilisateur, $mdpUtilisateur){
+        $sql = "INSERT into UTILISATEUR Values (?, ?,?,?, ?,?);";
         $arguments = array();
-        array_push($arguments,$idUtilisateur, $nomUtilisateur, $prenomUtilisateur, $dateNaissUtilisateur, $mailUtilisateur, $mdpUtilisateur, $adminUtilisateur, $dateInscUtilisateur);
+        array_push($arguments,$idUtilisateur, $nomUtilisateur, $prenomUtilisateur, $dateNaissUtilisateur, $mailUtilisateur, $mdpUtilisateur);
         return $this->lireRequete($sql, $arguments);
     }
 
     public function getUtilisateurParMail($mailUtilisateur){
-        $sql = "SELECT * FROM UTILISATEUR WHERE adresse_mail_utilisateur = ?;";
+        $sql = "SELECT * FROM UTILISATEUR WHERE mail_utilisateur = ?;";
         $arguments = array();
         array_push($arguments, $mailUtilisateur);
         return $this->lireRequete($sql, $arguments);

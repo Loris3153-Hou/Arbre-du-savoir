@@ -8,9 +8,6 @@ class UtilisateurControlleur
 {
     public $utilisateurDAO;
 
-    /**
-     * @param $utilisateurDAO
-     */
     public function __construct()
     {
         $this->utilisateurDAO = new \UtilisateurDAO();
@@ -31,18 +28,18 @@ class UtilisateurControlleur
         }
 
 
-    public function inscription($idUtilisateur, $nomUtilisateur, $prenomUtilisateur, $dateNaissUtilisateur, $mailUtilisateur, $mdpUtilisateur, $adminUtilisateur, $dateInscUtilisateur){
+    public function inscription($idUtilisateur, $nomUtilisateur, $prenomUtilisateur, $dateNaissUtilisateur, $mailUtilisateur, $mdpUtilisateur){
 
         $hashedMdpUtilisateur = hash("md5", $mdpUtilisateur);
 
-        $result = $this->utilisateurDAO->insertUtilisateur($idUtilisateur, $nomUtilisateur, $prenomUtilisateur, $dateNaissUtilisateur, $mailUtilisateur, $hashedMdpUtilisateur, $adminUtilisateur, $dateInscUtilisateur);
-        //$mail = mail($_POST['mail'], "Vérification mdp", "Bonjour, ceci est un test");
-        //echo $mail;
-        //if ($mail) echo "Un mail de réinitialisation du mot de passe vous a été envoyé.";else echo "Aucun compte ne correspond à cette adresse mail.";
+        $result = $this->utilisateurDAO->insertUtilisateur($idUtilisateur, $nomUtilisateur, $prenomUtilisateur, $dateNaissUtilisateur, $mailUtilisateur, $hashedMdpUtilisateur);
+        $mail = mail('tessier.nolan@yahoo.com', "Vérification mdp", "Bonjour, ceci est un test");
+
+        if ($mail) echo "Un mail de réinitialisation du mot de passe vous a été envoyé."; else echo "Aucun compte ne correspond à cette adresse mail.";
 
         session_start();
         $_SESSION['mail_utilisateur'] = $_POST['mail'];
-        header('Location: authentification.php');
+        //header('Location: authentification.php');
 
     }
 

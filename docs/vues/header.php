@@ -18,6 +18,9 @@
                 <li><a class="menu__item" href="panier.php">Panier</a></li>
             </ul>
         </div>
+        <?php
+            echo "<a href='authentification.php'>Deconnection</a>";
+        ?>
         <h1 onclick="goPageAccueil()">Arbre du Savoir</h1>
         <img onclick="goPagePanier()" src='../images/panier.png' alt='Panier' width='70px' height='70px'>
         <img onclick="goPageAccueil()" src='../images/logo.png' alt='Arbre du savoir' width='90px' height='80px'>

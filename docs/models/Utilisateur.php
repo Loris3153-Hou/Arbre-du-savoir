@@ -10,9 +10,7 @@ class Utilisateur
     public $prenomUtilisateur;
     public $dateNaisUtilisateur;
     public $mailUtilisateur;
-    public $admintilisateur;
     public $mdpUtilisateur;
-    public $dateInscUtilisateur;
 
     public function __construct()
     {
@@ -21,9 +19,7 @@ class Utilisateur
         $this->prenomUtilisateur = "";
         $this->dateNaisUtilisateur = "";
         $this->mailUtilisateur = "";
-        $this->admintilisateur = "";
         $this->mdpUtilisateur = "";
-        $this->dateInscUtilisateur = "";
     }
 
     public function getIdUtilisateur()
@@ -76,16 +72,6 @@ class Utilisateur
         $this->mailUtilisateur = $mailUtilisateur;
     }
 
-    public function getAdmintilisateur()
-    {
-        return $this->admintilisateur;
-    }
-
-    public function setAdmintilisateur($admintilisateur)
-    {
-        $this->admintilisateur = $admintilisateur;
-    }
-
     public function getMdpUtilisateur()
     {
         return $this->mdpUtilisateur;
@@ -95,16 +81,5 @@ class Utilisateur
     {
         $this->mdpUtilisateur = $mdpUtilisateur;
     }
-
-    public function getDateInscUtilisateur()
-    {
-        return $this->dateInscUtilisateur;
-    }
-
-    public function setDateInscUtilisateur($dateInscUtilisateur)
-    {
-        $this->dateInscUtilisateur = $dateInscUtilisateur;
-    }
-
 
 }

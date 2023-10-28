@@ -1,5 +1,9 @@
 <?php
 
+session_start();
+if(!isset ($_SESSION['mail_utilisateur'])){
+    header('Location: authentification.php');
+}
 
 ?>
 <!DOCTYPE html>

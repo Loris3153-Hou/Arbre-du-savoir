@@ -1,10 +1,9 @@
 <?php
-
     include_once(__DIR__."/../controlleurs/UtilisateurControlleur.php");
     $utilisateurControlleur = new \controlleurs\UtilisateurControlleur();
 
     if (isset($_POST['sub'])) {
-        $utilisateurControlleur->inscription(0, $_POST['nom'], $_POST['prenom'], $_POST['date'], $_POST['mail'], $_POST['mdp'], 0, '21/10/23');
+        $utilisateurControlleur->inscription(0, $_POST['nom'], $_POST['prenom'], $_POST['date'], $_POST['mail'], $_POST['mdp']);
     }
 ?>
 
@@ -60,7 +59,7 @@
 
         <div class='inscriptionMdp'>
             <h3 class='text'>Mot de passe :</h3>
-            <input name='mdp' type='text' required>
+            <input name='mdp' type='password' required>
         </div>
 
         <div class='inscriptionBouton'>

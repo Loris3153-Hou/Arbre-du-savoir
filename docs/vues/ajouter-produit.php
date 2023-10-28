@@ -6,6 +6,11 @@
     include_once(__DIR__."/../controlleurs/CategorieControlleur.php");
     $CategorieControlleur = new \controlleurs\CategorieControlleur();
 
+    session_start();
+    if(!isset ($_SESSION['mail_utilisateur'])){
+        header('Location: authentification.php');
+    }
+
     if (isset($_POST['boutonAjouterFormation'])) {
         $formationControlleur->ajouterLaFormation($_POST['ajouterFormationTitre'], $_POST['ajouterFormationDescription'],
             $_POST['ajouterFormationDateDebut'], $_POST['ajouterFormationDateFin'], $_POST['ajouterPrixCertification'],

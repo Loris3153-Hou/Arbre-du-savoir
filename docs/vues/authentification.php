@@ -2,11 +2,13 @@
 
 include_once(__DIR__."/../controlleurs/UtilisateurControlleur.php");
 $utilisateurControlleur = new \controlleurs\UtilisateurControlleur();
+session_start();
+unset($_SESSION['mail_utilisateur']);
 
 if (isset($_POST['sub'])) {
     $utilisateurControlleur->authentification($_POST['mailUser']);
 
-    session_start();
+
     $_SESSION['mail_utilisateur'] = $_POST['mailUser'];
     header('Location: accueil.php');
 }
@@ -48,7 +50,10 @@ if (isset($_POST['sub'])) {
 
         <div class='authMdp'>
             <h3 class='text'>Mot de passe :</h3>
-            <input name='passUser' type='text' required>
+            <input name='passUser' type='password' required>
+        </div>
+        <div class='authInsc'>
+            <a class='text' href="inscription.php">S'inscrire</a>
         </div>
 
         <div class='authBouton'>
