@@ -16,6 +16,7 @@
                 <li><a class="menu__item" href="liste-produit.php">Liste Des Produits</a></li>
                 <li><a class="menu__item" href="admin.php">Administrateur</a></li>
                 <li><a class="menu__item" href="panier.php">Panier</a></li>
+                <li><a class="menu__item" href="modifierProfil.php">Profil</a></li>
             </ul>
         </div>
         <?php
