@@ -1,7 +1,15 @@
 <?php
+include_once(__DIR__."/../controlleurs/UtilisateurControlleur.php");
+$utilisateurControlleur = new \controlleurs\UtilisateurControlleur();
 session_start();
 if(!isset ($_SESSION['mail_utilisateur'])){
     header('Location: authentification.php');
+}
+
+if(isset ($_POST['sub'])){
+    $utilisateurControlleur->modifierUtilisateur($_POST['nomUtilisateur'],$_POST['prenomUtilisateur'],$_POST['dateUtilisateur'],$_POST['mailUtilisateur']);
+    $_SESSION['mail_utilisateur'] = $_POST['mailUtilisateur'];
+    //header('Location: accueil.php');
 }
 ?>
 
@@ -14,39 +22,16 @@ if(!isset ($_SESSION['mail_utilisateur'])){
 </head>
 <?php include("header.php")?>
 <body>
+<form method="post">
 <div class='body'>
     <div class='profilTitre'>
         <h1>Profil</h1>
     </div>
-    <div class='profilNom'>
-        <h3 class='text'>Nom :</h3>
-        <input type='text' required>
-    </div>
-
-    <div class='profilPrenom'>
-        <h3 class='text'>Prénom :</h3>
-        <input type='text' required>
-    </div>
-
-    <div class='profilDate'>
-        <h3 class='text'>Date de naissance :</h3>
-        <input type='date' required>
-    </div>
-
-    <div class='profilMail'>
-        <h3 class='text'>Adresse mail :</h3>
-        <input type='text' required>
-    </div>
-
-    <div class='profilMdp'>
-        <h3 class='text'>Mot de passe oublié ?</h3>
-    </div>
-
-    <div class='profilBouton'>
-        <input class='boutton' type='submit'  value='Annuler'>
-        <input class='boutton' type='submit'  value='Enregistrer'>
-    </div>
+    <?php
+    $utilisateurControlleur->saisieDonneeModifierProfil();
+    ?>
 </div>
+</form>
 <footer>
     <h3>Condition d'utilisation</h3>
     <h3>Date mise à jour</h3>

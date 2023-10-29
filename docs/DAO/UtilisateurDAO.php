@@ -61,5 +61,12 @@ class UtilisateurDAO
         return $this->lireRequete($sql, $arguments);
     }
 
+    public function updateUtilisateur($idUtilisateur, $nomUtilisateur, $prenomUtilisateur, $dateNaissFormation, $mailUtilisateur){
+        $sql = "UPDATE UTILISATEUR SET nom_utilisateur = ?, prenom_utilisateur = ?, date_nais_utilisateur = ?, mail_utilisateur = ? WHERE id_utilisateur = ?; ";
+        $arguments = array();
+        array_push($arguments, $nomUtilisateur, $prenomUtilisateur, $dateNaissFormation, $mailUtilisateur, $idUtilisateur);
+        return $this->executerRequete($sql, $arguments);
+    }
+
 
 }
