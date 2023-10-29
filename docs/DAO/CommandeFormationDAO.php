@@ -32,11 +32,27 @@ class CommandeFormationDAO
         return $listCommandeFormation;
     }
 
+    public function executerRequete($sql, $arguments) {
+
+        require 'DAO.php';
+
+        $bdd = new PDO("mysql:host=localhost;dbname=$db_name",$user,$pass);
+        $rs = $bdd->prepare($sql);
+        $rs->execute($arguments);
+    }
+
     public function getParFormationEtCommande($idFormation, $idCommande){
         $sql = "SELECT * FROM COMMANDE_FORMATION WHERE id_formation = ? AND id_commande = ? ;";
         $argument = array();
         array_push($argument,$idFormation, $idCommande);
         return $this->lireRequete($sql, $argument);
+    }
+
+    public function insertCommandeFormation($idCommande, $idFormation, $quantiteFormation){
+        $sql = "INSERT INTO COMMANDE_FORMATION VALUES (?, ?, ?);";
+        $argument = array();
+        array_push($argument, $idCommande, $idFormation, $quantiteFormation);
+        return $this->executerRequete($sql, $argument);
     }
 
 
