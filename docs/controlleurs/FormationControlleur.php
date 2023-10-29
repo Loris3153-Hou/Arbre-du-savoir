@@ -135,6 +135,10 @@ class FormationControlleur
         }
     }
 
+    public function afficherRecapitulatifFormationsPanier(){
+
+    }
+
     public function ecrireNomFormation($idFormation)
     {
         foreach ($this->listeFormations as $formation) {
@@ -251,6 +255,5 @@ class FormationControlleur
         array_push($_SESSION['listeItemPanier']['idFormation'], $formation->getIdFormation());
         array_push($_SESSION['listeItemPanier']['nbFormation'], $nbFormation);
         array_push($_SESSION['listeItemPanier']['villeFormation'], $villeFormation);
-        echo $_SESSION['listeItemPanier']['idFormation'][0];
     }
 }
