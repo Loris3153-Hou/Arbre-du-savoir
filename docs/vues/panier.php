@@ -12,6 +12,7 @@ if(!isset ($_SESSION['mail_utilisateur'])){
     <head>
         <meta charset='UTF-8'>
         <title>Arbre du Savoir</title>
+        <script src="js/pay.js"></script>
         <link href="css/panier.css" rel="stylesheet">
         <link href="css/menu.css" rel="stylesheet">
     </head>
@@ -32,7 +33,7 @@ if(!isset ($_SESSION['mail_utilisateur'])){
 
             ?>
             <div class="button-paiement-recapitulatif">
-                <button id="bouton-paiement">Paiement</button>
+                <button onclick="goPaymment()" id="bouton-paiement">Paiement</button>
             </div>
             <div class="textePanier">
                 <h2 id="texte-panier">Panier :</h2>

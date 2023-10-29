@@ -284,4 +284,5 @@ class FormationControlleur
         array_push($_SESSION['listeItemPanier']['nbFormation'], $nbFormation);
         array_push($_SESSION['listeItemPanier']['villeFormation'], $villeFormation);
     }
+
 }
