@@ -7,6 +7,7 @@ class Cart
 
     private $sessionId;
     private $products;
+    private $id;
 
     /**
      * @param $products
@@ -14,6 +15,7 @@ class Cart
     public function __construct($products)
     {
         $this->products = $products;
+        $this->id = 0;
     }
 
 
@@ -25,18 +27,29 @@ class Cart
         $this->sessionId = $sessionId;
     }
 
-
-    public function getProducts(){
-        return [
-            [
-                'name' =>'formation en C',
-                'price' =>'1500'
-            ],
-            [
-                'name' =>'formation java',
-                'price' =>'8000'
-            ]
-        ];
+    /**
+     * @return mixed
+     */
+    public function getProducts()
+    {
+        return $this->products;
     }
+
+    /**
+     * @param mixed $products
+     */
+    public function setProducts($products): void
+    {
+        $this->products = $products;
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+
+
+
 
 }

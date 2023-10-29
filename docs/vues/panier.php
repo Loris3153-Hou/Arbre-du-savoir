@@ -12,6 +12,7 @@ if(!isset ($_SESSION['mail_utilisateur'])){
     <head>
         <meta charset='UTF-8'>
         <title>Arbre du Savoir</title>
+        <script src="js/pay.js"></script>
         <link href="css/panier.css" rel="stylesheet">
         <link href="css/menu.css" rel="stylesheet">
     </head>
@@ -24,20 +25,15 @@ if(!isset ($_SESSION['mail_utilisateur'])){
             <div class="texteRecapitulatif">
                 <h2>Récapitulatif :</h2>
             </div>
-            <div class="nom-produit-quantite-recapitulatif">
-                <p>Programmation en C x1</p>
-            </div>
-            <div class="prix-total-article-recapitulatif">
-                <p>152,00$</p>
-            </div>
-            <div class="texte-total-recapitulatif">
-                <h3>Total :</h3>
-            </div>
-            <div class="prix-total-commande-recapitulatif">
-                <h3>456,00$</h3>
-            </div>
+            <?php
+
+            include(__DIR__."/../controlleurs/FormationControlleur.php");
+            $formationControlleur = new \controlleurs\FormationControlleur();
+            $formationControlleur->afficherRecapitulatifFormationsPanier();
+
+            ?>
             <div class="button-paiement-recapitulatif">
-                <button id="bouton-paiement">Paiement</button>
+                <button onclick="goPaymment()" id="bouton-paiement">Paiement</button>
             </div>
             <div class="textePanier">
                 <h2 id="texte-panier">Panier :</h2>
@@ -45,8 +41,6 @@ if(!isset ($_SESSION['mail_utilisateur'])){
             <div class="description-article-panier">
                 <?php
 
-                include(__DIR__."/../controlleurs/FormationControlleur.php");
-                $formationControlleur = new \controlleurs\FormationControlleur();
                 $formationControlleur->afficherLesFormationsSelectionneesPagePanier();
 
                 ?>

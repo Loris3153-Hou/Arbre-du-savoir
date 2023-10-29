@@ -136,7 +136,36 @@ class FormationControlleur
     }
 
     public function afficherRecapitulatifFormationsPanier(){
-
+        $total = 0;
+        if (isset($_SESSION['listeItemPanier']['idFormation'])){
+            echo "<div class='nom-produit-quantite-recapitulatif'>";
+            for($i = 0; $i < count($_SESSION['listeItemPanier']['idFormation']); $i++){
+                foreach ($this->listeFormations as $formation) {
+                    if($_SESSION['listeItemPanier']['idFormation'][$i] == $formation->getIdFormation()){
+                        $formationPanier = $formation;
+                    }
+                }
+                echo "<p>".$formationPanier->getTitreFormation()." x". $_SESSION['listeItemPanier']['nbFormation'][$i] ."</p>";
+            }
+            echo "</div>
+                <div class='prix-total-article-recapitulatif'>";
+            for($i = 0; $i < count($_SESSION['listeItemPanier']['idFormation']); $i++){
+                foreach ($this->listeFormations as $formation) {
+                    if($_SESSION['listeItemPanier']['idFormation'][$i] == $formation->getIdFormation()){
+                        $formationPanier = $formation;
+                    }
+                }
+                echo "<p>". $formationPanier->getPrixFormation() * $_SESSION['listeItemPanier']['nbFormation'][$i] ."$</p>";
+                $total +=  $formationPanier->getPrixFormation() * $_SESSION['listeItemPanier']['nbFormation'][$i];
+            }
+            echo "</div>
+                <div class='texte-total-recapitulatif'>
+                    <h3>Total :</h3>
+                </div>
+                <div class='prix-total-commande-recapitulatif'>
+                    <h3>$total$</h3>
+                </div>";
+        }
     }
 
     public function ecrireNomFormation($idFormation)
@@ -206,8 +235,7 @@ class FormationControlleur
 
     }
 
-    public function getFormationById($id)
-    {
+    public function getFormationById($id) {
         foreach ($this->listeFormations as $formation) {
             if ($formation->getIdFormation() == $id) {
                 $formTrouvee = $formation;
@@ -256,4 +284,5 @@ class FormationControlleur
         array_push($_SESSION['listeItemPanier']['nbFormation'], $nbFormation);
         array_push($_SESSION['listeItemPanier']['villeFormation'], $villeFormation);
     }
+
 }
