@@ -1,6 +1,7 @@
 <?php
 
 namespace controlleurs;
+use controlleurs\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 
 include_once(__DIR__ . "/../DAO/UtilisateurDAO.php");
@@ -62,7 +63,7 @@ class UtilisateurControlleur
                               <p>Votre compte a bien été créer, veuillez cliquer sur ce bouton afin de vous authentifier :</p>
                               <br>
                               <p>
-                                <a href='http://localhost/arbre-du-savoir/docs/vues/authentification.php' style='background-color: #3498db; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px;'>Cliquez ici</a>
+                                <a href='http://localhost/arbre-du-savoir/poc/Inscription/vues/authentification.php' style='background-color: #3498db; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px;'>Cliquez ici</a>
                               </p>
                               <p>Merci de lire cet e-mail.</p>
                             </body>
@@ -87,7 +88,7 @@ class UtilisateurControlleur
             $result = $this->utilisateurDAO->insertUtilisateur($idUtilisateur, $nomUtilisateur, $prenomUtilisateur, $dateNaissUtilisateur, $mailUtilisateur, $hashedMdpUtilisateur);
           //  $mail = mail('lorishourriere31@outlook.fr', "Vérification mdp", "Bonjour, ceci est un test");
 
-            if ($mail) echo "Un mail de comfirmation vous a été envoyé."; else echo "Aucun compte ne correspond à cette adresse mail.";
+            if ($mail) echo "Un mail de réinitialisation du mot de passe vous a été envoyé."; else echo "Aucun compte ne correspond à cette adresse mail.";
 
             //session_start();
             //$_SESSION['mail_utilisateur'] = $_POST['mail'];
