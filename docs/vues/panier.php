@@ -24,18 +24,13 @@ if(!isset ($_SESSION['mail_utilisateur'])){
             <div class="texteRecapitulatif">
                 <h2>Récapitulatif :</h2>
             </div>
-            <div class="nom-produit-quantite-recapitulatif">
-                <p>Programmation en C x1</p>
-            </div>
-            <div class="prix-total-article-recapitulatif">
-                <p>152,00$</p>
-            </div>
-            <div class="texte-total-recapitulatif">
-                <h3>Total :</h3>
-            </div>
-            <div class="prix-total-commande-recapitulatif">
-                <h3>456,00$</h3>
-            </div>
+            <?php
+
+            include(__DIR__."/../controlleurs/FormationControlleur.php");
+            $formationControlleur = new \controlleurs\FormationControlleur();
+            $formationControlleur->afficherRecapitulatifFormationsPanier();
+
+            ?>
             <div class="button-paiement-recapitulatif">
                 <button id="bouton-paiement">Paiement</button>
             </div>
@@ -45,8 +40,6 @@ if(!isset ($_SESSION['mail_utilisateur'])){
             <div class="description-article-panier">
                 <?php
 
-                include(__DIR__."/../controlleurs/FormationControlleur.php");
-                $formationControlleur = new \controlleurs\FormationControlleur();
                 $formationControlleur->afficherLesFormationsSelectionneesPagePanier();
 
                 ?>
