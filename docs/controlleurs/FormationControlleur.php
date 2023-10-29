@@ -15,6 +15,7 @@ class FormationControlleur
     public $listeFormations;
     public $lieuController;
     public $categorieController;
+
     function __construct()
     {
         $this->formationDAO = new \formationDAO();
@@ -70,6 +71,68 @@ class FormationControlleur
                         </li>";
         }
         echo $html;
+    }
+
+    public function afficherLesFormationsSelectionneesPagePanier(){
+        if (isset($_SESSION['listeItemPanier']['idFormation'])){
+            for($i = 0; $i < count($_SESSION['listeItemPanier']['idFormation']); $i++){
+                foreach ($this->listeFormations as $formation) {
+                    if($_SESSION['listeItemPanier']['idFormation'][$i] == $formation->getIdFormation()){
+                        $formationPanier = $formation;
+                    }
+                }
+                echo "
+            <div class='grid-panier'>
+                    <div class='image-panier'>
+                        <img id='imagePanier' src='../images/". $formationPanier->getPhotoFormation() ."' alt='image'>
+                    </div>
+                    <div class='nom-produit-panier'>
+                        <p>". $formationPanier->getTitreFormation() ."</p>
+                    </div>
+                    <div class='prix-panier'>
+                        <p>". $formationPanier->getPrixFormation() ."$</p>
+                    </div>
+                    <div class='dates-panier'>
+                        <p>". $formationPanier->getDateDebutFormation() ." - ". $formationPanier->getDateFinFormation() ."</p>
+                    </div>
+                    <div class='niveau-panier'>
+                        <p>niveau : ". $formationPanier->getNiveauFormation() ."</p>
+                    </div>
+                    <div class='quantite-panier'>
+                        <form>
+                            <select name='quantite' id='quantite'>
+                                <option value='". $_SESSION['listeItemPanier']['nbFormation'][$i] ."'>". $_SESSION['listeItemPanier']['nbFormation'][$i] ."</option>
+                                ";
+                foreach (array(1, 2, 3, 4) as $quantite){
+                    if($quantite != $_SESSION['listeItemPanier']['nbFormation'][$i]){
+                        echo "<option value='$quantite'>$quantite</option>";
+                    }
+                }
+                echo "
+                            </select>
+                            <select name='ville' id='ville'>
+                                <option value='". $_SESSION['listeItemPanier']['villeFormation'][$i] ."'>". $_SESSION['listeItemPanier']['villeFormation'][$i] ."</option>
+                                ";
+                foreach ($formationPanier->getListeLieux() as $lieu){
+                    if($lieu->getVilleLieu() != $_SESSION['listeItemPanier']['villeFormation'][$i]){
+                        echo "<option value='".$lieu->getVilleLieu()."'>".$lieu->getVilleLieu()."</option>";
+                    }
+                }
+                echo "
+                            </select>
+                        </form>
+                    </div>
+                    <div class='supprimer'>
+                        <img id='imageSupprimer' src='../images/supprimer.png' alt='image'>
+                    </div>
+                    <div class='ligne'>
+                        <hr />
+                    </div>
+                </div>
+            
+            ";
+            }
+        }
     }
 
     public function ecrireNomFormation($idFormation)
@@ -177,5 +240,17 @@ class FormationControlleur
         } else {
             echo "Le prix de la formation n'est pas un nombre valide.";
         }
+    }
+
+    public function ajouterLaformationAuPanier($formation, $nbFormation, $villeFormation){
+        if(!isset($_SESSION['listeItemPanier']['idFormation']) && !isset($_SESSION['listeItemPanier']['nbFormation']) && !isset($_SESSION['listeItemPanier']['villeFormation'])){
+            $_SESSION['listeItemPanier']['idFormation'] = array();
+            $_SESSION['listeItemPanier']['nbFormation'] = array();
+            $_SESSION['listeItemPanier']['villeFormation'] = array();
+        }
+        array_push($_SESSION['listeItemPanier']['idFormation'], $formation->getIdFormation());
+        array_push($_SESSION['listeItemPanier']['nbFormation'], $nbFormation);
+        array_push($_SESSION['listeItemPanier']['villeFormation'], $villeFormation);
+        echo $_SESSION['listeItemPanier']['idFormation'][0];
     }
 }
