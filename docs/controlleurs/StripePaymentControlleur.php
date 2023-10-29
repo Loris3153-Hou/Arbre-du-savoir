@@ -1,5 +1,7 @@
 <?php
 
+use models\Cart;
+
 use Stripe\Stripe;
 class StripePaymentControlleur
 {
@@ -14,7 +16,7 @@ class StripePaymentControlleur
             'line_items'=>[
                 array_map(function (array $product) {
                     return [
-                        'quantity' => 1,
+                        'quantity' => $product['quantity'],
                         'price_data' => [
                             'currency' => 'EUR',
                             'product_data' => [

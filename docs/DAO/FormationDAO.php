@@ -60,6 +60,13 @@ class formationDAO
         return $this->lireRequete($sql, $argument);
     }
 
+    public function getFormationById($id){
+        $sql = "SELECT * FROM FORMATION WHERE id_formation = ?;";
+        $arguments = array();
+        array_push($arguments, $id);
+        return $this->lireRequete($sql, $arguments);
+    }
+
     public function supprimerUneFormation($idFormation){
         $sql = "DELETE FROM FORMATION_CATEGORIE WHERE FORMATION_CATEGORIE.id_formation = ?;
                 DELETE FROM FORMATION_LIEU WHERE FORMATION_LIEU.id_formation = ?;

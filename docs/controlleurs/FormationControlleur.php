@@ -253,4 +253,5 @@ class FormationControlleur
         array_push($_SESSION['listeItemPanier']['villeFormation'], $villeFormation);
         echo $_SESSION['listeItemPanier']['idFormation'][0];
     }
+
 }
