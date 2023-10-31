@@ -11,6 +11,7 @@ class Utilisateur
     public $dateNaisUtilisateur;
     public $mailUtilisateur;
     public $mdpUtilisateur;
+    public $adminUtilisateur;
     public $listeCommandes;
 
     public function __construct()
@@ -21,6 +22,7 @@ class Utilisateur
         $this->dateNaisUtilisateur = "";
         $this->mailUtilisateur = "";
         $this->mdpUtilisateur = "";
+        $this->adminUtilisateur = "";
         $this->listeCommandes = array();
     }
 
@@ -83,6 +85,17 @@ class Utilisateur
     {
         $this->mdpUtilisateur = $mdpUtilisateur;
     }
+
+    public function getAdminUtilisateur(): string
+    {
+        return $this->adminUtilisateur;
+    }
+
+    public function setAdminUtilisateur(string $adminUtilisateur): void
+    {
+        $this->adminUtilisateur = $adminUtilisateur;
+    }
+
 
     /**
      * @return array

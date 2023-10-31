@@ -10,7 +10,7 @@ if (isset($_POST['sub'])) {
 
 
     $_SESSION['mail_utilisateur'] = $_POST['mailUser'];
-    header('Location: accueil.php');
+    header('Location: index.php');
 }
 ?>
 

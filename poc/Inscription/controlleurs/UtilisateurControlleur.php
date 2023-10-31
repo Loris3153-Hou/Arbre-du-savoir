@@ -24,7 +24,7 @@ class UtilisateurControlleur
                     echo "test";
                     session_start();
                     $_SESSION['mail_utilisateur'] = $result[0]->mailUtilisateur;
-                    header('Location: accueil.php');
+                    header('Location: index.php');
                 }
             }
         }

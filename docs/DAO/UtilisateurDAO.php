@@ -16,6 +16,7 @@ class UtilisateurDAO
         $utilisateur->setDateNaisUtilisateur($tmp['date_nais_utilisateur']);
         $utilisateur->setMailUtilisateur($tmp['mail_utilisateur']);
         $utilisateur->setMdpUtilisateur($tmp['mdp_utilisateur']);
+        $utilisateur->setAdminUtilisateur($tmp['admin_utilisateur']);
         $utilisateur->setListeCommandes($commandeDAO->getCommandeParUtilisateur($utilisateur->getIdUtilisateur()));
 
         return $utilisateur;
@@ -48,7 +49,7 @@ class UtilisateurDAO
     }
 
     public function insertUtilisateur($idUtilisateur, $nomUtilisateur, $prenomUtilisateur, $dateNaissUtilisateur, $mailUtilisateur, $mdpUtilisateur){
-        $sql = "INSERT into UTILISATEUR Values (?, ?,?,?, ?,?);";
+        $sql = "INSERT into UTILISATEUR Values (?, ?,?,?, ?,?,0);";
         $arguments = array();
         array_push($arguments,$idUtilisateur, $nomUtilisateur, $prenomUtilisateur, $dateNaissUtilisateur, $mailUtilisateur, $mdpUtilisateur);
         return $this->executerRequete($sql, $arguments);

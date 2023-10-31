@@ -9,7 +9,7 @@ if(!isset ($_SESSION['mail_utilisateur'])){
 if(isset ($_POST['sub'])){
     $utilisateurControlleur->modifierUtilisateur($_POST['nomUtilisateur'],$_POST['prenomUtilisateur'],$_POST['dateUtilisateur'],$_POST['mailUtilisateur']);
     $_SESSION['mail_utilisateur'] = $_POST['mailUtilisateur'];
-    //header('Location: accueil.php');
+    //header('Location: index.php');
 }
 ?>
 

@@ -1,3 +1,3 @@
 function goPageAccueil() {
-    window.location.href = 'accueil.php'
+    window.location.href = 'index.php'
 }

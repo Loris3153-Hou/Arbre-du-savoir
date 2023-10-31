@@ -1,8 +1,5 @@
 <?php
 session_start();
-if(!isset ($_SESSION['mail_utilisateur'])){
-    header('Location: authentification.php');
-}
 ?>
 
 <!DOCTYPE html>
@@ -65,9 +62,9 @@ if(!isset ($_SESSION['mail_utilisateur'])){
         <h3>Réseaux sociaux</h3>
     </footer>
     </body>
-    <style>
-        header {
-            position: static;
-        }
-    </style>
+        <style>
+            header {
+                position: static;
+            }
+        </style>
 </html>

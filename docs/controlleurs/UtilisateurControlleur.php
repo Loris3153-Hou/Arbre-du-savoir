@@ -23,7 +23,10 @@ class UtilisateurControlleur
                     echo "test";
                     session_start();
                     $_SESSION['mail_utilisateur'] = $result[0]->mailUtilisateur;
-                    header('Location: accueil.php');
+                    header('Location: index.php');
+                }
+                else{
+                    echo "Mot de passe incorrect !";
                 }
             }
         }
@@ -36,24 +39,30 @@ class UtilisateurControlleur
         require_once "../vues/phpmailer/PHPMailer.php";
         require_once "../vues/phpmailer/SMTP.php";
 
+        $hashedMdpUtilisateur = hash("md5", $mdpUtilisateur);
 
-        $mail = new PHPMailer(true);
+        $resultMail = $this->utilisateurDAO->getUtilisateurParMail($mailUtilisateur);
 
-        try {
-            //$mail->SMTPDebug = 2;
-            $mail->isSMTP();
-            $mail->Host = "smtp-mail.outlook.com";
-            $mail->SMTPAuth = true;
-            $mail->SMTPSecure = "tls";
-            $mail->Port = 587;
-            $mail->Username = "totoleschamps@outlook.fr";
-            $mail->Password = "Lolita5300";
+        if (count($resultMail)==0) {
+            $result = $this->utilisateurDAO->insertUtilisateur($idUtilisateur, $nomUtilisateur, $prenomUtilisateur, $dateNaissUtilisateur, $mailUtilisateur, $hashedMdpUtilisateur);
+          //  $mail = mail('lorishourriere31@outlook.fr', "Vérification mdp", "Bonjour, ceci est un test");
+            $mail = new PHPMailer(true);
 
-            $mail->setFrom("totoleschamps@outlook.fr");
-            $mail->addAddress($mailUtilisateur);
-            $mail->isHTML(true);
-            $mail->Subject = "Confirmation d'incription Arbre du savoir";
-            $mail->Body = "<html>
+            try {
+                //$mail->SMTPDebug = 2;
+                $mail->isSMTP();
+                $mail->Host = "smtp-mail.outlook.com";
+                $mail->SMTPAuth = true;
+                $mail->SMTPSecure = "tls";
+                $mail->Port = 587;
+                $mail->Username = "totoleschamps@outlook.fr";
+                $mail->Password = "Lolita5300";
+
+                $mail->setFrom("totoleschamps@outlook.fr");
+                $mail->addAddress($mailUtilisateur);
+                $mail->isHTML(true);
+                $mail->Subject = "Confirmation d'incription Arbre du savoir";
+                $mail->Body = "<html>
                             <head>
                               <title>Confirmation</title>
                             </head>
@@ -62,37 +71,22 @@ class UtilisateurControlleur
                               <p>Votre compte a bien été créer, veuillez cliquer sur ce bouton afin de vous authentifier :</p>
                               <br>
                               <p>
-                                <a href='http://localhost/arbre-du-savoir/docs/vues/authentification.php' style='background-color: #3498db; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px;'>Cliquez ici</a>
+                                <a href='https://arbre-du-savoir.online/vues/authentification.php' style='background-color: #3498db; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px;'>Cliquez ici</a>
                               </p>
                               <p>Merci de lire cet e-mail.</p>
                             </body>
                             </html>";
 
-            $mail->send();
-        }catch(Exception){
-            echo "Erreur: {$mail->ErrorInfo}";
-        }
-
-        $hashedMdpUtilisateur = hash("md5", $mdpUtilisateur);
-
-        $resultMail = $this->utilisateurDAO->getUtilisateurParMail($mailUtilisateur);
-
-        /*$smtp_server = 'smtp.live.com'; // Remplacez par le serveur SMTP d'OVH
-        $smtp_username = 'lorishourriere31@outlook.fr'; // Votre nom d'utilisateur SMTP
-        $smtp_password = 'Bhq721hn'; // Votre mot de passe SMTP
-        $smtp_port = 465; // Port SMTP d'OVH (peut varier, vérifiez la documentation d'OVH)
-        $smtp_auth = true;*/
-
-        if (count($resultMail)==0) {
-            $result = $this->utilisateurDAO->insertUtilisateur($idUtilisateur, $nomUtilisateur, $prenomUtilisateur, $dateNaissUtilisateur, $mailUtilisateur, $hashedMdpUtilisateur);
-          //  $mail = mail('lorishourriere31@outlook.fr', "Vérification mdp", "Bonjour, ceci est un test");
-
+                $mail->send();
+            }catch(Exception){
+                echo "Erreur: {$mail->ErrorInfo}";
+            }
             if ($mail) echo "Un mail de comfirmation vous a été envoyé."; else echo "Aucun compte ne correspond à cette adresse mail.";
 
             //session_start();
             //$_SESSION['mail_utilisateur'] = $_POST['mail'];
         }else {
-            echo "deja use";
+            echo "Mail deja use";
         }
 
         //header('Location: authentification.php');
@@ -140,6 +134,15 @@ class UtilisateurControlleur
         $utilisateur = $this->utilisateurDAO->getUtilisateurParMail($_SESSION['mail_utilisateur']);
         $idUtilisateur = $utilisateur[0]->getIdUtilisateur();
         $this->utilisateurDAO->updateUtilisateur($idUtilisateur, $nomUtilisateur, $prenomUtilisateur, $dateNaissFormation, $mailUtilisateur);
+
+    }
+
+    public function adminUtilisateur($mailUtilisateur)
+    {
+        $utilisateur = $this->utilisateurDAO->getUtilisateurParMail($mailUtilisateur);
+        echo $utilisateur[0]->getAdminUtilisateur();
+        $adminUtilisateur = $utilisateur[0]->getAdminUtilisateur();
+        return $adminUtilisateur;
 
     }
 

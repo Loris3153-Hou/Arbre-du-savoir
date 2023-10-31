@@ -4,13 +4,16 @@ include_once(__DIR__."/../controlleurs/UtilisateurControlleur.php");
 $utilisateurControlleur = new \controlleurs\UtilisateurControlleur();
 session_start();
 unset($_SESSION['mail_utilisateur']);
+unset($_SESSION['admin_utilisateur']);
+unset($_SESSION['listeItemPanier']);
 
 if (isset($_POST['sub'])) {
     $utilisateurControlleur->authentification($_POST['mailUser']);
 
 
     $_SESSION['mail_utilisateur'] = $_POST['mailUser'];
-    header('Location: accueil.php');
+    $_SESSION['admin_utilisateur'] = $utilisateurControlleur->adminUtilisateur($_POST['mailUser']);
+    header('Location: index.php');
 }
 ?>
 
@@ -29,7 +32,7 @@ if (isset($_POST['sub'])) {
         </label>
 
         <ul class="menu__box">
-            <li><a class="menu__item" href="accueil.php">Acceuil</a></li>
+            <li><a class="menu__item" href="index.php">Acceuil</a></li>
             <li><a class="menu__item" href="liste-produit.php">Liste Des Produits</a></li>
             <li><a class="menu__item" href="admin.php">Administrateur</a></li>
             <li><a class="menu__item" href="panier.php">Panier</a></li>

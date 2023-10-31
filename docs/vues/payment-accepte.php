@@ -1,5 +1,6 @@
 <?php
 include_once "../controlleurs/CommandeControlleur.php";
+include_once "../controlleurs/PaymentControlleur.php";
     session_start();
     if(!isset ($_SESSION['mail_utilisateur'])){
         header('Location: authentification.php');
@@ -7,6 +8,10 @@ include_once "../controlleurs/CommandeControlleur.php";
 
     $commandeControlleur = new \controlleurs\CommandeControlleur();
     $commandeControlleur ->ajouterCommandeBDD();
+
+    $paymentControlleur = new \controlleurs\PaymentControlleur();
+    $paymentControlleur->confirmationPayement($_SESSION['mail_utilisateur']);
+
 ?>
 
 <!DOCTYPE html>
