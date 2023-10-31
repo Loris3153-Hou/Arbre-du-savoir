@@ -33,13 +33,13 @@ class CommandeDAO
     }
 
     public function getToutesLesCommandes(){
-        $sql = "SELECT * FROM COMMANDE;";
+        $sql = "SELECT * FROM COMMANDE ORDER BY date_commande DESC;";
         $argument = array();
         return $this->lireRequete($sql, $argument);
     }
 
     public function getCommandeParUtilisateur($idUtilisateur){
-        $sql = "SELECT COMMANDE.* FROM COMMANDE INNER JOIN UTILISATEUR ON COMMANDE.id_utilisateur = UTILISATEUR.id_utilisateur WHERE COMMANDE.id_utilisateur = ? ;";
+        $sql = "SELECT COMMANDE.* FROM COMMANDE INNER JOIN UTILISATEUR ON COMMANDE.id_utilisateur = UTILISATEUR.id_utilisateur WHERE COMMANDE.id_utilisateur = ? ORDER BY date_commande DESC;";
         $argument = array();
         array_push($argument, $idUtilisateur);
         return $this->lireRequete($sql, $argument);

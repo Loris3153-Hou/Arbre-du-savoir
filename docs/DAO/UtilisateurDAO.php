@@ -61,5 +61,11 @@ class UtilisateurDAO
         return $this->lireRequete($sql, $arguments);
     }
 
+    public function getTousLesUtilisateurs(){
+        $sql = "SELECT * FROM UTILISATEUR;";
+        $arguments = array();
+        return $this->lireRequete($sql, $arguments);
+    }
+
 
 }

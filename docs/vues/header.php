@@ -17,7 +17,7 @@
                 <li><a class="menu__item" href="admin.php">Administrateur</a></li>
                 <li><a class="menu__item" href="panier.php">Panier</a></li>
                 <li><a class="menu__item" href="modifierProfil.php">Profil</a></li>
-                <li><a class="menu__item" href="historiqueCommandes.php">Histotique de commandes</a></li>
+                <li><a class="menu__item" href="historique-commandes.php">Histotique de commandes</a></li>
             </ul>
         </div>
         <?php

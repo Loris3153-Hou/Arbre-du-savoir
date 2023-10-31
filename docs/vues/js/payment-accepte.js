@@ -1,3 +1,3 @@
 function redirectionhistorique() {
-    window.location.href = 'historiqueCommandes.php'
+    window.location.href = 'historique-commandes.php'
 }
