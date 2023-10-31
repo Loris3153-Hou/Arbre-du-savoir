@@ -99,5 +99,49 @@ class UtilisateurControlleur
 
     }
 
+    public function saisieDonneeModifierProfil(){
+
+        $utilisateur = $this->utilisateurDAO->getUtilisateurParMail($_SESSION['mail_utilisateur']);
+        $html = "";
+        $html .= "<div class='profilNom'>
+                        <h3 class='text'>Nom :</h3>
+                        <input type='text' name='nomUtilisateur' value='" . $utilisateur[0]->getNomUtilisateur() . "' required>
+                    </div>
+                
+                    <div class='profilPrenom'>
+                        <h3 class='text'>Prénom :</h3>
+                        <input type='text' name='prenomUtilisateur' value='" . $utilisateur[0]->getPrenomUtilisateur() . "' required>
+                    </div>
+                
+                    <div class='profilDate'>
+                        <h3 class='text'>Date de naissance :</h3>
+                        <input type='date' name='dateUtilisateur' value='" . $utilisateur[0]->getDateNaisUtilisateur() . "' required>
+                    </div>
+                
+                    <div class='profilMail'>
+                        <h3 class='text'>Adresse mail :</h3>
+                        <input type='text' name='mailUtilisateur' value='" . $utilisateur[0]->getMailUtilisateur() . "' required>
+                    </div>
+                
+                    <div class='profilMdp'>
+                        <h3 class='text'>Mot de passe oublié ?</h3>
+                    </div>
+                
+                    <div class='profilBouton'>
+                        <input class='boutton' type='submit' value='Annuler'>
+                        <input class='boutton' type='submit' name='sub' value='Enregistrer'>
+                    </div>";
+
+        echo $html;
+    }
+
+    public function modifierUtilisateur($nomUtilisateur, $prenomUtilisateur, $dateNaissFormation, $mailUtilisateur)
+    {
+        $utilisateur = $this->utilisateurDAO->getUtilisateurParMail($_SESSION['mail_utilisateur']);
+        $idUtilisateur = $utilisateur[0]->getIdUtilisateur();
+        $this->utilisateurDAO->updateUtilisateur($idUtilisateur, $nomUtilisateur, $prenomUtilisateur, $dateNaissFormation, $mailUtilisateur);
+
+    }
+
 
 }

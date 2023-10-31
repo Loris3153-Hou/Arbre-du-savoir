@@ -104,4 +104,17 @@ class CommandeControlleur
         echo $html;
     }
 
+    public function ajouterCommandeBDD(){
+        $utilisateur = $this->utilisateurDAO->getUtilisateurParMail($_SESSION['mail_utilisateur']);
+        $idUtilisateur = $utilisateur[0]->getIdUtilisateur();
+        $dateSysteme = date("Y-m-d");
+        if(isset($_SESSION['listeItemPanier']['idFormation'])){
+            $this->commandeDAO->insertCommande($dateSysteme, $idUtilisateur);
+            for($i = 0; $i< count($_SESSION['listeItemPanier']['idFormation']); $i++){
+                $this->commandeFormationDAO->insertCommandeFormation($this->commandeDAO->getIdMaxCommande(), $_SESSION['listeItemPanier']['idFormation'][$i], $_SESSION['listeItemPanier']['nbFormation'][$i]);
+            }
+        }
+        unset($_SESSION['listeItemPanier']);
+    }
+
 }

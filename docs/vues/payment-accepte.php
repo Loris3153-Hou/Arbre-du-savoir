@@ -1,8 +1,12 @@
 <?php
+include_once "../controlleurs/CommandeControlleur.php";
     session_start();
     if(!isset ($_SESSION['mail_utilisateur'])){
         header('Location: authentification.php');
     }
+
+    $commandeControlleur = new \controlleurs\CommandeControlleur();
+    $commandeControlleur ->ajouterCommandeBDD();
 ?>
 
 <!DOCTYPE html>

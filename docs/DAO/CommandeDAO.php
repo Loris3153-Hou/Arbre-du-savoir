@@ -32,6 +32,28 @@ class CommandeDAO
         return $listCommande;
     }
 
+    public function lireRequeteSansObjet($sql, $arguments) {
+
+        require 'DAO.php';
+
+        $bdd = new PDO("mysql:host=localhost;dbname=$db_name",$user,$pass);
+        $rs = $bdd->prepare($sql);
+        $rs->execute($arguments);
+        $tmp = $rs->fetch();
+
+        return $tmp['MAX(id_commande)'];
+    }
+
+    public function executerRequete($sql, $arguments) {
+
+        require 'DAO.php';
+
+        $bdd = new PDO("mysql:host=localhost;dbname=$db_name",$user,$pass);
+        $rs = $bdd->prepare($sql);
+        $rs->execute($arguments);
+
+    }
+
     public function getToutesLesCommandes(){
         $sql = "SELECT * FROM COMMANDE ORDER BY date_commande DESC;";
         $argument = array();
@@ -43,6 +65,19 @@ class CommandeDAO
         $argument = array();
         array_push($argument, $idUtilisateur);
         return $this->lireRequete($sql, $argument);
+    }
+
+    public function insertCommande($date, $idUtilisateur){
+        $sql = "INSERT INTO COMMANDE VALUES (0, ?, ?);";
+        $argument = array();
+        array_push($argument, $date, $idUtilisateur);
+        return $this->executerRequete($sql, $argument);
+    }
+
+    public function getIdMaxCommande(){
+        $sql ="SELECT MAX(id_commande) FROM COMMANDE;";
+        $argument = array();
+        return $this->lireRequeteSansObjet($sql, $argument);
     }
 
 
