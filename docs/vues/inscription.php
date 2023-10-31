@@ -23,9 +23,6 @@
 
         <ul class="menu__box">
             <li><a class="menu__item" href="index.php">Acceuil</a></li>
-            <li><a class="menu__item" href="liste-produit.php">Liste Des Produits</a></li>
-            <li><a class="menu__item" href="admin.php">Administrateur</a></li>
-            <li><a class="menu__item" href="panier.php">Panier</a></li>
         </ul>
     </div>
     <h1 onclick="goPageAccueil()">Arbre du Savoir</h1>
