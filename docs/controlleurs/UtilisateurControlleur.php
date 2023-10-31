@@ -85,11 +85,12 @@ class UtilisateurControlleur
 
             //session_start();
             //$_SESSION['mail_utilisateur'] = $_POST['mail'];
+            header('Location: authentification.php');
         }else {
             echo "Mail deja use";
         }
 
-        //header('Location: authentification.php');
+
 
     }
 

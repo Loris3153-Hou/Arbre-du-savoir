@@ -28,8 +28,8 @@ class StripePaymentControlleur
                 }, $cart->getProducts())
             ],
             'mode' => 'payment',
-            'success_url' => 'https://localhost/docs/vues/payment-accepte.php',
-            'cancel_url' => 'https://localhost/docs/vues/payment-refuse.php',
+            'success_url' => 'localhost/arbre-du-savoir/docs/vues/payment-accepte.php',
+            'cancel_url' => 'localhost/arbre-du-savoir/docs/vues/payment-refuse.php',
             'billing_address_collection' => 'required',
             'metadata' => [
                 'cart_id' =>$cart->getId()

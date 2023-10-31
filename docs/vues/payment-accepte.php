@@ -9,8 +9,8 @@ include_once "../controlleurs/PaymentControlleur.php";
     $commandeControlleur = new \controlleurs\CommandeControlleur();
     $commandeControlleur ->ajouterCommandeBDD();
 
-    $paymentControlleur = new \controlleurs\PaymentControlleur();
-    $paymentControlleur->confirmationPayement($_SESSION['mail_utilisateur']);
+    //$paymentControlleur = new \controlleurs\PaymentControlleur();
+    //$paymentControlleur->confirmationPayement($_SESSION['mail_utilisateur']);
 
 ?>
 
