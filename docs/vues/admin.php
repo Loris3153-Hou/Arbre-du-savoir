@@ -44,5 +44,10 @@ if(!isset ($_SESSION['mail_utilisateur'])){
         <h3>Réseaux sociaux</h3>
     </footer>  
 </body>
+<style>
+    header {
+        position: static;
+    }
+</style>
 </html>
 

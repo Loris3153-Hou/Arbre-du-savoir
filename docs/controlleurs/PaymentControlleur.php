@@ -110,19 +110,19 @@ class PaymentControlleur
         $mail = new PHPMailer(true);
 
         try {
-            //$mail->SMTPDebug = 2;
+           // $mail->SMTPDebug = 2;
             $mail->isSMTP();
             $mail->Host = "smtp-mail.outlook.com";
             $mail->SMTPAuth = true;
             $mail->SMTPSecure = "tls";
             $mail->Port = 587;
-            $mail->Username = "totoleschamps@outlook.fr";
-            $mail->Password = "Lolita5300";
+            $mail->Username = "nolan_tessier@outlook.com";
+            $mail->Password = "MaNoLo1234";
 
-            $mail->setFrom("totoleschamps@outlook.fr");
+            $mail->setFrom("nolan_tessier@outlook.com");
             $mail->addAddress($mailUtilisateur);
             $mail->isHTML(true);
-            $mail->Subject = "Confirmation d'incription Arbre du savoir";
+            $mail->Subject = "Confirmation de la commande Arbre du savoir";
             $mail->Body = $html;
 
             $mail->send();

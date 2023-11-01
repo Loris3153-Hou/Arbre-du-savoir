@@ -23,12 +23,20 @@ class UtilisateurControlleur
                     echo "test";
                     session_start();
                     $_SESSION['mail_utilisateur'] = $result[0]->mailUtilisateur;
+    			$_SESSION['admin_utilisateur'] = $this->adminUtilisateur($_SESSION['mail_utilisateur']);
                     header('Location: index.php');
                 }
                 else{
-                    echo "Mot de passe incorrect !";
+		   echo "<div class='authError'>
+            <h3 class='text' style='color:red;'>Mot de passe incorrect</h3>
+        </div>";
                 }
-            }
+            }else{
+		echo "<div class='authError'>
+            <h3 class='text' style='color:red;'>Adresse mail inconnu</h3>
+        </div>";
+
+	}
         }
 
 
@@ -39,26 +47,18 @@ class UtilisateurControlleur
         require_once "../vues/phpmailer/PHPMailer.php";
         require_once "../vues/phpmailer/SMTP.php";
 
-        $hashedMdpUtilisateur = hash("md5", $mdpUtilisateur);
-
-        $resultMail = $this->utilisateurDAO->getUtilisateurParMail($mailUtilisateur);
-
-        if (count($resultMail)==0) {
-            $result = $this->utilisateurDAO->insertUtilisateur($idUtilisateur, $nomUtilisateur, $prenomUtilisateur, $dateNaissUtilisateur, $mailUtilisateur, $hashedMdpUtilisateur);
-          //  $mail = mail('lorishourriere31@outlook.fr', "Vérification mdp", "Bonjour, ceci est un test");
-            $mail = new PHPMailer(true);
-
-            try {
+	$mail = new PHPMailer(true);
+	   try {
                 //$mail->SMTPDebug = 2;
                 $mail->isSMTP();
                 $mail->Host = "smtp-mail.outlook.com";
                 $mail->SMTPAuth = true;
                 $mail->SMTPSecure = "tls";
                 $mail->Port = 587;
-                $mail->Username = "totoleschamps@outlook.fr";
-                $mail->Password = "Lolita5300";
+                $mail->Username = "nolan_tessier@outlook.com";
+                $mail->Password = "MaNoLo1234";
 
-                $mail->setFrom("totoleschamps@outlook.fr");
+                $mail->setFrom("nolan_tessier@outlook.com");
                 $mail->addAddress($mailUtilisateur);
                 $mail->isHTML(true);
                 $mail->Subject = "Confirmation d'incription Arbre du savoir";
@@ -81,15 +81,26 @@ class UtilisateurControlleur
             }catch(Exception){
                 echo "Erreur: {$mail->ErrorInfo}";
             }
+	
+
+        $hashedMdpUtilisateur = hash("md5", $mdpUtilisateur);
+
+        $resultMail = $this->utilisateurDAO->getUtilisateurParMail($mailUtilisateur);
+
+        if (count($resultMail)==0) {
+            $result = $this->utilisateurDAO->insertUtilisateur($idUtilisateur, $nomUtilisateur, $prenomUtilisateur, $dateNaissUtilisateur, $mailUtilisateur, $hashedMdpUtilisateur);
+          //  $mail = mail('lorishourriere31@outlook.fr', "Vérification mdp", "Bonjour, ceci est un test");
+           
             if ($mail) echo "Un mail de comfirmation vous a été envoyé."; else echo "Aucun compte ne correspond à cette adresse mail.";
 
             //session_start();
             //$_SESSION['mail_utilisateur'] = $_POST['mail'];
             header('Location: authentification.php');
         }else {
-            echo "Mail deja use";
+            echo "<div class='inscriptionError'>
+            <h3 class='text' style='color:red;'>Adresse mail deja utiliser</h3>
+        </div>";
         }
-
 
 
     }
@@ -116,11 +127,7 @@ class UtilisateurControlleur
                     <div class='profilMail'>
                         <h3 class='text'>Adresse mail :</h3>
                         <input type='text' name='mailUtilisateur' value='" . $utilisateur[0]->getMailUtilisateur() . "' required>
-                    </div>
-                
-                    <div class='profilMdp'>
-                        <h3 class='text'>Mot de passe oublié ?</h3>
-                    </div>
+                   </div>
                 
                     <div class='profilBouton'>
                         <input class='boutton' type='submit' value='Annuler'>

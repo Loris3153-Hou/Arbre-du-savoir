@@ -7,14 +7,6 @@ unset($_SESSION['mail_utilisateur']);
 unset($_SESSION['admin_utilisateur']);
 unset($_SESSION['listeItemPanier']);
 
-if (isset($_POST['sub'])) {
-    $utilisateurControlleur->authentification($_POST['mailUser']);
-
-
-    $_SESSION['mail_utilisateur'] = $_POST['mailUser'];
-    $_SESSION['admin_utilisateur'] = $utilisateurControlleur->adminUtilisateur($_POST['mailUser']);
-    header('Location: index.php');
-}
 ?>
 
 <!DOCTYPE html>
@@ -55,6 +47,11 @@ if (isset($_POST['sub'])) {
         <div class='authInsc'>
             <a class='text' href="inscription.php">S'inscrire</a>
         </div>
+<?php
+if (isset($_POST['sub'])) {
+    $utilisateurControlleur->authentification($_POST['mailUser']);
+}
+?>
 
         <div class='authBouton'>
             <input name='sub' class='boutton' type='submit'  value='Sauthentifier'>

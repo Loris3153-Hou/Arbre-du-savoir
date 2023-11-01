@@ -46,7 +46,7 @@ class CommandeControlleur
                         <div class='div".$num_commande."2'><p>X".$nombre[0]->getNbFormation()."</p></div>";
                 $num_commande += 1;
                 $html .= "
-                        <div class='div".$num_commande."2'><p>".$prixFormation."</p></div>";
+                        <div class='div".$num_commande."2'><p>".$prixFormation."€</p></div>";
                 $nombreTotFormation += $nombre[0]->getNbFormation();
                 $prixTotFormation += $prixFormation;
             }
@@ -54,7 +54,7 @@ class CommandeControlleur
                     <div class='div2'><p class='totaux'>Total articles</p></div>
                     <div class='div3'><p class='totaux'>" .$nombreTotFormation."</p></div>
                     <div class='div4'><p class='totaux'>Montant total</p></div>
-                    <div class='div5'><p class='totaux'>".$prixTotFormation."</p></div>
+                    <div class='div5'><p class='totaux'>".$prixTotFormation."€</p></div>
                 </div>";
         }
 
@@ -89,7 +89,7 @@ class CommandeControlleur
                         <div class='div".$num_commande."2'><p>X".$nombre[0]->getNbFormation()."</p></div>";
                 $num_commande += 1;
                 $html .= "
-                        <div class='div".$num_commande."2'><p>".$prixFormation."</p></div>";
+                        <div class='div".$num_commande."2'><p>".$prixFormation."€</p></div>";
                 $nombreTotFormation += $nombre[0]->getNbFormation();
                 $prixTotFormation += $prixFormation;
             }
@@ -97,7 +97,7 @@ class CommandeControlleur
                     <div class='div2'><p class='totaux'>Total articles</p></div>
                     <div class='div3'><p class='totaux'>" .$nombreTotFormation."</p></div>
                     <div class='div4'><p class='totaux'>Montant total</p></div>
-                    <div class='div5'><p class='totaux'>".$prixTotFormation."</p></div>
+                    <div class='div5'><p class='totaux'>".$prixTotFormation."€</p></div>
                 </div>";
         }
 

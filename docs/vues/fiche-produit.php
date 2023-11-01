@@ -41,7 +41,7 @@ if(isset($_POST["boutonAjoutPanier"])){
             <div class="prix_formation">
                 <h2 class = "informationPrixDates" id = "prix">
                     <?php echo $formation->getPrixFormation()?>
-                    $
+                    €
                 </h2>
                 <div class = "dates">
                     <h3 class = "dateDeLaFormation informationPrixDates" id = "dateDeDebut">

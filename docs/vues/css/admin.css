@@ -24,11 +24,7 @@ h3{
     width: 100%;
     font-family: Arial, sans-serif;
     display: grid;
-    grid-template-columns: 0.10fr 0.25fr repeat(2, 1fr) 0.10fr; 
-    grid-template-rows: 0.01fr 0.5fr repeat(2, 0.25fr) repeat(2, 0.5fr) 0.01fr;
-    grid-column-gap: 15px;
-    grid-row-gap: 10px;
-    padding-top: 7%;
+    padding-top: 5%;
 }
 
 header {

@@ -52,7 +52,7 @@ class FormationControlleur
             }
 
             $html .= "</p>
-                            <p class='produit-info item'>" . $formation->getPrixFormation() . " $ </p>
+                            <p class='produit-info item'>" . $formation->getPrixFormation() . "€</p>
                             <p class='produit-info item'>";
 
             foreach ($formation->getListeLieux() as $lieu) {
@@ -90,7 +90,7 @@ class FormationControlleur
                         <p>". $formationPanier->getTitreFormation() ."</p>
                     </div>
                     <div class='prix-panier'>
-                        <p>". $formationPanier->getPrixFormation() ."$</p>
+                        <p>". $formationPanier->getPrixFormation() ."€</p>
                     </div>
                     <div class='dates-panier'>
                         <p>". $formationPanier->getDateDebutFormation() ." - ". $formationPanier->getDateFinFormation() ."</p>
@@ -155,7 +155,7 @@ class FormationControlleur
                         $formationPanier = $formation;
                     }
                 }
-                echo "<p>". $formationPanier->getPrixFormation() * $_SESSION['listeItemPanier']['nbFormation'][$i] ."$</p>";
+                echo "<p>". $formationPanier->getPrixFormation() * $_SESSION['listeItemPanier']['nbFormation'][$i] ."€</p>";
                 $total +=  $formationPanier->getPrixFormation() * $_SESSION['listeItemPanier']['nbFormation'][$i];
             }
             echo "</div>
@@ -163,7 +163,7 @@ class FormationControlleur
                     <h3>Total :</h3>
                 </div>
                 <div class='prix-total-commande-recapitulatif'>
-                    <h3>$total$</h3>
+                    <h3>$total €</h3>
                 </div>";
         }
     }

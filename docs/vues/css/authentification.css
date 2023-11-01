@@ -25,7 +25,7 @@ h3{
     font-family: Arial, sans-serif;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr repeat(2, 0.5fr) 0.25fr 0.75fr;
+    grid-template-rows: 1fr repeat(2, 0.5fr) 0.25fr 0.25fr 0.5fr;
     grid-column-gap: 15px;
     grid-row-gap: 10px;
     padding-top: 7%;
@@ -71,8 +71,16 @@ footer{
     justify-content: space-between;
     align-items: center;
 }
-.authBouton {
+
+.authError {
     grid-area: 5 / 2 / 6 / 3;
+    display: flex;
+    justify-content: center;  
+    justify-items: center;
+}
+
+.authBouton {
+    grid-area: 6 / 2 / 7 / 3;
     display: grid;
     align-items: center;
     justify-items: center;

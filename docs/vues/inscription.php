@@ -2,9 +2,6 @@
     include_once(__DIR__."/../controlleurs/UtilisateurControlleur.php");
     $utilisateurControlleur = new \controlleurs\UtilisateurControlleur();
 
-    if (isset($_POST['sub'])) {
-        $utilisateurControlleur->inscription(0, $_POST['nom'], $_POST['prenom'], $_POST['date'], $_POST['mail'], $_POST['mdp']);
-    }
 ?>
 
 <!DOCTYPE html>
@@ -58,6 +55,11 @@
             <h3 class='text'>Mot de passe :</h3>
             <input name='mdp' type='password' required>
         </div>
+<?php
+    if (isset($_POST['sub'])) {
+        $utilisateurControlleur->inscription(0, $_POST['nom'], $_POST['prenom'], $_POST['date'], $_POST['mail'], $_POST['mdp']);
+    }
+?>
 
         <div class='inscriptionBouton'>
             <input class='boutton' type='submit' name='sub' value='Sinscrire'>
