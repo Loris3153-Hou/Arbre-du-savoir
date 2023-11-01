@@ -14,6 +14,6 @@
 
 - page panier ➡ 15 h
 
-- page hidtorique des commandes admin ➡ 2 h
+- page historique des commandes admin ➡ 2 h
 
 **Total** ➡ 24 h 30
