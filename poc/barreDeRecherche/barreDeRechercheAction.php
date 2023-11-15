@@ -1,14 +1,21 @@
 <?php
 
-$liste[] = "Marketing Digital Avancé";
-$liste[] = "Développement Web Full-Stack";
-$liste[] = "Leadership et Gestion d'Équipe";
-$liste[] = "Développement d'Applications Mobiles";
-$liste[] = "Marketing des Réseaux Sociaux";
-$liste[] = "Cybersécurité et Protection des Données";
-$liste[] = "Gestion de Projet Agile";
-$liste[] = "Leadership Stratégique";
-$liste[] = "Programmer en C";
+$liste = [
+    "Marketing Digital Avancé",
+    "Développement Web Full-Stack",
+    "Leadership et Gestion d'Équipe",
+    "Développement d'Applications Mobiles",
+    "Marketing des Réseaux Sociaux",
+    "Cybersécurité et Protection des Données",
+    "Gestion de Projet Agile",
+    "Leadership Stratégique",
+    "Programmer en C",
+];
+
+// Génération de 91 formations supplémentaires
+for ($i = 1; $i <= 91; $i++) {
+    $liste[] = "Formation $i";
+}
 
 
 $value = fctRetirerAccents($_REQUEST["value"]);

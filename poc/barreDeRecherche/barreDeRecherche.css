@@ -1,14 +1,17 @@
 /* barreDeRecherche.css */
 
-body {
+/* Style pour le paragraphe "Suggestions" */
+body p {
+    text-align: center;
     font-family: 'Arial', sans-serif;
-    background-color: #f2f2f2;
-    margin: 0;
+    font-size: 16px;
+    color: #333;
 }
 
 .rech {
     width: 300px;
     margin: 50px auto;
+    text-align: center; /* Center the content inside .rech */
 }
 
 #barreDeRecherche {
@@ -26,9 +29,6 @@ body {
     box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
 }
 
-
-/* Ajoutez ces styles à votre fichier CSS existant */
-
 /* Style pour la liste de suggestions */
 #suggestions {
     margin-top: 10px;
@@ -39,18 +39,8 @@ body {
     padding: 10px;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Style pour chaque suggestion */
-#suggestions {
-    margin-top: 10px;
-    border: 1px solid #3498db;
-    border-radius: 5px;
-    max-height: 150px;
-    overflow-y: auto;
-    padding: 10px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Ajustez la largeur selon vos préférences */
+    margin: 0 auto; /* Center the #suggestions div */
 }
 
 /* Style pour chaque suggestion */
