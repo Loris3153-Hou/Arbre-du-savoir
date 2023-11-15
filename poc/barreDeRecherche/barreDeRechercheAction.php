@@ -11,7 +11,7 @@ $liste[] = "Leadership Stratégique";
 $liste[] = "Programmer en C";
 
 
-$value = $_REQUEST["value"];
+$value = fctRetirerAccents($_REQUEST["value"]);
 $html = "";
 
 function fctRetirerAccents($varMaChaine)
