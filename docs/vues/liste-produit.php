@@ -19,7 +19,7 @@ if(!isset ($_SESSION['mail_utilisateur'])){
         <?php include("header.php")?>
         <div class='body'>
             <div class='rech'>
-                <input type='text' name='search' placeholder='Recherche..'>
+                <input id="barreDeRecherche" type='text' name='search' placeholder='Recherche..'>
                 <input type='submit' name='submit' 
                 class='submit' value='Rechercher'>
             </div>
