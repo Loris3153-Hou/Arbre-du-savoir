@@ -126,4 +126,11 @@ class formationDAO
         array_push($argument,$idFormation, $idCommande);
         return $this->lireRequete($sql, $argument);
     }
+
+    public function getFormationParValeurDEntree($valeurEntree) {
+        $sql = 'SELECT * FROM `FORMATION` WHERE titre_formation LIKE ?;';
+        $argument = array();
+        array_push($argument, '%' . $valeurEntree . '%');
+        return $this->lireRequete($sql, $argument);
+    }
 }
