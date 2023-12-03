@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 include_once(__DIR__ . "/../DAO/FormationDAO.php");
 
 $success = 0;
@@ -17,6 +19,15 @@ if (!empty($_POST['idFormation']) AND !empty($_POST['nouveauNbFormation'])) {
     $nouveauSousTotalFormation = $prixFormation * $nouveauNbFormation;
     $nouveauSousTotal = $nouveauSousTotalFormation;
     $nomFormation = $formation->getTitreFormation();
+
+    if (isset($_SESSION['listeItemPanier']['idFormation'])){
+        for ($i = 0; $i < sizeof($_SESSION['listeItemPanier']['idFormation']); $i++) {
+            if ($_SESSION['listeItemPanier']['idFormation'][$i] == $idFormation) {
+                $_SESSION['listeItemPanier']['nbFormation'][$i] = $nouveauNbFormation;
+            }
+        }
+    }
+
 
     $success = 1;
     $msg = "";
