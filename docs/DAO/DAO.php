@@ -1,7 +1,5 @@
 <?php
-
-$db_name="bdd_arbre-du-savoir";
-$user="root";
-$pass="Wp50c9^f08DeUIp^g";
-
+    $db_name="arbre_du_savoir_test";
+    $user="root";
+    $pass="lepwd";
 ?>

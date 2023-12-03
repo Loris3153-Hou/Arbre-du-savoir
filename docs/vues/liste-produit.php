@@ -19,7 +19,7 @@ if(!isset ($_SESSION['mail_utilisateur'])){
         <?php include("header.php")?>
         <div class='body'>
             <div class='rech'>
-                <input type='text' name='search' placeholder='Recherche..'>
+                <input id="barreDeRecherche" type='text' name='search' placeholder='Recherche..' onkeyup="recherche(this.value)">
                 <input type='submit' name='submit' 
                 class='submit' value='Rechercher'>
             </div>
@@ -54,7 +54,7 @@ if(!isset ($_SESSION['mail_utilisateur'])){
                 ?>
             </div>
             
-            <div class='produits'>
+            <div class='produits' id="liste-des-produits">
                 <!--<div class='produit'>
                     <img src='images/pdt1.jpg' alt='Marketing Digital Avancé' width='400' height='220'>
                     <h2>Marketing Digital Avancé</h2>
