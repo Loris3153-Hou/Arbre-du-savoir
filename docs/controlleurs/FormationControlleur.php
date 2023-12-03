@@ -90,7 +90,7 @@ class FormationControlleur
                         <p>". $formationPanier->getTitreFormation() ."</p>
                     </div>
                     <div class='prix-panier'>
-                        <p>". $formationPanier->getPrixFormation() ."€</p>
+                        <p>". $formationPanier->getPrixFormation() ." €</p>
                     </div>
                     <div class='dates-panier'>
                         <p>". $formationPanier->getDateDebutFormation() ." - ". $formationPanier->getDateFinFormation() ."</p>
@@ -155,7 +155,7 @@ class FormationControlleur
                         $formationPanier = $formation;
                     }
                 }
-                echo "<p id=".$formationPanier->getIdFormation().$formationPanier->getIdFormation()." class='sous-total-commande'>". $formationPanier->getPrixFormation() * $_SESSION['listeItemPanier']['nbFormation'][$i] ."€</p>";
+                echo "<p id=".$formationPanier->getIdFormation().$formationPanier->getIdFormation()." class='sous-total-commande'>". $formationPanier->getPrixFormation() * $_SESSION['listeItemPanier']['nbFormation'][$i] ." €</p>";
                 $total +=  $formationPanier->getPrixFormation() * $_SESSION['listeItemPanier']['nbFormation'][$i];
             }
             echo "</div>
