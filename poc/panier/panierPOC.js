@@ -8,11 +8,19 @@ function modifierNombreFormation(inputSelectQuantite){
             var res = this.response;
             if (res.success) {
                 $sousTotal = document.getElementById("" + inputSelectQuantite.id + inputSelectQuantite.id);
-                $sousTotal.innerText = res.data + " €";
+                $ancienSousTotal = parseFloat($sousTotal.innerText.substr(0, $sousTotal.innerText.length - 2));
+                $sousTotal.innerText = res.nouveauSousTotal + " €";
 
                 $totalHTML = document.getElementById("totalCommande");
                 $sousTotaux = document.getElementsByClassName("sous-total-commande");
-                console.log($sousTotaux);
+
+                $nbFormationHTML = document.getElementById("" + inputSelectQuantite.id + inputSelectQuantite.id + inputSelectQuantite.id);
+                $nbFormationHTML.innerText = res.nomFormation + " x " + inputSelectQuantite.value;
+
+                $total = document.getElementById("totalCommande");
+                $totalInital = parseFloat($total.innerText.substr(0, $total.innerText.length - 2)) - $ancienSousTotal;
+                $nouveauTotal = $totalInital + res.nouveauSousTotal;
+                $total.innerText = $nouveauTotal + " €";
             } else {
                 alert(res.msg);
             }

@@ -4,7 +4,8 @@ include_once(__DIR__ . "/../../docs/DAO/FormationDAO.php");
 
 $success = 0;
 $msg = "Une erreur est survenue (ajaxPOC.php)";
-$data = [];
+$nouveauSousTotal = [];
+$nomFormation = [];
 
 if (!empty($_POST['idFormation']) AND !empty($_POST['nouveauNbFormation'])) {
     $idFormation = htmlspecialchars(strip_tags($_POST['idFormation']));
@@ -14,7 +15,8 @@ if (!empty($_POST['idFormation']) AND !empty($_POST['nouveauNbFormation'])) {
     $formation = $formationDAO->getFormationParId($idFormation)[0];
     $prixFormation = $formation->getPrixFormation();
     $nouveauSousTotalFormation = $prixFormation * $nouveauNbFormation;
-    $data = $nouveauSousTotalFormation;
+    $nouveauSousTotal = $nouveauSousTotalFormation;
+    $nomFormation = $formation->getTitreFormation();
 
     $success = 1;
     $msg = "";
@@ -23,7 +25,7 @@ if (!empty($_POST['idFormation']) AND !empty($_POST['nouveauNbFormation'])) {
 }
 
 
-$res = ["success" => $success, "msg" => $msg, "data" => $data];
+$res = ["success" => $success, "msg" => $msg, "nouveauSousTotal" => $nouveauSousTotal, "nomFormation" => $nomFormation];
 echo json_encode($res);
 
 ?>
