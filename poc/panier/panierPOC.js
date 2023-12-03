@@ -11,11 +11,10 @@ function modifierNombreFormation(inputSelectQuantite){
                 $ancienSousTotal = parseFloat($sousTotal.innerText.substr(0, $sousTotal.innerText.length - 2));
                 $sousTotal.innerText = res.nouveauSousTotal + " €";
 
-                $totalHTML = document.getElementById("totalCommande");
                 $sousTotaux = document.getElementsByClassName("sous-total-commande");
 
                 $nbFormationHTML = document.getElementById("" + inputSelectQuantite.id + inputSelectQuantite.id + inputSelectQuantite.id);
-                $nbFormationHTML.innerText = res.nomFormation + " x " + inputSelectQuantite.value;
+                $nbFormationHTML.innerText = res.nomFormation + " x" + inputSelectQuantite.value;
 
                 $total = document.getElementById("totalCommande");
                 $totalInital = parseFloat($total.innerText.substr(0, $total.innerText.length - 2)) - $ancienSousTotal;
