@@ -1,7 +1,3 @@
-function goPagePanier() {
-    window.location.href = 'panier.php'
-}
-
 function modifierNombreFormation(inputSelectQuantite){
 
     var requete = new XMLHttpRequest();
@@ -32,7 +28,7 @@ function modifierNombreFormation(inputSelectQuantite){
         }
     };
 
-    requete.open("POST", "../controlleurs/ModificationPanier.php", true);
+    requete.open("POST", "ajaxPOC.php", true);
     requete.responseType = "json";
     requete.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     requete.send("idFormation=" + inputSelectQuantite.id + "&nouveauNbFormation=" + inputSelectQuantite.value);

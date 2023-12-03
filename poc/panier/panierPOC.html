@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Panier POC</title>
+    <script src="panierPOC.js"></script>
+</head>
+<body>
+
+<h3>Articles :</h3>
+<div class='nom-produit-panier'>
+    <p>Marketing Digital</p>
+</div>
+<div class='prix-panier'>
+    <p>Prix unitaire : 100 €</p>
+</div>
+<div class='quantite-panier'>
+    <form method="post">
+        Quantite : <select id='1' class="quantite-formation" name='quantite' onchange="modifierNombreFormation(this)">
+            <option value='1'>1</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+        </select>
+    </form>
+</div>
+<br>
+<div class='nom-produit-panier'>
+    <p>Programmer en C</p>
+</div>
+<div class='prix-panier'>
+    <p>Prix unitaire : 50,75 €</p>
+</div>
+<div class='quantite-panier'>
+    <form method="post">
+        Quantite : <select id="9" class="quantite-formation" name='quantite' onchange="modifierNombreFormation(this)">
+            <option value='1'>1</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+        </select>
+    </form>
+</div>
+<br>
+
+<h3>Sous total :</h3>
+<div class='nom-produit-quantite-recapitulatif'>
+    <p id="111">Marketing Digital x 1</p>
+    <p id="11" class="sous-total-commande">100 €</p>
+    <br>
+    <p id="999">Programmer en C x 2</p>
+    <p id="99" class="sous-total-commande">101.5 €</p>
+</div>
+<br>
+<div class='texte-total-recapitulatif'>
+    <h3>Total :</h3>
+</div>
+<div class='prix-total-commande-recapitulatif'>
+    <h3 id="totalCommande">201.5 €</h3>
+</div>
+
+</body>
+</html>
