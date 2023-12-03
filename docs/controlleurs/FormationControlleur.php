@@ -100,7 +100,7 @@ class FormationControlleur
                     </div>
                     <div class='quantite-panier'>
                         <form>
-                            <select name='quantite' id='quantite'>
+                            <select name='quantite' id=". $formationPanier->getIdFormation() .">
                                 <option value='". $_SESSION['listeItemPanier']['nbFormation'][$i] ."'>". $_SESSION['listeItemPanier']['nbFormation'][$i] ."</option>
                                 ";
                 foreach (array(1, 2, 3, 4) as $quantite){
@@ -145,7 +145,7 @@ class FormationControlleur
                         $formationPanier = $formation;
                     }
                 }
-                echo "<p>".$formationPanier->getTitreFormation()." x". $_SESSION['listeItemPanier']['nbFormation'][$i] ."</p>";
+                echo "<p id=".$formationPanier->getIdFormation().$formationPanier->getIdFormation().$formationPanier->getIdFormation().">".$formationPanier->getTitreFormation()." x". $_SESSION['listeItemPanier']['nbFormation'][$i] ."</p>";
             }
             echo "</div>
                 <div class='prix-total-article-recapitulatif'>";
@@ -155,7 +155,7 @@ class FormationControlleur
                         $formationPanier = $formation;
                     }
                 }
-                echo "<p>". $formationPanier->getPrixFormation() * $_SESSION['listeItemPanier']['nbFormation'][$i] ."€</p>";
+                echo "<p id=".$formationPanier->getIdFormation().$formationPanier->getIdFormation()." class='sous-total-commande'>". $formationPanier->getPrixFormation() * $_SESSION['listeItemPanier']['nbFormation'][$i] ."€</p>";
                 $total +=  $formationPanier->getPrixFormation() * $_SESSION['listeItemPanier']['nbFormation'][$i];
             }
             echo "</div>
@@ -163,7 +163,7 @@ class FormationControlleur
                     <h3>Total :</h3>
                 </div>
                 <div class='prix-total-commande-recapitulatif'>
-                    <h3>$total €</h3>
+                    <h3 id='totalCommande'>$total €</h3>
                 </div>";
         }
     }
