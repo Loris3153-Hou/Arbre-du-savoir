@@ -100,7 +100,7 @@ class FormationControlleur
                     </div>
                     <div class='quantite-panier'>
                         <form>
-                            <select name='quantite' id=". $formationPanier->getIdFormation() .">
+                            <select name='quantite' id=". $formationPanier->getIdFormation() ." onchange='modifierNombreFormation(this)'>
                                 <option value='". $_SESSION['listeItemPanier']['nbFormation'][$i] ."'>". $_SESSION['listeItemPanier']['nbFormation'][$i] ."</option>
                                 ";
                 foreach (array(1, 2, 3, 4) as $quantite){
