@@ -62,11 +62,11 @@ if ($_GET["value"] == "insc") {
 if (isset($_GET["value"])){
     $html = '';
     if ($_GET["value"] == "inscription") {
-        $html = '<h2>Inscription</h2>';
+        $html = '<h1>Inscription</h1>';
 
         echo $html;
     }elseif ($_GET["value"] == "authentification") {
-        $html = '<h2>Connexion</h2>';
+        $html = '<h1>Connexion</h1>';
 
         echo $html;
     }

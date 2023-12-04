@@ -2,7 +2,7 @@
 
 session_start();
 if(!isset ($_SESSION['mail_utilisateur'])){
-    header('Location: authentification.php');
+    header('Location: inscriptionAuthentification.php');
 }
 
 include_once(__DIR__."/../controlleurs/CommandeControlleur.php");

@@ -8,7 +8,7 @@
 
     session_start();
     if(!isset ($_SESSION['mail_utilisateur'])){
-        header('Location: authentification.php');
+        header('Location: inscriptionAuthentification.php');
     }
 
     if (isset($_POST['boutonAjouterFormation'])) {

@@ -3,7 +3,7 @@ include_once(__DIR__."/../controlleurs/UtilisateurControlleur.php");
 $utilisateurControlleur = new \controlleurs\UtilisateurControlleur();
 session_start();
 if(!isset ($_SESSION['mail_utilisateur'])){
-    header('Location: authentification.php');
+    header('Location: inscriptionAuthentification.php');
 }
 
 if(isset ($_POST['sub'])){

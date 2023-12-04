@@ -59,7 +59,7 @@
 
 <div id="erreur"></div>
 <style>
-    #connexion-form{
+    #inscription-form{
         position: absolute;
         z-index: 1;
     }

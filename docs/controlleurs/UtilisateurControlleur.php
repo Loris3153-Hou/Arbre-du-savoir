@@ -20,25 +20,19 @@ class UtilisateurControlleur
             if (count($result)==1) {
                 $hashed = hash("md5", $_POST['passUser']);
                 if ($hashed == $result[0]->mdpUtilisateur) {
-                    echo "test";
                     session_start();
                     $_SESSION['mail_utilisateur'] = $result[0]->mailUtilisateur;
-    			$_SESSION['admin_utilisateur'] = $this->adminUtilisateur($_SESSION['mail_utilisateur']);
-                    header('Location: index.php');
+    			    $_SESSION['admin_utilisateur'] = $this->adminUtilisateur($_SESSION['mail_utilisateur']);
+                    return "";
                 }
                 else{
-		   echo "<div class='authError'>
-            <h3 class='text' style='color:red;'>Mot de passe incorrect</h3>
-        </div>";
+                    return "<h3 class='text' style='color:red;'>Mot de passe incorrect</h3>";
                 }
             }else{
-		echo "<div class='authError'>
-            <h3 class='text' style='color:red;'>Adresse mail inconnu</h3>
-        </div>";
+                return "<h3 class='text' style='color:red;'>Adresse mail inconnu</h3>";
+               }
 
-	}
-        }
-
+    }
 
     public function inscription($idUtilisateur, $nomUtilisateur, $prenomUtilisateur, $dateNaissUtilisateur, $mailUtilisateur, $mdpUtilisateur){
 
@@ -47,8 +41,20 @@ class UtilisateurControlleur
         require_once "../vues/phpmailer/PHPMailer.php";
         require_once "../vues/phpmailer/SMTP.php";
 
-	$mail = new PHPMailer(true);
-	   try {
+        $hashedMdpUtilisateur = hash("md5", $mdpUtilisateur);
+
+        $resultMail = $this->utilisateurDAO->getUtilisateurParMail($mailUtilisateur);
+
+        if (count($resultMail)==0) {
+            $result = $this->utilisateurDAO->insertUtilisateur($idUtilisateur, $nomUtilisateur, $prenomUtilisateur, $dateNaissUtilisateur, $mailUtilisateur, $hashedMdpUtilisateur);
+          //  $mail = mail('lorishourriere31@outlook.fr', "Vérification mdp", "Bonjour, ceci est un test");
+
+            //session_start();
+            //$_SESSION['mail_utilisateur'] = $_POST['mail'];
+            if(!preg_match("#^[a-z0-9_-]+((\.[a-z0-9_-]+){1,})?@[a-z0-9_-]+((\.[a-z0-9_-]+){1,})?\.[a-z]{2,30}$#i",$mailUtilisateur)) {
+                return "<h3 class='text' style='color:red;>'Le mail est incorrect !</h3>";
+            } else {
+                $mail = new PHPMailer(true);
                 //$mail->SMTPDebug = 2;
                 $mail->isSMTP();
                 $mail->Host = "smtp-mail.outlook.com";
@@ -63,43 +69,26 @@ class UtilisateurControlleur
                 $mail->isHTML(true);
                 $mail->Subject = "Confirmation d'incription Arbre du savoir";
                 $mail->Body = "<html>
-                            <head>
-                              <title>Confirmation</title>
-                            </head>
-                            <body>
-                              <p>Cher cleint,</p>
-                              <p>Votre compte a bien été créer, veuillez cliquer sur ce bouton afin de vous authentifier :</p>
-                              <br>
-                              <p>
-                                <a href='https://arbre-du-savoir.online/vues/authentification.php' style='background-color: #3498db; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px;'>Cliquez ici</a>
-                              </p>
-                              <p>Merci de lire cet e-mail.</p>
-                            </body>
-                            </html>";
+                <head>
+                  <title>Confirmation</title>
+                </head>
+                <body>
+                  <p>Cher cleint,</p>
+                  <p>Votre compte a bien été créer, veuillez cliquer sur ce bouton afin de vous authentifier :</p>
+                  <br>
+                  <p>
+                    <a href='https://arbre-du-savoir.online/vues/inscriptionAuthentification.php' style='background-color: #3498db; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px;'>Cliquez ici</a>
+                  </p>
+                  <p>Merci de lire cet e-mail.</p>
+                </body>
+                </html>";
 
                 $mail->send();
-            }catch(Exception){
-                echo "Erreur: {$mail->ErrorInfo}";
+                return "<h1>Authentification</h1>";
             }
-	
 
-        $hashedMdpUtilisateur = hash("md5", $mdpUtilisateur);
-
-        $resultMail = $this->utilisateurDAO->getUtilisateurParMail($mailUtilisateur);
-
-        if (count($resultMail)==0) {
-            $result = $this->utilisateurDAO->insertUtilisateur($idUtilisateur, $nomUtilisateur, $prenomUtilisateur, $dateNaissUtilisateur, $mailUtilisateur, $hashedMdpUtilisateur);
-          //  $mail = mail('lorishourriere31@outlook.fr', "Vérification mdp", "Bonjour, ceci est un test");
-           
-            if ($mail) echo "Un mail de comfirmation vous a été envoyé."; else echo "Aucun compte ne correspond à cette adresse mail.";
-
-            //session_start();
-            //$_SESSION['mail_utilisateur'] = $_POST['mail'];
-            header('Location: authentification.php');
         }else {
-            echo "<div class='inscriptionError'>
-            <h3 class='text' style='color:red;'>Adresse mail deja utiliser</h3>
-        </div>";
+            return "<h3 class='text' style='color:red;'>Adresse mail deja utiliser</h3>";
         }
 
 

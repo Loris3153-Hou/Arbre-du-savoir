@@ -15,7 +15,7 @@
                 <?php
                 if(!isset($_SESSION['admin_utilisateur'])){
                     echo '<li><a class="menu__item" href="index.php">Acceuil</a></li>
-                    <li><a class="menu__item" href="authentification.php">Authentification</a></li>';
+                    <li><a class="menu__item" href="inscriptionAuthentification.php">Authentification-Inscription-Ajax</a></li>';
                 }
                 elseif ($_SESSION['admin_utilisateur'] == 1){
                     echo '<li><a class="menu__item" href="index.php">Acceuil</a></li>
@@ -33,7 +33,7 @@
             </ul>
         </div>
         <?php
-            echo "<a href='authentification.php'>Deconnection</a>";
+            echo "<a href='inscriptionAuthentification.php'>Deconnection</a>";
         ?>
         <h1 onclick="goPageAccueil()">Arbre du Savoir</h1>
         <img onclick="goPagePanier()" src='../images/panier.png' alt='Panier' width='70px' height='70px'>
