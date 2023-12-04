@@ -14,7 +14,7 @@ if (!empty($_POST['idFormation']) AND !empty($_POST['nouveauNbFormation'])) {
     $nouveauNbFormation = htmlspecialchars(strip_tags($_POST['nouveauNbFormation']));
 
     $formationDAO = new formationDAO();
-    $formation = $formationDAO->getFormationParId($idFormation)[0];
+    $formation = $formationDAO->getFormationById($idFormation)[0];
     $prixFormation = $formation->getPrixFormation();
     $nouveauSousTotalFormation = $prixFormation * $nouveauNbFormation;
     $nouveauSousTotal = $nouveauSousTotalFormation;
