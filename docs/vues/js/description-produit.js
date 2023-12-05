@@ -11,7 +11,7 @@ function recherche(valeurEntree) {
             document.getElementById("liste-des-produits").innerHTML = this.responseText;
         }
     };
-    xhttp.open("GET", "../controlleurs/RechercheFormations.php?value=" + valeurEntree, true);
+    xhttp.open("GET", "../controlleurs/RechercheFormations.php?valeurRecherche=" + valeurEntree, true);
     xhttp.send();
 }
 
