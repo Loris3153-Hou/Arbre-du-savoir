@@ -1,6 +1,6 @@
 <?php
 
-include_once(__DIR__ . "/../../docs/DAO/FormationDAO.php");
+include_once(__DIR__ . "/../../../docs/DAO/FormationDAO.php");
 
 $success = 0;
 $msg = "Une erreur est survenue (ajaxPOC.php)";
