@@ -82,23 +82,23 @@ class FormationControlleur
                     }
                 }
                 echo "
-            <div class='grid-panier'>
-                    <div class='image-panier'>
+            <div class='grid-modificationPanier'>
+                    <div class='image-modificationPanier'>
                         <img id='imagePanier' src='../images/". $formationPanier->getPhotoFormation() ."' alt='image'>
                     </div>
-                    <div class='nom-produit-panier'>
+                    <div class='nom-produit-modificationPanier'>
                         <p>". $formationPanier->getTitreFormation() ."</p>
                     </div>
-                    <div class='prix-panier'>
+                    <div class='prix-modificationPanier'>
                         <p>". $formationPanier->getPrixFormation() ." €</p>
                     </div>
-                    <div class='dates-panier'>
+                    <div class='dates-modificationPanier'>
                         <p>". $formationPanier->getDateDebutFormation() ." - ". $formationPanier->getDateFinFormation() ."</p>
                     </div>
-                    <div class='niveau-panier'>
+                    <div class='niveau-modificationPanier'>
                         <p>niveau : ". $formationPanier->getNiveauFormation() ."</p>
                     </div>
-                    <div class='quantite-panier'>
+                    <div class='quantite-modificationPanier'>
                         <form>
                             <select name='quantite' id=". $formationPanier->getIdFormation() ." onchange='modifierNombreFormation(this)'>
                                 <option value='". $_SESSION['listeItemPanier']['nbFormation'][$i] ."'>". $_SESSION['listeItemPanier']['nbFormation'][$i] ."</option>
