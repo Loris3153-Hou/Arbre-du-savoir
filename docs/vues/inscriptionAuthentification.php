@@ -123,7 +123,7 @@ unset($_SESSION['listeItemPanier']);
                 }
             }
         };
-        xhttp.open("POST", "ajax.php?value=auth", true);
+        xhttp.open("POST", "../controlleurs/inscriptionAuthentification-ajax.php?value=auth", true);
         xhttp.send(data);
 
         return false;
@@ -156,7 +156,7 @@ unset($_SESSION['listeItemPanier']);
 
             }
         };
-        xhttp.open("POST", "ajax.php?value=insc", true);
+        xhttp.open("POST", "../controlleurs/inscriptionAuthentification-ajax.php?value=insc", true);
         xhttp.send(data);
 
         return false;
@@ -184,7 +184,7 @@ unset($_SESSION['listeItemPanier']);
                 document.getElementById("but-insc").style.height ="50px";
             }
         };
-        xhttp.open("POST", "ajax.php?value=authentification", true);
+        xhttp.open("POST", "../controlleurs/inscriptionAuthentification-ajax.php?value=authentification", true);
         xhttp.responseType = "text";
         xhttp.send(data);
 
@@ -213,7 +213,7 @@ unset($_SESSION['listeItemPanier']);
                 document.getElementById("but-auth").style.height ="50px";
             }
         };
-        xhttp.open("POST", "ajax.php?value=inscription", true);
+        xhttp.open("POST", "../controlleurs/inscriptionAuthentification-ajax.php?value=inscription", true);
         xhttp.responseType = "text";
         xhttp.send(data);
 

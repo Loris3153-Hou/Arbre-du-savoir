@@ -15,7 +15,7 @@
                 <?php
                 if(!isset($_SESSION['admin_utilisateur'])){
                     echo '<li><a class="menu__item" href="index.php">Acceuil</a></li>
-                    <li><a class="menu__item" href="inscriptionAuthentification.php">Authentification-Inscription-Ajax</a></li>';
+                    <li><a class="menu__item" href="inscriptionAuthentification.php">Authentification-Inscription</a></li>';
                 }
                 elseif ($_SESSION['admin_utilisateur'] == 1){
                     echo '<li><a class="menu__item" href="index.php">Acceuil</a></li>

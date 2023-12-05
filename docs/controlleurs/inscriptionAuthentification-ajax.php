@@ -1,6 +1,6 @@
 <?php
 
-include_once(__DIR__."/../controlleurs/UtilisateurControlleur.php");
+include_once(__DIR__ . "/UtilisateurControlleur.php");
 $utilisateurControlleur = new \controlleurs\UtilisateurControlleur();
 
 if ($_GET["value"] == "insc") {
