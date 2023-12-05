@@ -26,7 +26,7 @@ class Categorie
      */
     public function setIdCategorie($idCategorie)
     {
-        $this->idCategorie = $idCategorie;
+        $this->idCategorie = filter_var($idCategorie, FILTER_SANITIZE_NUMBER_INT);
     }
 
     /**
@@ -42,7 +42,7 @@ class Categorie
      */
     public function setNomCategorie($nomCategorie)
     {
-        $this->nomCategorie = $nomCategorie;
+        $this->nomCategorie = filter_var($nomCategorie, FILTER_SANITIZE_STRING);
     }
 
 }

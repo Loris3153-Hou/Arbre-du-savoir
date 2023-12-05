@@ -30,7 +30,7 @@ class Lieu
      */
     public function setIdLieu($idLieu)
     {
-        $this->idLieu = $idLieu;
+        $this->idLieu = filter_var($idLieu, FILTER_SANITIZE_NUMBER_INT);
     }
 
     /**
@@ -46,7 +46,7 @@ class Lieu
      */
     public function setAdresseLieu($adresseLieu)
     {
-        $this->adresseLieu = $adresseLieu;
+        $this->adresseLieu = filter_var($adresseLieu, FILTER_SANITIZE_STRING);
     }
 
     /**
@@ -62,7 +62,7 @@ class Lieu
      */
     public function setVilleLieu($villeLieu)
     {
-        $this->villeLieu = $villeLieu;
+        $this->villeLieu = filter_var($villeLieu, FILTER_SANITIZE_STRING);
     }
 
     /**
@@ -78,7 +78,7 @@ class Lieu
      */
     public function setPaysLieu($paysLieu)
     {
-        $this->paysLieu = $paysLieu;
+        $this->paysLieu = filter_var($paysLieu, FILTER_SANITIZE_STRING);
     }
 
 }

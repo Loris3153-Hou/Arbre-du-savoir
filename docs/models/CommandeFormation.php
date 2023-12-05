@@ -28,7 +28,7 @@ class CommandeFormation
      */
     public function setIdCommande($idCommande)
     {
-        $this->idCommande = $idCommande;
+        $this->idCommande = filter_var($idCommande, FILTER_SANITIZE_NUMBER_INT);;
     }
 
     /**
@@ -44,7 +44,7 @@ class CommandeFormation
      */
     public function setIdFormation($idFormation)
     {
-        $this->idFormation = $idFormation;
+        $this->idFormation = filter_var($idFormation, FILTER_SANITIZE_NUMBER_INT);
     }
 
     /**
@@ -60,7 +60,7 @@ class CommandeFormation
      */
     public function setNbFormation($nbFormation)
     {
-        $this->nbFormation = $nbFormation;
+        $this->nbFormation = filter_var($nbFormation, FILTER_SANITIZE_NUMBER_INT);
     }
 
 

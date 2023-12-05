@@ -33,7 +33,7 @@ class Utilisateur
 
     public function setIdUtilisateur($idUtilisateur)
     {
-        $this->idUtilisateur = $idUtilisateur;
+        $this->idUtilisateur = filter_var($idUtilisateur, FILTER_SANITIZE_NUMBER_INT);
     }
 
     public function getNomUtilisateur()
@@ -43,7 +43,7 @@ class Utilisateur
 
     public function setNomUtilisateur($nomUtilisateur)
     {
-        $this->nomUtilisateur = $nomUtilisateur;
+        $this->nomUtilisateur = filter_var($nomUtilisateur, FILTER_SANITIZE_STRING);
     }
 
     public function getPrenomUtilisateur()
@@ -53,7 +53,7 @@ class Utilisateur
 
     public function setPrenomUtilisateur($prenomUtilisateur)
     {
-        $this->prenomUtilisateur = $prenomUtilisateur;
+        $this->prenomUtilisateur = filter_var($prenomUtilisateur, FILTER_SANITIZE_STRING);
     }
 
     public function getDateNaisUtilisateur()
@@ -73,7 +73,7 @@ class Utilisateur
 
     public function setMailUtilisateur($mailUtilisateur)
     {
-        $this->mailUtilisateur = $mailUtilisateur;
+        $this->mailUtilisateur = filter_var($mailUtilisateur, FILTER_SANITIZE_EMAIL);
     }
 
     public function getMdpUtilisateur()
@@ -83,7 +83,7 @@ class Utilisateur
 
     public function setMdpUtilisateur($mdpUtilisateur)
     {
-        $this->mdpUtilisateur = $mdpUtilisateur;
+        $this->mdpUtilisateur = filter_var($mdpUtilisateur, FILTER_SANITIZE_STRING);
     }
 
     public function getAdminUtilisateur(): string
@@ -93,7 +93,7 @@ class Utilisateur
 
     public function setAdminUtilisateur(string $adminUtilisateur): void
     {
-        $this->adminUtilisateur = $adminUtilisateur;
+        $this->adminUtilisateur = filter_var($adminUtilisateur, FILTER_SANITIZE_NUMBER_INT);
     }
 
 

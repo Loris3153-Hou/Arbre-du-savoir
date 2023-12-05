@@ -43,7 +43,7 @@ class Formation
      */
     public function setIdFormation($idFormation)
     {
-        $this->idFormation = $idFormation;
+        $this->idFormation = filter_var($idFormation, FILTER_SANITIZE_STRING);;
     }
 
     /**
@@ -59,7 +59,7 @@ class Formation
      */
     public function setTitreFormation($titreFormation)
     {
-        $this->titreFormation = $titreFormation;
+        $this->titreFormation = filter_var($titreFormation, FILTER_SANITIZE_STRING);
     }
 
     /**
@@ -75,7 +75,7 @@ class Formation
      */
     public function setDescFormation($descFormation)
     {
-        $this->descFormation = $descFormation;
+        $this->descFormation = filter_var($descFormation, FILTER_SANITIZE_STRING);
     }
 
     /**
@@ -91,7 +91,7 @@ class Formation
      */
     public function setPhotoFormation($photoFormation)
     {
-        $this->photoFormation = $photoFormation;
+        $this->photoFormation = filter_var($photoFormation, FILTER_SANITIZE_STRING);
     }
 
     /**
@@ -107,7 +107,7 @@ class Formation
      */
     public function setPrixFormation($prixFormation)
     {
-        $this->prixFormation = $prixFormation;
+        $this->prixFormation = filter_var($prixFormation, FILTER_SANITIZE_STRING);
     }
 
     /**
@@ -123,7 +123,7 @@ class Formation
      */
     public function setNiveauFormation($niveauFormation)
     {
-        $this->niveauFormation = $niveauFormation;
+        $this->niveauFormation = filter_var($niveauFormation, FILTER_SANITIZE_STRING);
     }
 
     /**
@@ -139,7 +139,7 @@ class Formation
      */
     public function setCertificationFormation($certificationFormation)
     {
-        $this->certificationFormation = $certificationFormation;
+        $this->certificationFormation = filter_var($certificationFormation, FILTER_SANITIZE_STRING);
     }
 
     /**

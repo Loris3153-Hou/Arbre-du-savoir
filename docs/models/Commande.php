@@ -28,7 +28,7 @@ class Commande
      */
     public function setIdCommande($idCommande)
     {
-        $this->idCommande = $idCommande;
+        $this->idCommande = filter_var($idCommande, FILTER_SANITIZE_NUMBER_INT);
     }
 
     /**
@@ -60,7 +60,7 @@ class Commande
      */
     public function setIdUtilisateur($idUtilisateur)
     {
-        $this->idUtilisateur = $idUtilisateur;
+        $this->idUtilisateur = filter_var($idUtilisateur, FILTER_SANITIZE_NUMBER_INT);
     }
 
 }
