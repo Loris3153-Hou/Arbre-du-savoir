@@ -6,7 +6,7 @@ include_once(__DIR__ . "/../DAO/FormationDAO.php");
 $formationDAO = new formationDAO();
 
 $html = "";
-$listeDesFormationsAAfficher = $formationDAO->getFormationParValeurDEntree($_REQUEST["value"]);
+$listeDesFormationsAAfficher = $formationDAO->getFormationParValeurDEntree($_REQUEST["valeurRecherche"]);
 
 if(!empty($listeDesFormationsAAfficher)){
     foreach ($listeDesFormationsAAfficher as $formation) {
