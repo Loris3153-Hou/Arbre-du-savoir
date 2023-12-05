@@ -82,23 +82,24 @@ class FormationControlleur
                     }
                 }
                 echo "
-            <div class='grid-modificationPanier'>
-                    <div class='image-modificationPanier'>
+            <div class='grid-panier'>
+                    <div class='image-panier'>
                         <img id='imagePanier' src='../images/". $formationPanier->getPhotoFormation() ."' alt='image'>
                     </div>
-                    <div class='nom-produit-modificationPanier'>
+                    <div class='nom-produit-panier'>
                         <p>". $formationPanier->getTitreFormation() ."</p>
                     </div>
-                    <div class='prix-modificationPanier'>
+                    <div class='prix-panier'>
+                        <p>". $formationPanier->getPrixFormation() ."€</p>
                         <p>". $formationPanier->getPrixFormation() ." €</p>
                     </div>
-                    <div class='dates-modificationPanier'>
+                    <div class='dates-panier'>
                         <p>". $formationPanier->getDateDebutFormation() ." - ". $formationPanier->getDateFinFormation() ."</p>
                     </div>
-                    <div class='niveau-modificationPanier'>
+                    <div class='niveau-panier'>
                         <p>niveau : ". $formationPanier->getNiveauFormation() ."</p>
                     </div>
-                    <div class='quantite-modificationPanier'>
+                    <div class='quantite-panier'>
                         <form>
                             <select name='quantite' id=". $formationPanier->getIdFormation() ." onchange='modifierNombreFormation(this)'>
                                 <option value='". $_SESSION['listeItemPanier']['nbFormation'][$i] ."'>". $_SESSION['listeItemPanier']['nbFormation'][$i] ."</option>
@@ -134,7 +135,6 @@ class FormationControlleur
             }
         }
     }
-
     public function afficherRecapitulatifFormationsPanier(){
         $total = 0;
         if (isset($_SESSION['listeItemPanier']['idFormation'])){
@@ -155,6 +155,7 @@ class FormationControlleur
                         $formationPanier = $formation;
                     }
                 }
+                echo "<p id=".$formationPanier->getIdFormation().$formationPanier->getIdFormation()." class='sous-total-commande'>". $formationPanier->getPrixFormation() * $_SESSION['listeItemPanier']['nbFormation'][$i] ."€</p>";
                 echo "<p id=".$formationPanier->getIdFormation().$formationPanier->getIdFormation()." class='sous-total-commande'>". $formationPanier->getPrixFormation() * $_SESSION['listeItemPanier']['nbFormation'][$i] ." €</p>";
                 $total +=  $formationPanier->getPrixFormation() * $_SESSION['listeItemPanier']['nbFormation'][$i];
             }
