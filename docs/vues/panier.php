@@ -22,7 +22,7 @@ if(!isset ($_SESSION['mail_utilisateur'])){
 
         <div class="parent">
             <div class="panier"> </div>
-            <div class="recapitulatif"> </div>
+            <div class="recapitulatif"></div>
             <div class="texteRecapitulatif">
                 <h2>Récapitulatif :</h2>
             </div>
@@ -36,6 +36,7 @@ if(!isset ($_SESSION['mail_utilisateur'])){
             <div class="button-paiement-recapitulatif">
                 <button onclick="goPaymment()" id="bouton-paiement">Paiement</button>
             </div>
+
             <div class="textePanier">
                 <h2 id="texte-panier">Panier :</h2>
             </div>
