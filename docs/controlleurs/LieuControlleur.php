@@ -43,7 +43,7 @@ class LieuControlleur
     public function afficherTousLesLieuxVueAjouterFormation(){
         $html = "";
         foreach ($this->listeLieux as $lieu){
-            $html .= "<input type='checkbox' id='sous-lieu' name='". $lieu->getIdLieu() ."'>
+            $html .= "<input type='checkbox' id='sous-lieu' name='lieuFormation' value='". $lieu->getIdLieu() ."'>
                     <label for='sous-lieu'>" . $lieu->getVilleLieu() ."</label><br><br>";
         }
         echo $html;
