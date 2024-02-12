@@ -12,9 +12,16 @@
     }
 
     if (isset($_POST['boutonAjouterFormation'])) {
+        $listeLieuxFormation = array();
+        foreach($_POST['lieuFormation'] as $lieu)
+        {
+            array_push($listeLieuxFormation, $lieu);
+        }
+
         $formationControlleur->ajouterLaFormation($_POST['ajouterFormationTitre'], $_POST['ajouterFormationDescription'],
             $_POST['ajouterFormationDateDebut'], $_POST['ajouterFormationDateFin'], $_POST['ajouterPrixCertification'],
-            $_POST['ajouterFormationCertification'], $_POST['ajouterFormationNiveau'], $_POST['ajouterFormationPhoto']);
+            $_POST['ajouterFormationCertification'], $_POST['ajouterFormationNiveau'], $_POST['ajouterFormationPhoto'], $listeLieuxFormation);
+
         header('Location: admin.php');
         exit;
     }
