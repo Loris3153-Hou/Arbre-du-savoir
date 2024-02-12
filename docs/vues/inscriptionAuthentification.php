@@ -118,7 +118,7 @@ unset($_SESSION['listeItemPanier']);
             if (this.readyState == 4 && this.status == 200) {
                 console.log(this.responseText)
                 document.getElementById("erreurAuth").innerHTML =  this.responseText;
-                if(this.responseText === "0"){
+                if(this.responseText === "0" || this.responseText === "1"){
                     window.location.replace("index.php");
                 }
             }
