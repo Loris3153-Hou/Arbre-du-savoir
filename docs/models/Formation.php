@@ -91,7 +91,7 @@ class Formation
      */
     public function setPhotoFormation($photoFormation)
     {
-        $this->photoFormation = filter_var($photoFormation, FILTER_SANITIZE_STRING);
+        $this->photoFormation = $photoFormation;
     }
 
     /**

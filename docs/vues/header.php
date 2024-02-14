@@ -33,7 +33,7 @@
             </ul>
         </div>
         <?php
-            echo "<a href='inscriptionAuthentification.php'>Deconnection</a>";
+            echo "<a href='inscriptionAuthentification.php'>Deconnexion</a>";
         ?>
         <h1 onclick="goPageAccueil()">Arbre du Savoir</h1>
         <img onclick="goPagePanier()" src='../images/panier.png' alt='Panier' width='70px' height='70px'>
