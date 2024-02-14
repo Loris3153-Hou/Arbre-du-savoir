@@ -39,67 +39,68 @@ unset($_SESSION['listeItemPanier']);
         <input type="submit" class='boutton' id="but-insc" value="Inscription">
     </form>
 </div>
-<div id="inscription-form" style="visibility: hidden;">
-    <form id="insc" class='body-inscr' method="post">
-        <div id="titre-insc" class="inscriptionTitre">
+<div id="forms">
+    <div id="inscription-form">
+        <form id="insc" class='body-inscr' method="post">
+            <div id="titre-insc" class="inscriptionTitre">
 
-        </div>
-        <div class='inscriptionNom'>
-            <h3 class='text'>Nom :</h3>
-            <input name='nom' type='text' required>
-        </div>
+            </div>
+            <div class='inscriptionNom'>
+                <h3 class='text'>Nom :</h3>
+                <input name='nom' type='text' required>
+            </div>
 
-        <div class='inscriptionPrenom'>
-            <h3 class='text'>Prénom :</h3>
-            <input name='prenom' type='text' required>
-        </div>
+            <div class='inscriptionPrenom'>
+                <h3 class='text'>Prénom :</h3>
+                <input name='prenom' type='text' required>
+            </div>
 
-        <div class='inscriptionDate'>
-            <h3 class='text'>Date de naissance :</h3>
-            <input name='date' type='date' required>
-        </div>
+            <div class='inscriptionDate'>
+                <h3 class='text'>Date de naissance :</h3>
+                <input name='date' type ='date' required>
+            </div>
 
-        <div class='inscriptionMail'>
-            <h3 class='text'>Adresse mail :</h3>
-            <input name='mail' type='text' required>
-        </div>
+            <div class='inscriptionMail'>
+                <h3 class='text'>Adresse mail :</h3>
+                <input name='mail' type='text' required>
+            </div>
 
-        <div class='inscriptionMdp'>
-            <h3 class='text'>Mot de passe :</h3>
-            <input name='mdp' type='password' required>
-        </div>
-        <div id='erreurInsc'>
+            <div class='inscriptionMdp'>
+                <h3 class='text'>Mot de passe :</h3>
+                <input name='mdp' type='password' required>
+            </div>
+            <div id='erreurInsc'>
 
-        </div>
-        <div class='inscriptionBouton'>
-            <input class='boutton' type='submit' value='Sinscrire'>
-        </div>
-    </form>
-</div>
+            </div>
+            <div class='inscriptionBouton'>
+                <input class='boutton' type='submit' value='Sinscrire'>
+            </div>
+        </form>
+    </div>
 
 
-<div  id="connexion-form" style="visibility: visible;">
-    <form id="auth" class='body-auth' method="post">
-        <div id="titre-auth" class="authTitre">
-            <h1>Connexion</h1>
-        </div>
-        <div class='authMail'>
-            <h3 class='text'>Adresse mail :</h3>
-            <input name='mailUser' type='text' required>
-        </div>
+    <div  id="connexion-form">
+        <form id="auth" class='body-auth' method="post">
+            <div id="titre-auth" class="authTitre">
+                <h1>Authentification</h1>
+            </div>
+            <div class='authMail'>
+                <h3 class='text'>Adresse mail :</h3>
+                <input name='mailUser' type='text' required>
+            </div>
 
-        <div class='authMdp'>
-            <h3 class='text'>Mot de passe :</h3>
-            <input name='passUser' type='password' required>
-        </div>
-        <div id='erreurAuth'>
+            <div class='authMdp'>
+                <h3 class='text'>Mot de passe :</h3>
+                <input name='passUser' type='password' required>
+            </div>
+            <div id='erreurAuth'>
 
-        </div>
-        <div class='authBouton'>
-            <input name='sub' class='boutton' type='submit'  value='Sauthentifier'>
-        </div>
-    </form>
-</div>
+            </div>
+            <div class='authBouton'>
+                <input name='sub' class='boutton' type='submit'  value='Sauthentifier'>
+            </div>
+        </form>
+    </div>
 
 
 <footer>
@@ -108,6 +109,7 @@ unset($_SESSION['listeItemPanier']);
     <h3>Réseaux sociaux</h3>
 </footer>
 <script>
+
     document.getElementById("auth").addEventListener("submit", function(e) {
         e.preventDefault();
 
@@ -173,8 +175,14 @@ unset($_SESSION['listeItemPanier']);
             if (this.readyState == 4 && this.status == 200) {
                 console.log(this.response)
                 document.getElementById("titre-auth").innerHTML =  this.response;
+                document.getElementById('inscription-form').style.opacity = "0";
                 document.getElementById('inscription-form').style.visibility = "hidden";
                 document.getElementById("titre-insc").innerHTML =  "";
+                document.getElementById('inscription-form').style.transition = "transform 1s, visibility 0s, opacity 1s ease";
+                document.getElementById('connexion-form').style.transition = "transform 1s, visibility 0s, opacity 1s ease";
+                document.getElementById('inscription-form').style.transform = "rotateY(-180deg)";
+                document.getElementById('connexion-form').style.transform = "rotateY(0deg)";
+                document.getElementById('connexion-form').style.opacity = "1";
                 document.getElementById('connexion-form').style.visibility = "visible";
                 document.getElementById("but-auth").style.backgroundColor ="#00008B";
                 document.getElementById("but-insc").style.backgroundColor ="#3498db";
@@ -191,6 +199,7 @@ unset($_SESSION['listeItemPanier']);
         return false;
     });
 
+
     document.getElementById("form-insc").addEventListener("submit", function(e) {
         e.preventDefault();
 
@@ -202,8 +211,14 @@ unset($_SESSION['listeItemPanier']);
             if (this.readyState == 4 && this.status == 200) {
                 console.log(this.response)
                 document.getElementById("titre-insc").innerHTML =  this.response;
+                document.getElementById('connexion-form').style.opacity = "0";
                 document.getElementById('connexion-form').style.visibility = "hidden";
                 document.getElementById("titre-auth").innerHTML =  "";
+                document.getElementById('inscription-form').style.transition = "transform 1s, visibility 0s, opacity 1s ease";
+                document.getElementById('connexion-form').style.transition = "transform 1s, visibility 0s, opacity 1s ease";
+                document.getElementById('connexion-form').style.transform = "rotateY(-180deg)";
+                document.getElementById('inscription-form').style.transform = "rotateY(0deg)";
+                document.getElementById('inscription-form').style.opacity = "1";
                 document.getElementById('inscription-form').style.visibility = "visible";
                 document.getElementById("but-auth").style.backgroundColor ="#3498db";
                 document.getElementById("but-insc").style.backgroundColor ="#00008B";
