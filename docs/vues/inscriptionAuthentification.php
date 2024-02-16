@@ -119,10 +119,21 @@ unset($_SESSION['listeItemPanier']);
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 console.log(this.responseText)
-                document.getElementById("erreurAuth").innerHTML =  this.responseText;
+                document.getElementById("erreurAuth").innerHTML = this.responseText;
                 if(this.responseText === "0" || this.responseText === "1"){
-                    window.location.replace("index.php");
+                    document.getElementById('connexion-form').style.borderColor = 'green';
+                    setTimeout(() => {
+                        window.location.replace("index.php");
+                    }, 2000);
+                }else{
+                    setTimeout(() => {
+                        document.getElementById('inscription-form').style.borderColor = 'red';
+                    }, 2000);
                 }
+            }else{
+                setTimeout(() => {
+                    document.getElementById('inscription-form').style.borderColor = 'red';
+                }, 2000);
             }
         };
         xhttp.open("POST", "../controlleurs/inscriptionAuthentification-ajax.php?value=auth", true);
@@ -145,8 +156,18 @@ unset($_SESSION['listeItemPanier']);
                 document.getElementById("erreurInsc").innerHTML = this.responseText;
                 if(this.responseText === "<h1>Authentification</h1>"){
                     document.getElementById("titre-auth").innerHTML =  this.response;
+                    document.getElementById('inscription-form').style.borderColor = 'green';
+                    setTimeout(() => {
+                        document.getElementById('inscription-form').style.borderColor = '#3498db';
+                    }, 2000);
+                    document.getElementById('inscription-form').style.opacity = "0";
                     document.getElementById('inscription-form').style.visibility = "hidden";
                     document.getElementById("titre-insc").innerHTML =  "";
+                    document.getElementById('inscription-form').style.transition = "transform 1s, visibility 0s, opacity 1s ease";
+                    document.getElementById('connexion-form').style.transition = "transform 1s, visibility 0s, opacity 1s ease";
+                    document.getElementById('inscription-form').style.transform = "rotateY(-180deg)";
+                    document.getElementById('connexion-form').style.transform = "rotateY(0deg)";
+                    document.getElementById('connexion-form').style.opacity = "1";
                     document.getElementById('connexion-form').style.visibility = "visible";
                     document.getElementById("but-auth").style.backgroundColor ="#00008B";
                     document.getElementById("but-insc").style.backgroundColor ="#3498db";
@@ -155,6 +176,13 @@ unset($_SESSION['listeItemPanier']);
                     document.getElementById("but-insc").style.width = "120px";
                     document.getElementById("but-insc").style.height ="50px";
                 }
+
+            }
+            else{
+                document.getElementById('inscription-form').style.borderColor = 'red';
+                setTimeout(() => {
+                    document.getElementById('inscription-form').style.borderColor = '#3498db';
+                }, 2000);
 
             }
         };
