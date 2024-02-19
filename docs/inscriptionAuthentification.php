@@ -1,8 +1,12 @@
 <?php
-include_once(__DIR__."/../controlleurs/UtilisateurControlleur.php");
+include_once(__DIR__ . "/controlleurs/UtilisateurControlleur.php");
 $utilisateurControlleur = new \controlleurs\UtilisateurControlleur();
 
-session_start();
+if (!isset($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+$csrf_token = $_SESSION['csrf_token'];
+
 unset($_SESSION['mail_utilisateur']);
 unset($_SESSION['admin_utilisateur']);
 unset($_SESSION['listeItemPanier']);
@@ -28,7 +32,7 @@ unset($_SESSION['listeItemPanier']);
         </ul>
     </div>
     <h1 onclick="goPageAccueil()">Arbre du Savoir</h1>
-    <img onclick="goPageAccueil()" src='../images/logo.png' alt='Programmer en C' width='90px' height='80px'>
+    <img onclick="goPageAccueil()" src='images/logo.png' alt='Programmer en C' width='90px' height='80px'>
 </header>
 <body>
 <div id="inputButton">
@@ -45,6 +49,7 @@ unset($_SESSION['listeItemPanier']);
             <div id="titre-insc" class="inscriptionTitre">
 
             </div>
+            <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
             <div class='inscriptionNom'>
                 <h3 class='text'>Nom :</h3>
                 <input name='nom' type='text' required>
@@ -84,6 +89,7 @@ unset($_SESSION['listeItemPanier']);
             <div id="titre-auth" class="authTitre">
                 <h1>Authentification</h1>
             </div>
+            <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
             <div class='authMail'>
                 <h3 class='text'>Adresse mail :</h3>
                 <input name='mailUser' type='text' required>
@@ -136,7 +142,7 @@ unset($_SESSION['listeItemPanier']);
                 }, 2000);
             }
         };
-        xhttp.open("POST", "../controlleurs/inscriptionAuthentification-ajax.php?value=auth", true);
+        xhttp.open("POST", "controlleurs/inscriptionAuthentification-ajax.php?value=auth", true);
         xhttp.send(data);
 
         return false;
@@ -186,7 +192,7 @@ unset($_SESSION['listeItemPanier']);
 
             }
         };
-        xhttp.open("POST", "../controlleurs/inscriptionAuthentification-ajax.php?value=insc", true);
+        xhttp.open("POST", "controlleurs/inscriptionAuthentification-ajax.php?value=insc", true);
         xhttp.send(data);
 
         return false;
@@ -220,7 +226,7 @@ unset($_SESSION['listeItemPanier']);
                 document.getElementById("but-insc").style.height ="50px";
             }
         };
-        xhttp.open("POST", "../controlleurs/inscriptionAuthentification-ajax.php?value=authentification", true);
+        xhttp.open("POST", "controlleurs/inscriptionAuthentification-ajax.php?value=authentification", true);
         xhttp.responseType = "text";
         xhttp.send(data);
 
@@ -256,7 +262,7 @@ unset($_SESSION['listeItemPanier']);
                 document.getElementById("but-auth").style.height ="50px";
             }
         };
-        xhttp.open("POST", "../controlleurs/inscriptionAuthentification-ajax.php?value=inscription", true);
+        xhttp.open("POST", "controlleurs/inscriptionAuthentification-ajax.php?value=inscription", true);
         xhttp.responseType = "text";
         xhttp.send(data);
 
