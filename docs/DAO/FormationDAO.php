@@ -133,4 +133,11 @@ class formationDAO
         array_push($argument, '%' . $valeurEntree . '%');
         return $this->lireRequete($sql, $argument);
     }
+
+    public function associerFormationALieu($idFormation, $idLieu){
+        $sql = 'INSERT INTO FORMATION_LIEU VALUES (?, ?);';
+        $argument = array();
+        array_push($argument, $idFormation, $idLieu);
+        return $this->executerRequete($sql, $argument);
+    }
 }
