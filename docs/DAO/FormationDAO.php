@@ -120,6 +120,13 @@ class formationDAO
         return $this->lireRequete($sql, $argument);
     }
 
+    public function getDerniereFormationAjoutee(){
+        $sql = "SELECT FORMATION.* FROM FORMATION ORDER BY id_formation DESC LIMIT 1;";
+        $argument = array();
+        array_push($argument);
+        return $this->lireRequete($sql, $argument);
+    }
+
     public function getNombreFormationParCommande($idFormation, $idCommande){
         $sql = "SELECT nb_formation FROM COMMANDE_FORMATION WHERE id_formation = ? AND id_commande = ? ;";
         $argument = array();
@@ -132,5 +139,12 @@ class formationDAO
         $argument = array();
         array_push($argument, '%' . $valeurEntree . '%');
         return $this->lireRequete($sql, $argument);
+    }
+
+    public function associerFormationALieu($idFormation, $idLieu){
+        $sql = 'INSERT INTO FORMATION_LIEU VALUES (?, ?);';
+        $argument = array();
+        array_push($argument, $idFormation, $idLieu);
+        return $this->executerRequete($sql, $argument);
     }
 }
