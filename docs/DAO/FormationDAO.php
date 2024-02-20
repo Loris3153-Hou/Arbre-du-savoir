@@ -120,6 +120,13 @@ class formationDAO
         return $this->lireRequete($sql, $argument);
     }
 
+    public function getDerniereFormationAjoutee(){
+        $sql = "SELECT FORMATION.* FROM FORMATION ORDER BY id_formation DESC LIMIT 1;";
+        $argument = array();
+        array_push($argument);
+        return $this->lireRequete($sql, $argument);
+    }
+
     public function getNombreFormationParCommande($idFormation, $idCommande){
         $sql = "SELECT nb_formation FROM COMMANDE_FORMATION WHERE id_formation = ? AND id_commande = ? ;";
         $argument = array();
