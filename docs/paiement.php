@@ -16,7 +16,7 @@ if(!isset ($_SESSION['mail_utilisateur'])){
     <link href="css/menu.css" rel="stylesheet">
 </head>
 <body>
-<?php include("header.php")?>
+<?php include("header.php") ?>
     <div class='body'>
         <div class='titre'>
             <h1>Paiement produit</h1>

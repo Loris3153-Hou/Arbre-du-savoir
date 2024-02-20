@@ -5,7 +5,7 @@ if(!isset ($_SESSION['mail_utilisateur'])){
     header('Location: inscriptionAuthentification.php');
 }
 
-include_once(__DIR__."/../controlleurs/CommandeControlleur.php");
+include_once(__DIR__ . "/controlleurs/CommandeControlleur.php");
 $commandeControlleur = new \controlleurs\CommandeControlleur();
 
 ?>
@@ -19,7 +19,7 @@ $commandeControlleur = new \controlleurs\CommandeControlleur();
     <link href="css/menu.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 </head>
-<?php include("header.php")?>
+<?php include("header.php") ?>
 <body>
     <div class='body'>
         <div class='titre'>

@@ -6,7 +6,7 @@ if(!isset ($_SESSION['mail_utilisateur'])){
 
     $idFormation = $_GET['idFormation'];
 
-    include_once(__DIR__."/../controlleurs/FormationControlleur.php");
+    include_once(__DIR__ . "/controlleurs/FormationControlleur.php");
     $formationControlleur = new \controlleurs\FormationControlleur();
 
     if (isset($_POST['boutonModifierFormation'])) {
@@ -25,7 +25,7 @@ if(!isset ($_SESSION['mail_utilisateur'])){
     <script src="js/modifier-produit.js"></script>
 </head>
 <body>
-    <?php include("header.php")?>
+    <?php include("header.php") ?>
 
     <form method='post'>
     <div class='body'>

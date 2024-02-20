@@ -18,7 +18,7 @@ if(!isset ($_SESSION['mail_utilisateur'])){
         <link href="css/menu.css" rel="stylesheet">
     </head>
     <body>
-        <?php include("header.php")?>
+        <?php include("header.php") ?>
 
         <div class="parent">
             <div class="panier"> </div>
@@ -28,7 +28,7 @@ if(!isset ($_SESSION['mail_utilisateur'])){
             </div>
             <?php
 
-            include(__DIR__."/../controlleurs/FormationControlleur.php");
+            include(__DIR__ . "/controlleurs/FormationControlleur.php");
             $formationControlleur = new \controlleurs\FormationControlleur();
             $formationControlleur->afficherRecapitulatifFormationsPanier();
 

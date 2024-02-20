@@ -1,9 +1,10 @@
 <?php
 
 namespace controlleurs;
-use PHPMailer\PHPMailer\PHPMailer;
+use docs\phpmailer\PHPMailer;
 
 include_once(__DIR__ . "/../DAO/UtilisateurDAO.php");
+include_once(__DIR__ . "/../models/UserSession.php");
 
 class UtilisateurControlleur
 {
@@ -20,7 +21,7 @@ class UtilisateurControlleur
             if (count($result)==1) {
                 $hashed = hash("md5", $_POST['passUser']);
                 if ($hashed == $result[0]->mdpUtilisateur) {
-                    session_start();
+                   // login($mailUtilisateur, $_POST['passUser']);
                     $_SESSION['mail_utilisateur'] = $result[0]->mailUtilisateur;
     			    $_SESSION['admin_utilisateur'] = $this->adminUtilisateur($_SESSION['mail_utilisateur']);
                     return "";
@@ -36,16 +37,17 @@ class UtilisateurControlleur
 
     public function inscription($idUtilisateur, $nomUtilisateur, $prenomUtilisateur, $dateNaissUtilisateur, $mailUtilisateur, $mdpUtilisateur){
 
-
-        require_once "../vues/phpmailer/Exception.php";
-        require_once "../vues/phpmailer/PHPMailer.php";
-        require_once "../vues/phpmailer/SMTP.php";
-
+/*
+        require_once "../phpmailer/Exception.php";
+        require_once "../phpmailer/PHPMailer.php";
+        require_once "../phpmailer/SMTP.php";
+*/
         $hashedMdpUtilisateur = hash("md5", $mdpUtilisateur);
 
         $resultMail = $this->utilisateurDAO->getUtilisateurParMail($mailUtilisateur);
 
         if (count($resultMail)==0) {
+            //register($mailUtilisateur, $mdpUtilisateur);
             $result = $this->utilisateurDAO->insertUtilisateur($idUtilisateur, $nomUtilisateur, $prenomUtilisateur, $dateNaissUtilisateur, $mailUtilisateur, $hashedMdpUtilisateur);
           //  $mail = mail('lorishourriere31@outlook.fr', "Vérification mdp", "Bonjour, ceci est un test");
 
@@ -54,7 +56,7 @@ class UtilisateurControlleur
             if(!preg_match("#^[a-z0-9_-]+((\.[a-z0-9_-]+){1,})?@[a-z0-9_-]+((\.[a-z0-9_-]+){1,})?\.[a-z]{2,30}$#i",$mailUtilisateur)) {
                 return "<h3 class='text'>'Le mail est incorrect !</h3>";
             } else {
-                $mail = new PHPMailer(true);
+                /*$mail = new PHPMailer(true);
                 //$mail->SMTPDebug = 2;
                 $mail->isSMTP();
                 $mail->Host = "smtp-mail.outlook.com";
@@ -83,7 +85,7 @@ class UtilisateurControlleur
                 </body>
                 </html>";
 
-                $mail->send();
+                $mail->send();*/
                 return "<h1>Authentification</h1>";
             }
 
@@ -143,5 +145,9 @@ class UtilisateurControlleur
 
     }
 
+    public function deconnexion(){
+
+        //logout();
+    }
 
 }

@@ -16,7 +16,7 @@ if(!isset ($_SESSION['mail_utilisateur'])){
         <script src="js/description-produit.js"></script>
     </head>
     <body>
-        <?php include("header.php")?>
+        <?php include("header.php") ?>
         <div class='body'>
             <div class='rech'>
                 <input id="barreDeRecherche" type='text' name='search' placeholder='Recherche..' onkeyup="recherche(this.value)">
@@ -36,7 +36,7 @@ if(!isset ($_SESSION['mail_utilisateur'])){
                 <h3>Catégorie d’activité :</h3>
                 <?php
 
-                include_once(__DIR__."/../controlleurs/CategorieControlleur.php");
+                include_once(__DIR__ . "/controlleurs/CategorieControlleur.php");
 
                 $categorieControlleur = new \controlleurs\CategorieControlleur();
 
@@ -46,7 +46,7 @@ if(!isset ($_SESSION['mail_utilisateur'])){
                 <h3>Lieux :</h3>
                 <?php
 
-                include_once(__DIR__."/../controlleurs/LieuControlleur.php");
+                include_once(__DIR__ . "/controlleurs/LieuControlleur.php");
 
                 $lieuControlleur = new \controlleurs\LieuControlleur();
 
@@ -112,7 +112,7 @@ if(!isset ($_SESSION['mail_utilisateur'])){
 
                 <?php
 
-                include_once(__DIR__."/../controlleurs/FormationControlleur.php");
+                include_once(__DIR__ . "/controlleurs/FormationControlleur.php");
 
                 $formationControlleur = new \controlleurs\FormationControlleur();
 

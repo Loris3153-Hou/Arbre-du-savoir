@@ -1,9 +1,9 @@
 <?php
-    include_once(__DIR__."/../controlleurs/FormationControlleur.php");
+    include_once(__DIR__ . "/controlleurs/FormationControlleur.php");
     $formationControlleur = new \controlleurs\FormationControlleur();
-    include_once(__DIR__."/../controlleurs/LieuControlleur.php");
+    include_once(__DIR__ . "/controlleurs/LieuControlleur.php");
     $lieuControlleur = new \controlleurs\LieuControlleur();
-    include_once(__DIR__."/../controlleurs/CategorieControlleur.php");
+    include_once(__DIR__ . "/controlleurs/CategorieControlleur.php");
     $CategorieControlleur = new \controlleurs\CategorieControlleur();
 
     session_start();
@@ -37,7 +37,7 @@
     <script src="js/ajouter-produit.js"></script>
 </head>
 <body>
-    <?php include("header.php")?>
+    <?php include("header.php") ?>
     <form method='post'>
     <div class='body'>
     <div class='titre'>

@@ -19,7 +19,9 @@
  * FITNESS FOR A PARTICULAR PURPOSE.
  */
 
-namespace PHPMailer\PHPMailer;
+namespace docs\phpmailer;
+
+use docs\phpmailer\Exception;
 
 /**
  * PHPMailer POP-Before-SMTP Authentication Class.

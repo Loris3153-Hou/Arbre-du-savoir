@@ -4,7 +4,7 @@ session_start();
 if(!isset ($_SESSION['mail_utilisateur'])){
     header('Location: inscriptionAuthentification.php');
 }
-include(__DIR__."/../controlleurs/FormationControlleur.php");
+include(__DIR__ . "/controlleurs/FormationControlleur.php");
 $formationControlleur = new \controlleurs\FormationControlleur();
 $formation = $formationControlleur->getFormationById($_COOKIE['id']);
 
@@ -26,7 +26,7 @@ if(isset($_POST["boutonAjoutPanier"])){
         <link href="css/fiche-produit.css" rel="stylesheet">
     </head>
     <body>
-        <?php include("header.php")?>
+        <?php include("header.php") ?>
         <div class="parent">
             <div class = "titre_formation">
                 <h1 id="titre-formation">
@@ -35,7 +35,7 @@ if(isset($_POST["boutonAjoutPanier"])){
             </div>
             <div class="photo_formation">
                 <?php
-                echo "<img id='imageFormation' src='../images/" . $formation->getPhotoFormation() . "' alt='" . $formation->getPhotoFormation() . "'>";
+                echo "<img id='imageFormation' src='images/" . $formation->getPhotoFormation() . "' alt='" . $formation->getPhotoFormation() . "'>";
                 ?>
             </div>
             <div class="prix_formation">

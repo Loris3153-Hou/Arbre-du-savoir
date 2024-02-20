@@ -16,7 +16,7 @@ if(!isset ($_SESSION['mail_utilisateur'])){
     <script src="js/admin.js"></script>
 </head>
 <body>
-    <?php include("header.php")?>
+    <?php include("header.php") ?>
     <div class='body'>
     <div class='recherche'>
         <input type='text' name='search' placeholder='Recherche..'>
@@ -28,7 +28,7 @@ if(!isset ($_SESSION['mail_utilisateur'])){
         <ul class='produits_list'>
             <?php
 
-            include(__DIR__."/../controlleurs/FormationControlleur.php");
+            include(__DIR__ . "s/controlleurs/FormationControlleur.php");
 
             $formationControlleur = new \controlleurs\FormationControlleur();
 

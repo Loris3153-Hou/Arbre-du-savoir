@@ -19,7 +19,11 @@
  * FITNESS FOR A PARTICULAR PURPOSE.
  */
 
-namespace PHPMailer\PHPMailer;
+namespace docs\phpmailer;
+
+use docs\phpmailer\Exception;
+use docs\phpmailer\PHPMailer;
+use docs\phpmailer\SMTP;
 
 /**
  * Configure PHPMailer with DSN string.

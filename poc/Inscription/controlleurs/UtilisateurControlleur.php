@@ -2,7 +2,7 @@
 
 namespace controlleurs;
 use controlleurs\Exception;
-use PHPMailer\PHPMailer\PHPMailer;
+use docs\phpmailer\PHPMailer;
 
 include_once(__DIR__ . "/../DAO/UtilisateurDAO.php");
 

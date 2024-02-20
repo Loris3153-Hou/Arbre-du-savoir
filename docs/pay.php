@@ -1,9 +1,9 @@
 <?php
 
-require "../../vendor/autoload.php";
-include_once "../models/Cart.php";
-include_once "../controlleurs/StripePaymentControlleur.php";
-include_once "../controlleurs/PaymentControlleur.php";
+require "../vendor/autoload.php";
+include_once "models/Cart.php";
+include_once "controlleurs/StripePaymentControlleur.php";
+include_once "controlleurs/PaymentControlleur.php";
 
 
 session_start();

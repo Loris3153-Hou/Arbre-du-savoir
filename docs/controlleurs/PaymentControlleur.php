@@ -3,11 +3,16 @@
 namespace controlleurs;
 
 use models\Cart;
-use PHPMailer\PHPMailer\PHPMailer;
+use docs\phpmailer\PHPMailer;
 
 include_once(__DIR__ . "/../DAO/UtilisateurDAO.php");
 include_once(__DIR__ . "/../DAO/FormationDAO.php");
 include_once(__DIR__ . "/../DAO/CommandeFormationDAO.php");
+include_once(__DIR__ . "/../phpmailer/Exception.php");
+include_once(__DIR__ . "/../phpmailer/PHPMailer.php");
+include_once(__DIR__ . "/../phpmailer/SMTP.php");
+
+
 class PaymentControlleur
 {
 
@@ -75,10 +80,6 @@ class PaymentControlleur
 
     public function confirmationPayement($mailUtilisateur){
 
-        require_once "../vues/phpmailer/Exception.php";
-        require_once "../vues/phpmailer/PHPMailer.php";
-        require_once "../vues/phpmailer/SMTP.php";
-
         $html = "";
         $nombreTotFormation = 0;
         $prixTotFormation = 0;
@@ -107,28 +108,28 @@ class PaymentControlleur
                 <div class='div4'><p class='totaux'>Montant total : ".$prixTotFormation." euros</p></div>
             </div>";
 
-        $mail = new PHPMailer(true);
+       // $mail = new PHPMailer(true);
+        /*
+                try {
+                   // $mail->SMTPDebug = 2;
+                   $mail->isSMTP();
+                    $mail->Host = "smtp-mail.outlook.com";
+                    $mail->SMTPAuth = true;
+                    $mail->SMTPSecure = "tls";
+                    $mail->Port = 587;
+                    $mail->Username = "nolan_tessier@outlook.com";
+                    $mail->Password = "MaNoLo1234";
 
-        try {
-           // $mail->SMTPDebug = 2;
-            $mail->isSMTP();
-            $mail->Host = "smtp-mail.outlook.com";
-            $mail->SMTPAuth = true;
-            $mail->SMTPSecure = "tls";
-            $mail->Port = 587;
-            $mail->Username = "nolan_tessier@outlook.com";
-            $mail->Password = "MaNoLo1234";
+                    $mail->setFrom("nolan_tessier@outlook.com");
+                    $mail->addAddress($mailUtilisateur);
+                    $mail->isHTML(true);
+                    $mail->Subject = "Confirmation de la commande Arbre du savoir";
+                    $mail->Body = $html;
 
-            $mail->setFrom("nolan_tessier@outlook.com");
-            $mail->addAddress($mailUtilisateur);
-            $mail->isHTML(true);
-            $mail->Subject = "Confirmation de la commande Arbre du savoir";
-            $mail->Body = $html;
-
-            $mail->send();
-        }catch(Exception){
-            echo "Erreur: {$mail->ErrorInfo}";
-        }
+                    $mail->send();
+                }catch(Exception){
+                    echo "Erreur: {$mail->ErrorInfo}";
+                }*/
 
     }
 

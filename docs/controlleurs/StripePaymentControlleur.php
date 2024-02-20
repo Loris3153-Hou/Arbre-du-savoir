@@ -28,8 +28,8 @@ class StripePaymentControlleur
                 }, $cart->getProducts())
             ],
             'mode' => 'payment',
-            'success_url' => 'https://arbre-du-savoir.online/vues/payment-accepte.php',
-            'cancel_url' => 'https://arbre-du-savoir.online/vues/payment-refuse.php',
+            'success_url' => 'http://localhost/arbre-du-savoir/docs/payment-accepte.php',
+            'cancel_url' => 'http://localhost/arbre-du-savoir/docs/payment-refuse.php',
             'billing_address_collection' => 'required',
             'metadata' => [
                 'cart_id' =>$cart->getId()

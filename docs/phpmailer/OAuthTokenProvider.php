@@ -19,7 +19,7 @@
  * FITNESS FOR A PARTICULAR PURPOSE.
  */
 
-namespace PHPMailer\PHPMailer;
+namespace docs\phpmailer;
 
 use docs\phpmailer\OAuth;
 use docs\phpmailer\SMTP;

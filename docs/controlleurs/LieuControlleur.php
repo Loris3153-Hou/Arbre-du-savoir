@@ -28,15 +28,18 @@ class LieuControlleur
 
     public function afficherTousLesLieuxVueModifierFormation($listeLieuxFormation){
         $html = "";
+        $count = 1;
         foreach ($this->listeLieux as $lieu){
-            $html .= "<input type='checkbox' id='sous-lieu' name='". $lieu->getIdLieu() ."'";
+            $html .= "<input type='checkbox' id='sous-lieu$count' name='". $lieu->getIdLieu() ."'";
             foreach ($listeLieuxFormation as $lieuFormation){
                 if ($lieu->getIdLieu() == $lieuFormation->getIdLieu()){
                     $html .= " checked='true'";
                 }
             }
-            $html .= "><label for='sous-lieu'>" . $lieu->getVilleLieu() ."</label><br><br>";
+            $html .= "><label for='sous-lieu$count'>" . $lieu->getVilleLieu() ."</label><br><br>";
+            $count = $count + 1;
         }
+
         return $html;
     }
 

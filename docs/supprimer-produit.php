@@ -5,7 +5,7 @@ if (!isset ($_SESSION['mail_utilisateur'])) {
     header('Location: inscriptionAuthentification.php');
 }
 
-include(__DIR__."/../controlleurs/FormationControlleur.php");
+include(__DIR__ . "/controlleurs/FormationControlleur.php");
 $formationControlleur = new \controlleurs\FormationControlleur();
 
 if (isset($_GET['idFormationASupprimer'])) {

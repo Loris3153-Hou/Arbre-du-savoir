@@ -21,6 +21,10 @@
 
 namespace PHPMailer\PHPMailer;
 
+use docs\phpmailer\Exception;
+use docs\phpmailer\PHPMailer;
+use docs\phpmailer\SMTP;
+
 /**
  * Configure PHPMailer with DSN string.
  *
@@ -43,7 +47,7 @@ class DSNConfigurator
         static $configurator = null;
 
         if (null === $configurator) {
-            $configurator = new DSNConfigurator();
+            $configurator = new \docs\phpmailer\DSNConfigurator();
         }
 
         return $configurator->configure(new PHPMailer($exceptions), $dsn);

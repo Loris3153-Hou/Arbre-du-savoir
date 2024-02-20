@@ -1,6 +1,6 @@
 <?php
 
-include_once(__DIR__."/../controlleurs/UtilisateurControlleur.php");
+include_once(__DIR__ . "/../controlleurs/UtilisateurControlleur.php");
 $utilisateurControlleur = new \controlleurs\UtilisateurControlleur();
 session_start();
 unset($_SESSION['mail_utilisateur']);
@@ -28,7 +28,7 @@ unset($_SESSION['listeItemPanier']);
         </ul>
     </div>
     <h1 onclick="goPageAccueil()">Arbre du Savoir</h1>
-    <img onclick="goPageAccueil()" src='../images/logo.png' alt='Programmer en C' width='90px' height='80px'>
+    <img onclick="goPageAccueil()" src='images/logo.png' alt='Programmer en C' width='90px' height='80px'>
 </header>
 <form method="post">
     <div class='body'>

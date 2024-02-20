@@ -1,6 +1,6 @@
 <?php
-include_once "../controlleurs/CommandeControlleur.php";
-include_once "../controlleurs/PaymentControlleur.php";
+include_once "controlleurs/CommandeControlleur.php";
+include_once "controlleurs/PaymentControlleur.php";
     session_start();
     if(!isset ($_SESSION['mail_utilisateur'])){
         header('Location: inscriptionAuthentification.php');

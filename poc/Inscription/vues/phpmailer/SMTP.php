@@ -21,6 +21,8 @@
 
 namespace PHPMailer\PHPMailer;
 
+use docs\phpmailer\OAuthTokenProvider;
+
 /**
  * PHPMailer RFC821 SMTP email transport class.
  * Implements RFC 821 SMTP commands and provides some utility methods for sending mail to an SMTP server.
@@ -258,8 +260,8 @@ class SMTP
      * @param string $str   Debug string to output
      * @param int    $level The debug level of this message; see DEBUG_* constants
      *
-     * @see SMTP::$Debugoutput
-     * @see SMTP::$do_debug
+     * @see \docs\phpmailer\SMTP::$Debugoutput
+     * @see \docs\phpmailer\SMTP::$do_debug
      */
     protected function edebug($str, $level = 0)
     {

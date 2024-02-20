@@ -1,5 +1,5 @@
 <?php
-include_once(__DIR__."/../controlleurs/UtilisateurControlleur.php");
+include_once(__DIR__ . "/controlleurs/UtilisateurControlleur.php");
 $utilisateurControlleur = new \controlleurs\UtilisateurControlleur();
 session_start();
 if(!isset ($_SESSION['mail_utilisateur'])){
@@ -20,7 +20,7 @@ if(isset ($_POST['sub'])){
     <link href="css/menu.css" rel="stylesheet">
     <script src="js/acceuil.js"></script>
 </head>
-<?php include("header.php")?>
+<?php include("header.php") ?>
 <body>
 <form method="post">
 <div class='body'>

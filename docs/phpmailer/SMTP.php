@@ -19,7 +19,9 @@
  * FITNESS FOR A PARTICULAR PURPOSE.
  */
 
-namespace PHPMailer\PHPMailer;
+namespace docs\phpmailer;
+
+use docs\phpmailer\OAuthTokenProvider;
 
 /**
  * PHPMailer RFC821 SMTP email transport class.
