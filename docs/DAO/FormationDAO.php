@@ -147,4 +147,16 @@ class formationDAO
         array_push($argument, $idFormation, $idLieu);
         return $this->executerRequete($sql, $argument);
     }
+
+    public function tierParPrixCroissant(){
+        $sql = "SELECT * FROM `FORMATION` ORDER BY prix_formation;";
+        $argument = array();
+        return $this->lireRequete($sql, $argument);
+    }
+
+    public function tierParPrixDecroissant(){
+        $sql = "SELECT * FROM `FORMATION` ORDER BY prix_formation DESC;";
+        $argument = array();
+        return $this->lireRequete($sql, $argument);
+    }
 }
