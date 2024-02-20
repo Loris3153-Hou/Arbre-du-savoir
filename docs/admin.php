@@ -28,7 +28,7 @@ if(!isset ($_SESSION['mail_utilisateur'])){
         <ul class='produits_list'>
             <?php
 
-            include(__DIR__ . "s/controlleurs/FormationControlleur.php");
+            include(__DIR__ . "/controlleurs/FormationControlleur.php");
 
             $formationControlleur = new \controlleurs\FormationControlleur();
 
