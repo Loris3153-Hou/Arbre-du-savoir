@@ -6,6 +6,12 @@ $utilisateurControlleur = new \controlleurs\UtilisateurControlleur();
 if ($_GET["value"] == "insc") {
     $html = '';
 
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+            die("Erreur CSRF détectée!");
+        }
+    }
+
     $html = $utilisateurControlleur->inscription(0, $_POST['nom'], $_POST['prenom'], $_POST['date'], $_POST['mail'], $_POST['mdp']);
 
     /*if (!empty($_POST["nom"]) and !empty($_POST["prenom"]) and !empty($_POST["date_naissance"]) and !empty($_POST["email_inscription"]) and !empty($_POST["password_inscription"])) {
@@ -20,6 +26,12 @@ if ($_GET["value"] == "insc") {
 if ($_GET["value"] == "auth") {
     $html = '';
 
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+            die("Erreur CSRF détectée!");
+        }
+    }
+    
     $html = $utilisateurControlleur->authentification($_POST['mailUser']);
 
     echo $html;

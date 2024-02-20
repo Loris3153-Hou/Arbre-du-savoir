@@ -26,10 +26,10 @@ class UtilisateurControlleur
                     return "";
                 }
                 else{
-                    return "<h3 class='text' style='color:red;'>Mot de passe incorrect</h3>";
+                    return "<h3 class='text'>Mot de passe incorrect</h3>";
                 }
             }else{
-                return "<h3 class='text' style='color:red;'>Adresse mail inconnu</h3>";
+                return "<h3 class='text'>Adresse mail inconnu</h3>";
                }
 
     }
@@ -52,7 +52,7 @@ class UtilisateurControlleur
             //session_start();
             //$_SESSION['mail_utilisateur'] = $_POST['mail'];
             if(!preg_match("#^[a-z0-9_-]+((\.[a-z0-9_-]+){1,})?@[a-z0-9_-]+((\.[a-z0-9_-]+){1,})?\.[a-z]{2,30}$#i",$mailUtilisateur)) {
-                return "<h3 class='text' style='color:red;>'Le mail est incorrect !</h3>";
+                return "<h3 class='text'>'Le mail est incorrect !</h3>";
             } else {
                 $mail = new PHPMailer(true);
                 //$mail->SMTPDebug = 2;
@@ -88,7 +88,7 @@ class UtilisateurControlleur
             }
 
         }else {
-            return "<h3 class='text' style='color:red;'>Adresse mail deja utiliser</h3>";
+            return "<h3 class='text'>Adresse mail deja utiliser</h3>";
         }
 
 

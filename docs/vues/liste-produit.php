@@ -25,7 +25,8 @@ if(!isset ($_SESSION['mail_utilisateur'])){
             </div>
             <div class='tri'>
                 <h2>Trier par :</h2>
-                <select>
+                <select onchange="triParPrix(this)">
+                    <option value='Alphabet'>---------</option>
                     <option value='prixC'>Prix croissant</option>
                     <option value='prixD'>Prix decroissant</option>
                 </select>
