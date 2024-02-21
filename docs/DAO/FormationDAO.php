@@ -166,4 +166,11 @@ class formationDAO
         $argument = array();
         return $this->lireRequete($sql, $argument);
     }
+
+    public function supprimerAssociationFormationLieu($idFormation, $idLieu){
+        $sql = 'DELETE FROM FORMATION_LIEU WHERE id_lieu = ? AND id_formation = ?;';
+        $argument = array();
+        array_push($argument, $idLieu, $idFormation);
+        return $this->executerRequete($sql, $argument);
+    }
 }
