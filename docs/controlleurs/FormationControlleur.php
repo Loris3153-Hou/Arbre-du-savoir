@@ -5,6 +5,7 @@ namespace controlleurs;
 use models\Formation;
 
 include_once(__DIR__ . "/../DAO/FormationDAO.php");
+include_once(__DIR__ . "/../DAO/LieuDAO.php");
 include_once(__DIR__ . "/LieuControlleur.php");
 include_once(__DIR__ . "/CategorieControlleur.php");
 
@@ -12,6 +13,7 @@ class FormationControlleur
 {
 
     public $formationDAO;
+    public $lieuDAO;
     public $listeFormations;
     public $lieuController;
     public $categorieController;
@@ -19,6 +21,7 @@ class FormationControlleur
     function __construct()
     {
         $this->formationDAO = new \formationDAO();
+        $this->lieuDAO = new \lieuDAO();
         $this->listeFormations = $this->formationDAO->getToutesLesFormations();
         $this->lieuController = new LieuControlleur();
         $this->categorieController = new CategorieControlleur();
@@ -248,7 +251,7 @@ class FormationControlleur
         $this->formationDAO->supprimerUneFormation($idFormation);
     }
 
-    public function modifierLaFormation($titreFormation, $descFormation, $dateDebutFormation, $dateFinFormation, $prixFormation, $certificationFormation, $niveauFormation, $photoFormation, $idFormation)
+    public function modifierLaFormation($titreFormation, $descFormation, $dateDebutFormation, $dateFinFormation, $prixFormation, $certificationFormation, $niveauFormation, $photoFormation, $idFormation, $listeLieuxFormation)
     {
         if ($photoFormation == null){
             foreach ($this->listeFormations as $formation) {
@@ -259,6 +262,19 @@ class FormationControlleur
         }
         if (filter_var($prixFormation, FILTER_VALIDATE_FLOAT) !== false) {
             $this->formationDAO->modifierUneFormation($titreFormation, $descFormation, $dateDebutFormation, $dateFinFormation, $prixFormation, $certificationFormation, $niveauFormation, $photoFormation, $idFormation);
+            $listeLieuxFormationActuelle = $this->lieuDAO->getLieuxParFormation($idFormation);
+            $listeIdLieuxFormationActuelle = array();
+            foreach ($listeLieuxFormationActuelle as $lieuActuel) {
+                array_push($listeIdLieuxFormationActuelle, $lieuActuel->getIdLieu());
+                if (!in_array($lieuActuel->getIdLieu(), $listeLieuxFormation)) {
+                    $this->formationDAO->supprimerAssociationFormationLieu($idFormation, $lieuActuel->getIdLieu());
+                }
+            }
+            foreach ($listeLieuxFormation as $lieu){
+                if (!in_array($lieu, $listeIdLieuxFormationActuelle)) {
+                    $this->formationDAO->associerFormationALieu($idFormation, $lieu);
+                }
+            }
         } else {
             echo "Le prix de la formation n'est pas un nombre valide.";
         }
