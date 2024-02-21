@@ -264,7 +264,7 @@ class FormationControlleur
         }
     }
 
-    public function ajouterLaFormation($titreFormation, $descFormation, $dateDebutFormation, $dateFinFormation, $prixFormation, $certificationFormation, $niveauFormation, $photoFormation, $listeLieuxFormation)
+    public function ajouterLaFormation($titreFormation, $descFormation, $dateDebutFormation, $dateFinFormation, $prixFormation, $certificationFormation, $niveauFormation, $photoFormation, $listeLieuxFormation, $listeCategoriesFormation)
     {
         if (filter_var($prixFormation, FILTER_VALIDATE_FLOAT) !== false) {
             $this->formationDAO->ajouterUneFormation($titreFormation, $descFormation, $dateDebutFormation, $dateFinFormation, $prixFormation, $certificationFormation, $niveauFormation, $photoFormation);

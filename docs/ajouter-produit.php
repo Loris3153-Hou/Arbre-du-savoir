@@ -18,9 +18,15 @@
             array_push($listeLieuxFormation, $lieu);
         }
 
+        $listeCategoriesFormation = array();
+        foreach($_POST['categorieFormation'] as $categorie)
+        {
+            array_push($listeCategoriesFormation, $categorie);
+        }
+
         $formationControlleur->ajouterLaFormation($_POST['ajouterFormationTitre'], $_POST['ajouterFormationDescription'],
             $_POST['ajouterFormationDateDebut'], $_POST['ajouterFormationDateFin'], $_POST['ajouterPrixCertification'],
-            $_POST['ajouterFormationCertification'], $_POST['ajouterFormationNiveau'], $_POST['ajouterFormationPhoto'], $listeLieuxFormation);
+            $_POST['ajouterFormationCertification'], $_POST['ajouterFormationNiveau'], $_POST['ajouterFormationPhoto'], $listeLieuxFormation, $listeCategoriesFormation);
 
         header('Location: admin.php');
         exit;
