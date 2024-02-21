@@ -273,7 +273,7 @@ class FormationControlleur
                 $this->formationDAO->associerFormationALieu($formation ,$lieu);
             }
             foreach ($listeCategoriesFormation as $categorie){
-                $this->formationDAO->associerFormationALieu($formation ,$categorie);
+                $this->formationDAO->associerFormationACategorie($formation ,$categorie);
             }
         } else {
             echo "Le prix de la formation n'est pas un nombre valide.";
