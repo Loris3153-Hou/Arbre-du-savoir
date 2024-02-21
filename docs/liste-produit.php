@@ -35,15 +35,17 @@ if(!isset ($_SESSION['mail_utilisateur'])){
             <div class='filtre'>
                 <h2>Filtres</h2>
                 <h3>Catégorie d’activité :</h3>
-                <?php
+                <form id="formulaireDesCatégories">
+                    <?php
 
-                include_once(__DIR__ . "/controlleurs/CategorieControlleur.php");
+                    include_once(__DIR__ . "/controlleurs/CategorieControlleur.php");
 
-                $categorieControlleur = new \controlleurs\CategorieControlleur();
+                    $categorieControlleur = new \controlleurs\CategorieControlleur();
 
-                $categorieControlleur->afficherToutesLesCategories();
+                    $categorieControlleur->afficherToutesLesCategories();
 
-                ?>
+                    ?>
+                </form>
                 <h3>Lieux :</h3>
                 <form id='formulaireDesLieux'>
                     <?php

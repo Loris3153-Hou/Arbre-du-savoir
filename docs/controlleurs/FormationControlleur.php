@@ -90,7 +90,7 @@ class FormationControlleur
                 echo "
             <div class='grid-panier'>
                     <div class='image-panier'>
-                        <img id='imagePanier' src='../images/". $formationPanier->getPhotoFormation() ."' alt='image'>
+                        <img id='imagePanier' src='images/". $formationPanier->getPhotoFormation() ."' alt='image'>
                     </div>
                     <div class='nom-produit-panier'>
                         <p>". $formationPanier->getTitreFormation() ."</p>
@@ -129,7 +129,7 @@ class FormationControlleur
                         </form>
                     </div>
                     <div class='supprimer'>
-                        <img id='imageSupprimer' src='../images/supprimer.png' alt='image'>
+                        <img id='imageSupprimer' src='images/supprimer.png' alt='image'>
                     </div>
                     <div class='ligne'>
                         <hr />

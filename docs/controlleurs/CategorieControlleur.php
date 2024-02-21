@@ -19,7 +19,7 @@ class CategorieControlleur
         $num_sous_categorie = 0;
         foreach ($this->listeCategories as $categorie){
             $num_sous_categorie += 1;
-            $html .= "<input type='checkbox' id='sous-cat". $num_sous_categorie ."' name='". $categorie->getNomCategorie() ."'>
+            $html .= "<input type='checkbox' class='choixDeLaCategorie' id='sous-cat". $num_sous_categorie ."' name='". $categorie->getNomCategorie() ."'>
                 <label for='sous-cat". $num_sous_categorie ."'>". $categorie->getNomCategorie() ."</label><br>";
         }
         echo $html;
