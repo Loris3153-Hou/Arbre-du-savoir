@@ -45,11 +45,3 @@ div {
 #bouton-annuler {
     margin-left: 50px;
 }
-
-body {
-    height: 98vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
