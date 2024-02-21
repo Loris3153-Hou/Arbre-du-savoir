@@ -25,7 +25,9 @@ if(!isset ($_SESSION['mail_utilisateur'])){
                 class='submit' value='Rechercher'>
             </div>
             <div class='tri'>
+                <br>
                 <h2>Trier par :</h2>
+                <br>
                 <select onchange="triParPrix(this)">
                     <option value='Alphabet'>---------</option>
                     <option value='prixC'>Prix croissant</option>
@@ -34,7 +36,9 @@ if(!isset ($_SESSION['mail_utilisateur'])){
             </div>
             <div class='filtre'>
                 <h2>Filtres</h2>
+                <br>
                 <h3>Catégorie d’activité :</h3>
+                <br>
                 <form id="formulaireDesCatégories">
                     <?php
 
@@ -46,7 +50,9 @@ if(!isset ($_SESSION['mail_utilisateur'])){
 
                     ?>
                 </form>
+                <br>
                 <h3>Lieux :</h3>
+                <br>
                 <form id='formulaireDesLieux'>
                     <?php
 

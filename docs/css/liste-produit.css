@@ -23,13 +23,16 @@
     background-color: #f1f1f1;
     padding: 10px;
     border-radius: 5px;
+    text-align: center;
 }
 
 .filtre {
     grid-area: 5 / 2 / 7 / 3;
     background-color: #f1f1f1;
-    padding: 10px;
+    padding: 50px;
     border-radius: 5px;
+    padding-top: 50px;
+    padding-left: 30px;
 }
 
 .produits {
