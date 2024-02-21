@@ -25,6 +25,7 @@ if (isset($_GET['idFormation'])) {
 <!DOCTYPE html>
 
     <head>
+        <link href="css/general.css" rel="stylesheet">
         <link href="css/supprimer-produit.css" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
         <script src="js/supprimer-produit.js"></script>

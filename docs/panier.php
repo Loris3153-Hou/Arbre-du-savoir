@@ -14,6 +14,7 @@ if(!isset ($_SESSION['mail_utilisateur'])){
         <title>Arbre du Savoir</title>
         <script src="js/pay.js"></script>
         <script src="js/panier.js"></script>
+        <link href="css/general.css" rel="stylesheet">
         <link href="css/panier.css" rel="stylesheet">
         <link href="css/menu.css" rel="stylesheet">
     </head>

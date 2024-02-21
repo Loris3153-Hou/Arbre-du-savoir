@@ -22,6 +22,7 @@ if(isset($_POST["boutonAjoutPanier"])){
         <title>Fiche Produit</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/general.css" rel="stylesheet">
         <link href="css/menu.css" rel="stylesheet">
         <link href="css/fiche-produit.css" rel="stylesheet">
     </head>

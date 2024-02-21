@@ -17,6 +17,7 @@ include_once "controlleurs/PaymentControlleur.php";
 <!DOCTYPE html>
 
     <head>
+        <link href="css/general.css" rel="stylesheet">
         <link href="css/payment-accepte.css" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
         <script src="js/payment-accepte.js"></script>

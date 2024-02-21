@@ -32,6 +32,7 @@ if(!isset ($_SESSION['mail_utilisateur'])){
 <head>
     <meta charset='UTF-8'>
     <title>Arbre du Savoir</title>
+    <link href="css/general.css" rel="stylesheet">
     <link href="css/modifier-produit.css" rel="stylesheet">
     <link href="css/menu.css" rel="stylesheet">
     <script src="js/modifier-produit.js"></script>

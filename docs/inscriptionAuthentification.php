@@ -16,6 +16,7 @@ unset($_SESSION['listeItemPanier']);
 <!DOCTYPE html>
 <html lang='fr'>
 <head>
+    <link href="css/general.css" rel="stylesheet">
     <link href="css/inscriptionAuthentification.css" rel="stylesheet">
     <link href="css/menu.css" rel="stylesheet">
     <script src="js/acceuil.js"></script>
