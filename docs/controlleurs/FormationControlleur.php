@@ -268,9 +268,12 @@ class FormationControlleur
     {
         if (filter_var($prixFormation, FILTER_VALIDATE_FLOAT) !== false) {
             $this->formationDAO->ajouterUneFormation($titreFormation, $descFormation, $dateDebutFormation, $dateFinFormation, $prixFormation, $certificationFormation, $niveauFormation, $photoFormation);
+            $formation = $this->formationDAO->getDerniereFormationAjoutee()[0]->getIdFormation();
             foreach ($listeLieuxFormation as $lieu){
-                $formation = $this->formationDAO->getDerniereFormationAjoutee()[0]->getIdFormation();
                 $this->formationDAO->associerFormationALieu($formation ,$lieu);
+            }
+            foreach ($listeCategoriesFormation as $categorie){
+                $this->formationDAO->associerFormationALieu($formation ,$categorie);
             }
         } else {
             echo "Le prix de la formation n'est pas un nombre valide.";
