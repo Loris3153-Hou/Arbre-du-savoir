@@ -44,15 +44,17 @@ if(!isset ($_SESSION['mail_utilisateur'])){
 
                 ?>
                 <h3>Lieux :</h3>
-                <?php
+                <form id='formulaireDesLieux'>
+                    <?php
 
-                include_once(__DIR__ . "/controlleurs/LieuControlleur.php");
+                    include_once(__DIR__ . "/controlleurs/LieuControlleur.php");
 
-                $lieuControlleur = new \controlleurs\LieuControlleur();
+                    $lieuControlleur = new \controlleurs\LieuControlleur();
 
-                $lieuControlleur->afficherTousLesLieux();
+                    $lieuControlleur->afficherTousLesLieux();
 
-                ?>
+                    ?>
+                </form>
             </div>
             
             <div class='produits' id="liste-des-produits">

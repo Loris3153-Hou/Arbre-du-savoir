@@ -159,4 +159,27 @@ class formationDAO
         $argument = array();
         return $this->lireRequete($sql, $argument);
     }
+
+    public function filtrerParUneVille($ville){
+        $sql = "SELECT FORMATION.id_formation, titre_formation, desc_formation, photo_formation, prix_formation, niveau_formation, certification_formation, date_debut_formation, date_fin_formation FROM FORMATION INNER JOIN FORMATION_LIEU ON FORMATION.id_formation = FORMATION_LIEU.id_formation INNER JOIN LIEU ON LIEU.id_lieu = FORMATION_LIEU.id_lieu WHERE ville_lieu = ?;";
+        $argument = array();
+        array_push($argument, $ville);
+        return $this->lireRequete($sql, $argument);
+    }
+
+    public function filtrerParPlusieursVilles($villes ){
+        $sql = "SELECT FORMATION.id_formation, titre_formation, desc_formation, photo_formation, prix_formation, niveau_formation, certification_formation, date_debut_formation, date_fin_formation FROM FORMATION INNER JOIN FORMATION_LIEU ON FORMATION.id_formation = FORMATION_LIEU.id_formation INNER JOIN LIEU ON LIEU.id_lieu = FORMATION_LIEU.id_lieu WHERE ville_lieu IN (?";
+        for ($i = 2; $i <= count($villes); $i++) {
+            $sql .= ", ?";
+        }
+        $sql .= ");";
+        $argument = array();
+        foreach ($villes as $ville) {
+            array_push($argument, $ville);
+        }
+
+
+
+        return $this->lireRequete($sql, $argument);
+    }
 }

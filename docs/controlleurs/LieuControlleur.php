@@ -18,10 +18,10 @@ class LieuControlleur
     public function afficherTousLesLieux(){
         $html = "";
         $num_sous_categorie = 0;
-        foreach ($this->listeLieux as $lieu){
+        foreach ($this->listeLieux as $lieu) {
             $num_sous_categorie += 1;
-            $html .= "<input type='checkbox' id='sous-cat". $num_sous_categorie ."' name='". $lieu->getVilleLieu() ."'>
-                <label for='sous-cat". $num_sous_categorie ."'>". $lieu->getVilleLieu() ."</label><br>";
+            $html .= "<input type='checkbox' class='choixDuLieu' id='sous-cat" . $num_sous_categorie . "' name='" . $lieu->getVilleLieu() . "'>
+                <label for='sous-cat" . $num_sous_categorie . "'>" . $lieu->getVilleLieu() . "</label><br>";
         }
         echo $html;
     }
