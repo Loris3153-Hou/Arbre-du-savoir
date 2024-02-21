@@ -20,7 +20,7 @@ if(!isset ($_SESSION['mail_utilisateur'])){
         <?php include("header.php") ?>
         <div class='body'>
             <div class='rech'>
-                <input id="barreDeRecherche" type='text' name='search' placeholder='Recherche..' onkeyup="recherche(this.value)">
+                <input id="barreDeRecherche" type='text' name='search' placeholder='Recherche...' onkeyup="recherche(this.value)">
                 <input type='submit' name='submit' 
                 class='submit' value='Rechercher'>
             </div>
