@@ -6,6 +6,7 @@ use models\Formation;
 
 include_once(__DIR__ . "/../DAO/FormationDAO.php");
 include_once(__DIR__ . "/../DAO/LieuDAO.php");
+include_once(__DIR__ . "/../DAO/CategorieDAO.php");
 include_once(__DIR__ . "/LieuControlleur.php");
 include_once(__DIR__ . "/CategorieControlleur.php");
 
@@ -14,6 +15,7 @@ class FormationControlleur
 
     public $formationDAO;
     public $lieuDAO;
+    public $categorieDAO;
     public $listeFormations;
     public $lieuController;
     public $categorieController;
@@ -22,6 +24,7 @@ class FormationControlleur
     {
         $this->formationDAO = new \formationDAO();
         $this->lieuDAO = new \lieuDAO();
+        $this->categorieDAO = new \categorieDAO();
         $this->listeFormations = $this->formationDAO->getToutesLesFormations();
         $this->lieuController = new LieuControlleur();
         $this->categorieController = new CategorieControlleur();
@@ -262,6 +265,7 @@ class FormationControlleur
         }
         if (filter_var($prixFormation, FILTER_VALIDATE_FLOAT) !== false) {
             $this->formationDAO->modifierUneFormation($titreFormation, $descFormation, $dateDebutFormation, $dateFinFormation, $prixFormation, $certificationFormation, $niveauFormation, $photoFormation, $idFormation);
+
             $listeLieuxFormationActuelle = $this->lieuDAO->getLieuxParFormation($idFormation);
             $listeIdLieuxFormationActuelle = array();
             foreach ($listeLieuxFormationActuelle as $lieuActuel) {
@@ -273,6 +277,20 @@ class FormationControlleur
             foreach ($listeLieuxFormation as $lieu){
                 if (!in_array($lieu, $listeIdLieuxFormationActuelle)) {
                     $this->formationDAO->associerFormationALieu($idFormation, $lieu);
+                }
+            }
+
+            $listeCategoriesFormationActuelle = $this->categorieDAO->getCategoriesParFormation($idFormation);
+            $listeIdCategoriesFormationActuelle = array();
+            foreach ($listeCategoriesFormationActuelle as $categorieActuelle) {
+                array_push($listeIdCategoriesFormationActuelle, $categorieActuelle->getIdCategorie());
+                if (!in_array($categorieActuelle->getIdCategorie(), $listeCategorieFormation)) {
+                    $this->formationDAO->supprimerAssociationFormationCategorie($idFormation, $categorieActuelle->getIdCategorie());
+                }
+            }
+            foreach ($listeCategorieFormation as $categorie){
+                if (!in_array($categorie, $listeIdCategoriesFormationActuelle)) {
+                    $this->formationDAO->associerFormationACategorie($idFormation, $categorie);
                 }
             }
         } else {
