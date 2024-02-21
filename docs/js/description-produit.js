@@ -11,7 +11,7 @@ function recherche(valeurEntree) {
             document.getElementById("liste-des-produits").innerHTML = this.responseText;
         }
     };
-    xhttp.open("GET", "../controlleurs/RechercheFormations.php?valeurRecherche=" + valeurEntree, true);
+    xhttp.open("GET", "controlleurs/RechercheFormations.php?valeurRecherche=" + valeurEntree, true);
     xhttp.send();
 }
 
@@ -23,6 +23,7 @@ function triParPrix(prix){
             console.log(this.response);
             var res = this.response;
             if (res.success) {
+                document.getElementById("liste-des-produits").innerHTML = res.msg;
                 console.log(res.success)
             } else {
                 alert(res.msg);
@@ -32,7 +33,7 @@ function triParPrix(prix){
         }
     };
 
-    requete.open("POST", "../controlleurs/TriPrixControlleur.php", true);
+    requete.open("POST", "controlleurs/TriPrixControlleur.php", true);
     requete.responseType = "json";
     requete.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     requete.send("ChoixTri=" + prix.value);
