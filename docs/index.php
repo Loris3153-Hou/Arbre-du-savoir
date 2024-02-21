@@ -5,6 +5,7 @@ session_start();
 <!DOCTYPE html>
 
     <head>
+        <link href="css/general.css" rel="stylesheet">
         <link href="css/accueil.css" rel="stylesheet">
         <link href="css/menu.css" rel="stylesheet">
     </head>

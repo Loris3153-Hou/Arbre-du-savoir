@@ -11,6 +11,7 @@ if(!isset ($_SESSION['mail_utilisateur'])){
     <head>
         <meta charset='UTF-8'>
         <title>Liste des produits</title>
+        <link href="css/general.css" rel="stylesheet">
         <link href="css/liste-produit.css" rel="stylesheet">
         <link href="css/menu.css" rel="stylesheet">
         <script src="js/description-produit.js"></script>

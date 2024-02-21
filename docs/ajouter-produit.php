@@ -38,6 +38,7 @@
 <head>
     <meta charset='UTF-8'>
     <title>Ajouter produit</title>
+    <link href="css/general.css" rel="stylesheet">
     <link href="css/ajouter-produit.css" rel="stylesheet">
     <link href="css/menu.css" rel="stylesheet">
     <script src="js/ajouter-produit.js"></script>

@@ -15,6 +15,7 @@ $commandeControlleur = new \controlleurs\CommandeControlleur();
 <head>
     <meta charset='UTF-8'>
     <title>Arbre du Savoir</title>
+    <link href="css/general.css" rel="stylesheet">
     <link href="css/historiqueCommandes.css" rel="stylesheet">
     <link href="css/menu.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>

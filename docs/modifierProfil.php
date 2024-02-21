@@ -16,6 +16,7 @@ if(isset ($_POST['sub'])){
 <!DOCTYPE html>
 <html lang='fr'>
 <head>
+    <link href="css/general.css" rel="stylesheet">
     <link href="css/modifierProfil.css" rel="stylesheet">
     <link href="css/menu.css" rel="stylesheet">
     <script src="js/acceuil.js"></script>

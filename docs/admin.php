@@ -11,6 +11,7 @@ if(!isset ($_SESSION['mail_utilisateur'])){
 <head>
     <meta charset='UTF-8'>
     <title>Administrateur</title>
+    <link href="css/general.css" rel="stylesheet">
     <link href="css/menu.css" rel="stylesheet">
     <link href="css/admin.css" rel="stylesheet">
     <script src="js/admin.js"></script>

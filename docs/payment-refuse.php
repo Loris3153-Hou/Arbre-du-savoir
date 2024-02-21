@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 
     <head>
+        <link href="css/general.css" rel="stylesheet">
         <link href="css/payment-refuse.css" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
         <script src="js/payment-refuse.js"></script>

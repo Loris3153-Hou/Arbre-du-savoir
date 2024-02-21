@@ -1,5 +1,6 @@
 <head>
     <meta charset="utf-8">
+    <link href="css/general.css" rel="stylesheet">
     <script src="js/acceuil.js"></script>
     <script src="js/panier.js"></script>
 </head>
