@@ -28,7 +28,7 @@ class CategorieControlleur
     public function afficherTousLesCategoriesVueModifierFormation($listeCategoriesFormation){
         $html = "";
         foreach ($this->listeCategories as $categorie){
-            $html .= "<input type='checkbox' id='sous-catego' name='". $categorie->getIdCategorie() ."'";
+            $html .= "<input type='checkbox' id='sous-catego' name='categorieFormation[]' value='". $categorie->getIdCategorie() ."'";
             foreach ($listeCategoriesFormation as $categorieFormation){
                 if ($categorie->getIdCategorie() == $categorieFormation->getIdCategorie()){
                     $html .= " checked='true'";
