@@ -1,35 +1,5 @@
-footer{
-  display: flex;
-  width: 100vw;
-  height: 8vh;
-  background-color: #73B7DE;
-  color: white;
-  text-align: center;
-  margin-top: 7%;
-  justify-content: space-between;
-  align-items: center;
-}
-
 html{
   background-image: url("../images/background.jpg");
-}
-
-h1{
-  padding-left: 20px;
-  padding-right: 20px;
-  color: black;
-  font-size: 40px;
-}
-
-h2{
-  padding-left: 40px;
-  padding-right: 40px;
-}
-
-h3{
-  padding-left: 20px;
-  padding-right: 20px;
-  color: black;
 }
 
 #slider {

@@ -30,7 +30,7 @@ class LieuControlleur
         $html = "";
         $count = 1;
         foreach ($this->listeLieux as $lieu){
-            $html .= "<input type='checkbox' id='sous-lieu$count' name='". $lieu->getIdLieu() ."'";
+            $html .= "<input type='checkbox' id='sous-lieu$count' name='lieuFormation[]' value='". $lieu->getIdLieu() ."'";
             foreach ($listeLieuxFormation as $lieuFormation){
                 if ($lieu->getIdLieu() == $lieuFormation->getIdLieu()){
                     $html .= " checked='true'";

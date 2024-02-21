@@ -10,7 +10,19 @@ if(!isset ($_SESSION['mail_utilisateur'])){
     $formationControlleur = new \controlleurs\FormationControlleur();
 
     if (isset($_POST['boutonModifierFormation'])) {
-        $formationControlleur->modifierLaFormation($_POST['modifierFormationTitre'], $_POST['modifierFormationDescription'], $_POST['modifierFormationDateDebut'], $_POST['modifierFormationDateFin'], $_POST['modifierFormationPrix'], $_POST['modifierFormationCertification'], $_POST['modifierFormationNiveau'], $_POST['modifierFormationPhoto'], $idFormation);
+        $listeLieuxFormation = array();
+        foreach($_POST['lieuFormation'] as $lieu)
+        {
+            array_push($listeLieuxFormation, $lieu);
+        }
+
+        $listeCategorieFormation = array();
+        foreach($_POST['categorieFormation'] as $categorie)
+        {
+            array_push($listeCategorieFormation, $categorie);
+        }
+
+        $formationControlleur->modifierLaFormation($_POST['modifierFormationTitre'], $_POST['modifierFormationDescription'], $_POST['modifierFormationDateDebut'], $_POST['modifierFormationDateFin'], $_POST['modifierFormationPrix'], $_POST['modifierFormationCertification'], $_POST['modifierFormationNiveau'], $_POST['modifierFormationPhoto'], $idFormation, $listeLieuxFormation, $listeCategorieFormation);
         header('Location: admin.php');
         exit;
     }

@@ -148,6 +148,13 @@ class formationDAO
         return $this->executerRequete($sql, $argument);
     }
 
+    public function associerFormationACategorie($idFormation, $idCategorie){
+        $sql = 'INSERT INTO FORMATION_CATEGORIE VALUES (?, ?);';
+        $argument = array();
+        array_push($argument, $idFormation, $idCategorie);
+        return $this->executerRequete($sql, $argument);
+    }
+
     public function tierParPrixCroissant(){
         $sql = "SELECT * FROM `FORMATION` ORDER BY prix_formation;";
         $argument = array();
