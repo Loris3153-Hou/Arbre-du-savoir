@@ -251,7 +251,7 @@ class FormationControlleur
         $this->formationDAO->supprimerUneFormation($idFormation);
     }
 
-    public function modifierLaFormation($titreFormation, $descFormation, $dateDebutFormation, $dateFinFormation, $prixFormation, $certificationFormation, $niveauFormation, $photoFormation, $idFormation, $listeLieuxFormation)
+    public function modifierLaFormation($titreFormation, $descFormation, $dateDebutFormation, $dateFinFormation, $prixFormation, $certificationFormation, $niveauFormation, $photoFormation, $idFormation, $listeLieuxFormation, $listeCategorieFormation)
     {
         if ($photoFormation == null){
             foreach ($this->listeFormations as $formation) {
